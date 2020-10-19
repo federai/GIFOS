@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GIFOS</title>
+    <script src="https://kit.fontawesome.com/edc3ff8ef8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Style/lightmode/lightstyle.css" id="theme-link">
 </head>
 
 <body id="principal">
-    <div class="purple"></div>
+    <div class="line"></div>
     <header>
         <div class="logo"><img src="images/logo-mobile.svg" alt="logo" id="logo"></div>
         <button class="ham" id="ham"></button>
@@ -33,14 +34,43 @@
                 <input type="text" name="busqueda" id="search" class="search" placeholder="Busca GIFOS y más">
                 <button type="submit" class="icon-search"></button>
             </div>
-            <div class="trending" id="TT">
-                <p>Trending</p>
+            <div id="TT">
+                <p class="trending">Trending</p>
+                <p class="mostsearch">Reactions, Entertainment, Sports, Stickers, Artists</p>
             </div>
         </div>
 
+        <article>
+            <div class="mostview">
+                <div class="titlemostview">
+                    <p>Trending GIFOS</p>
+                </div>
+                <p class="desc">Mira los últimos GIFOS de nuestra comunidad.</p>
+                <div class="slider" id="slider">
+                    <button class="closebutton" id="closebutton"></button>
+                    <img src="http://via.placeholder.com/250x200"" alt="img" id="imagen">
+                </div>
+            </div>
+            
+        </article>
 
     </main>
-    <script src="Javascript/app.js"></script>
+    <footer>
+        <div class=" footer">
+                    <p class="footer-text">Compartir en:</p>
+                </div>
+                <div class="socialnetworks">
+                    <a href="http://www.facebook.com.ar" target="_blank"> <img src="images/icon_facebook.svg"
+                            alt="facebook"></a>
+                    <a href="http://www.twitter.com.ar" target="_blank"><img src="images/icon-twitter.svg"
+                            alt="twitter"></a>
+                    <a href="http://www.instagram.com" target="blank"><img src="images/icon_instagram.svg"
+                            alt="instragram"></a>
+                </div>
+                <p class="copy">© GIFOS 2020 All Rights Reserved.</p>
+                </footer>
+                <div class="line"></div>
+                <script src=" Javascript/app.js"></script>
 </body>
 
 </html>
