@@ -1,0 +1,58 @@
+.title {
+    margin-top: 107px;
+    font-family: $fontprincipal;
+    text-align: center;
+    color: $colornocturno;
+    font-size: 25px;
+    padding: 0% 12%;
+    line-height: 33px;
+    font-weight: bold;
+}
+.imagen{
+    display: flex;
+    justify-content: center;
+}
+.imagen img{
+    padding: 0% 13%;
+    width: 100%;
+    padding-top: 5%;
+}
+
+.container-search{
+    display: flex;
+    padding: 0% 5%;
+    height: 50px;
+    
+    
+}
+.search{
+    width: 100%;
+    border-radius: 27px;
+    background-color: transparent;
+    border: 1px solid #572EE5;
+    text-indent: 14%;
+    font-family: $fontsecundario;
+    color: $colornocturno;
+    
+    
+}
+.icon-search{
+    background-image: url(/images/icon-search-modo-noct.svg);
+    z-index: 4;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    right: 11%;
+    margin-top: 13px;
+}
+
+.trending{
+    text-align: center;
+    font-family: $fontprincipal;
+    font-weight: bold;
+    font-size: 16px;
+    color: $colornocturno;
+    margin-top: 4%;
+}
