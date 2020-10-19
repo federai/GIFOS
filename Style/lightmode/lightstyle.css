@@ -233,4 +233,27 @@
   font-size: 14px;
   margin-bottom: 5%;
 }
+
+.title-fav {
+  font-family: "Montserrat", sans-serif;
+  color: #572EE5;
+  font-size: 20px;
+  text-align: center;
+}
+
+.images-fav {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 5%;
+  width: 100%;
+  margin-top: 5%;
+}
+
+.images-fav img {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: 5%;
+}
 /*# sourceMappingURL=lightstyle.css.map */
