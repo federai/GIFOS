@@ -162,7 +162,7 @@ body {
   width: 100%;
   border-radius: 27px;
   background-color: transparent;
-  border: 1px solid #572EE5;
+  border: 1px solid #FFFFFF;
   text-indent: 14%;
   font-family: "Roboto", sans-serif;
   color: #FFFFFF;
@@ -316,6 +316,39 @@ body {
     height: 54px;
     background-color: transparent;
     border: none;
+  }
+  .title {
+    font-size: 35px;
+    padding: 2% 15% 2% 15%;
+    line-height: 50px;
+  }
+  .imagen img {
+    padding: 0% 30%;
+    width: 100%;
+    padding-top: 5%;
+  }
+  .br {
+    display: unset;
+  }
+  .container-search {
+    padding: 0% 22%;
+  }
+  .search {
+    font-size: 16px;
+  }
+  .icon-search {
+    right: 25%;
+  }
+  .trending {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .titlemostview {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .desc {
+    font-size: 18px;
   }
 }
 /*# sourceMappingURL=darkstyle.css.map */

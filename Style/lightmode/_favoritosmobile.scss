@@ -1,0 +1,18 @@
+.title-fav{
+    font-family: $fontprincipal;
+    color: $colordiurno;
+    font-size: 20px;
+    text-align: center;
+}
+.images-fav{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:5%;
+    width: 100%;
+    margin-top: 5%;
+}
+.images-fav img{
+    justify-self: center;
+    margin: 5%;
+}
