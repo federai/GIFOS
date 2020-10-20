@@ -311,11 +311,17 @@ body {
   }
   .add {
     display: unset;
-    background-image: url(/images/button-crear-gifo.svg);
+    background-image: url(/images/CTA-crear-gifo-modo-noc.svg);
     width: 54px;
     height: 54px;
     background-color: transparent;
     border: none;
+  }
+  .add-hover {
+    background-image: url(/images/CTA-crear-gifo-hover-modo-noc.svg);
+  }
+  .add-click {
+    background-image: url(/images/CTA-crear-gifo-active-modo-noc.svg);
   }
   .title {
     font-size: 35px;
@@ -349,6 +355,25 @@ body {
   }
   .desc {
     font-size: 18px;
+  }
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .socialnetworks {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    padding: 4% 6% 4% 9%;
+  }
+  .copy {
+    padding: 4% 6% 4% 10%;
+    margin-bottom: unset;
   }
 }
 /*# sourceMappingURL=darkstyle.css.map */
