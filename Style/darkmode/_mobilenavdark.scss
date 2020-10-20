@@ -4,7 +4,7 @@
     width: 100%;
   }
  
-  .logo{
+  .logomobile{
     position: absolute;
     /* always keep ham on top of everything */
     z-index: 1000;
@@ -15,9 +15,12 @@
     border: none;
     cursor: pointer;   
   }
-  .logo img{
+  .logomobile img{
     width: 50px;
     height: 49px;
+  }
+  .logo{
+    display: none;
   }
   .ham {
     position: absolute;
@@ -40,6 +43,10 @@
     background-image: url(/images/close-modo-noct.svg);
     width: 15px;
     height: 14px;
+  }
+  
+  .add{
+    display: none;
   }
   
   .navbar {

@@ -16,7 +16,7 @@ body {
   width: 100%;
 }
 
-.logo {
+.logomobile {
   position: absolute;
   /* always keep ham on top of everything */
   z-index: 1000;
@@ -28,9 +28,13 @@ body {
   cursor: pointer;
 }
 
-.logo img {
+.logomobile img {
   width: 50px;
   height: 49px;
+}
+
+.logo {
+  display: none;
 }
 
 .ham {
@@ -53,6 +57,10 @@ body {
   background-image: url(/images/close-modo-noct.svg);
   width: 15px;
   height: 14px;
+}
+
+.add {
+  display: none;
 }
 
 .navbar {
@@ -235,5 +243,79 @@ body {
   font-size: 14px;
   margin-bottom: 5%;
   color: #FFFFFF;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    height: 90px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .logomobile {
+    display: none;
+  }
+  .logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: unset;
+    top: unset;
+    left: unset;
+    padding: 1% 0% 1% 10%;
+  }
+  .ham {
+    display: none;
+  }
+  .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: black;
+    -webkit-transform: none;
+            transform: none;
+    position: unset;
+    top: unset;
+    left: unset;
+    background-color: unset;
+    overflow: unset;
+    height: unset;
+    -webkit-transition: unset;
+    transition: unset;
+    width: unset;
+  }
+  .navbar .menu {
+    width: unset;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: unset;
+            flex-flow: unset;
+    margin: unset;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 1%;
+  }
+  .navbar .menu li {
+    text-align: center;
+  }
+  .navbar .menu li a {
+    font-family: "Montserrat", sans-serif;
+    color: #FFFFFF;
+    font-weight: bold;
+    border: none;
+  }
+  .add {
+    display: unset;
+    background-image: url(/images/button-crear-gifo.svg);
+    width: 54px;
+    height: 54px;
+    background-color: transparent;
+    border: none;
+  }
 }
 /*# sourceMappingURL=darkstyle.css.map */

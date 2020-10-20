@@ -1,0 +1,61 @@
+header{
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.logomobile{
+    display: none;
+}
+.logo{
+    display: flex;
+    position: unset;
+    top: unset;
+    left: unset;
+    padding: 1% 0% 1% 10%;
+}
+
+.ham{
+    display: none;
+}
+.navbar{
+    display: flex;
+    color: black;
+    transform: none;
+    position: unset;
+    top: unset;
+    left: unset;
+    background-color: unset;
+    overflow: unset;
+    height: unset;
+    transition: unset;
+    width: unset;
+}
+.navbar .menu{
+   width: unset;
+   flex-flow: unset;
+   margin: unset;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   margin-top: 1%;
+   
+}
+.navbar .menu li{
+    text-align: center;
+}
+.navbar .menu li a{
+    font-family: $fontprincipal;
+    color: $colornocturno;
+    font-weight: bold;
+    border: none;
+    
+}
+
+.add{
+    display: unset;
+    background-image: url(/images/button-crear-gifo.svg);
+    width: 54px;
+    height: 54px;
+    background-color: transparent;
+    border: none;
+  }

@@ -18,3 +18,7 @@ $colornocturno: #FFFFFF;
 @import 'mobiletitledark';
 @import 'mostviewdark';
 @import 'footermobiledark';
+
+@media screen and (min-width: 768px){
+  @import 'navdesktopdark';
+}

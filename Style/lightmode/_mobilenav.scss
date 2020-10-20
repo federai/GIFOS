@@ -3,8 +3,11 @@
     height: 5px;
     width: 100%;
   }
- 
   .logo{
+    display: none;
+  }
+
+  .logomobile{
     position: absolute;
     /* always keep ham on top of everything */
     z-index: 1000;
@@ -15,10 +18,12 @@
     border: none;
     cursor: pointer;   
   }
-  .logo img{
+
+  .logomobile img{
     width: 50px;
     height: 49px;
   }
+
   .ham {
     position: absolute;
     /* always keep ham on top of everything */
@@ -34,6 +39,9 @@
     background-size: 100%;
   }
   
+  .add{
+    display: none;
+  }
   
   /* change ham image to close */
   .showClose {

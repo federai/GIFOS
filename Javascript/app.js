@@ -44,20 +44,19 @@ function darkmode() {
     if (theme.getAttribute("href") == "Style/lightmode/lightstyle.css") {
         // ... then switch it to "dark-theme.css"
         theme.href = "Style/darkmode/darkstyle.css";
-        var logo = document.getElementById("logo").src="images/logo-mobile-modo-noct.svg";
-
+        var logomovil = document.getElementById("logomobile").src="images/logo-mobile-modo-noct.svg";
+        var logo = document.getElementById("logo").src="images/Logo-modo-noc.svg";
       // Otherwise...
       } else {
         // ... switch it to "light-theme.css"
         theme.href = "Style/lightmode/lightstyle.css";
-        var logo = document.getElementById("logo").src="images/logo-mobile.svg";
+        var logomovil = document.getElementById("logomobile").src="images/logo-mobile.svg";
+        var logo = document.getElementById("logo").src="images/logo-desktop.svg";
       }
 
 
 }
 //-------------------------------------FULLSCREEN IMAGE----------------------------------------------------------
-
-
 
 
 

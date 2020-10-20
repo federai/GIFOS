@@ -15,3 +15,9 @@ $colordiurno:  #572EE5;
 @import 'mostview';
 @import 'footermobile';
 @import 'favoritos';
+
+
+
+@media screen and (min-width: 768px){
+  @import 'navdesktop';
+}
