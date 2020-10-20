@@ -389,12 +389,18 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .footer-text {
+    font-size: 13px;
+    margin-top: 2px;
+  }
   .socialnetworks {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
     padding: 4% 6% 4% 9%;
+    -ms-grid-row-align: center;
+        align-self: center;
   }
   .copy {
     padding: 4% 6% 4% 10%;
