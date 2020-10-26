@@ -334,6 +334,9 @@
     font-weight: bold;
     border: none;
   }
+  .navbar ul li a:hover, .navbar ul li a:focus {
+    border-bottom: 2px solid #5ED7C6;
+  }
   .add {
     display: unset;
     background-image: url(/images/button-crear-gifo.svg);

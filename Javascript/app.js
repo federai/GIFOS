@@ -26,53 +26,65 @@ menuLinks.forEach(
 let mode = localStorage.getItem("colormode");
 var theme = document.querySelector("#theme-link");
 
-if (localStorage.getItem("colormode") == null) {
-    theme.href = "Style/lightmode/lightstyle.css";
+
+ if (localStorage.getItem("colormode") == "Style/darkmode/darkstyle.css") {
+     darkmodechanges();                                                      //Chequeo que hay en localStorage y aplico el Style
+     hoverRedesNoc();                                                        //Por defecto aplico lightstyle.css, si tengo guardado darkstyle 
+     theme.href = localStorage.getItem("colormode");                         // lo aplico con theme.href  //Aplico hover redes dark y logos dark  
 }
-else if (localStorage.getItem("colormode") == "Style/darkmode/darkstyle.css") {
-    var logomovil = document.getElementById("logomobile").src = "images/logo-mobile-modo-noct.svg";
-    var logo = document.getElementById("logo").src = "images/Logo-modo-noc.svg";
-    theme.href = localStorage.getItem("colormode");
-    
+else{
+    hoverRedes();                                                            //aplico hover redes modo diurno
 }
 
-const chooselightmode = () => {
+/*funcion a aplicar cuando elijo modo diurno
+ -- Cambio href y aplico lightstyle.css
+ -- Guardo en localStorage href
+ -- Aplico cambios de logos con lightmodechanges
+ */
+function chooselightmode ()  {
     theme.href = "Style/lightmode/lightstyle.css";
-    var linklightmode = theme.getAttribute("href");
-    console.log("El link es " + linklightmode)
+    var linklightmode = theme.getAttribute("href");              
     localStorage.setItem("colormode", linklightmode);
+    lightmodechanges();
+    hoverRedes();
+}
+
+/*funcion a aplicar cuando elijo modo nocturno
+ -- Cambio href y aplico lightstyle.css
+ -- Guardo en localStorage href
+ */
+function choosedarkmode () {
+    theme.href = "Style/darkmode/darkstyle.css";
+    var linkdarkmode = theme.getAttribute("href");
+    localStorage.setItem("colormode", linkdarkmode);
+    darkmodechanges();
+    hoverRedesNoc();
+}
+
+/*
+function darkMode() {
+    choosedarkmode();
+    hoverRedesNoc();
+
+}
+
+function lightMode() {
+    chooselightmode();
+    hoverRedes();
+
+}
+*/
+function darkmodechanges(){
+    var logomovil = document.getElementById("logomobile").src = "images/logo-mobile-modo-noct.svg";
+    var logo = document.getElementById("logo").src = "images/Logo-modo-noc.svg";
+}
+
+function lightmodechanges(){
     var logomovil = document.getElementById("logomobile").src = "images/logo-mobile.svg";
     var logo = document.getElementById("logo").src = "images/logo-desktop.svg";
 }
-const choosedarkmode = () => {
-    theme.href = "Style/darkmode/darkstyle.css";
-    var linkdarkmode = theme.getAttribute("href");
-    console.log("El link es " + linkdarkmode)
-    localStorage.setItem("colormode", linkdarkmode);
-    var logomovil = document.getElementById("logomobile").src = "images/logo-mobile-modo-noct.svg";
-    var logo = document.getElementById("logo").src = "images/Logo-modo-noc.svg";
-
-}
-
-function darkMode() {
-    choosedarkmode();
-
-}
-function lightMode() {
-    chooselightmode();
-
-}
 //------------------------------------------------------HOVER MENU Y BOTON MAS----------------------------------------------------------
 
-var menu = document.getElementById("menu");
-menu.addEventListener("mouseover", function (event) {
-    // highlight the mouseover target
-    event.target.style.color = "orange";
-    // reset the color after a short delay
-});
-menu.addEventListener("mouseout", function (event) {
-    event.target.style.color = "purple";
-});
 
 var botonagregar = document.getElementById("add");
 botonagregar.addEventListener("mouseover", function () {
@@ -83,11 +95,13 @@ botonagregar.addEventListener("mouseout", function () {
 })
 botonagregar.addEventListener("click", function () {
     botonagregar.classList.toggle("add-click");
+    
 })
 
 //-----------------------------------------------------HOVER FOOTER-----------------------------------------------------------------------
 
 //-----------------------------------------------------Icono Facebook---------------------------------------------------------------------
+function hoverRedes(){
 var facebook = document.getElementById("facebook");
 
 facebook.addEventListener("mouseover", function () {
@@ -114,7 +128,7 @@ insta.addEventListener("mouseover", function () {
 insta.addEventListener("mouseout", function () {
     insta.src = "images/icon_instagram.svg";
 });
-
+}
 //---------------------------------------------------Modo Nocturno-------------------------------------------
 function hoverRedesNoc() {
     facebook.addEventListener("mouseover", function () {
@@ -130,6 +144,7 @@ function hoverRedesNoc() {
     twitter.addEventListener("mouseout", function () {
         twitter.src = "images/icon-twitter.svg";
     });
+    var insta = document.getElementById("instagram");
     insta.addEventListener("mouseover", function () {
         insta.src = "images/icon_instagram_noc.svg";
     });

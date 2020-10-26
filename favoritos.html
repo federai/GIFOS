@@ -11,14 +11,14 @@
 <body>
     <div class="line"></div>
     <header>
-        <div class="logomobile"><a href="/index.html"><img src="images/logo-mobile.svg" alt="logomobile" id="logomobile"></a></div>
-        <div class="logo"><a href="/index.html"><img src="images/logo-desktop.svg" alt="logo" id="logo"></a></div>
+        <div class="logomobile"><a href="/index.html"><img src="images/logo-mobile.svg" alt="logomobile" id="logomobile" onclick="chooselightmode()"></a></div>
+        <div class="logo"><a href="/index.html"><img src="images/logo-desktop.svg" alt="logo" id="logo" onclick="chooselightmode()"></a></div>
 
         <button class="ham" id="ham"></button>
         <nav class="navbar">
             <ul class="menu" id="menu">
-                <li id="darkMode"><a class="menuLink" href="#" id="darkmode" onclick="darkMode()"><span >Modo Nocturno</span> </a></li>
-                <li id="lightMode"><a class="menuLink" href="#" id="darkmode" onclick="lightMode()"><span >Modo Diurno</span> </a></li>
+                <li id="darkMode"><a class="menuLink" href="#" onclick="choosedarkmode()"><span >Modo Nocturno</span> </a></li>
+                <li id="lightMode"><a class="menuLink" href="#" onclick="chooselightmode()"><span >Modo Diurno</span> </a></li>
                 <li><a class="menuLink" href="/favoritos.html">Favoritos</a></li>
                 <li><a class="menuLink" href="/my-gifos.html">Mis GIFOS</a></li>
                 <li><button class="add" id="add"></button></li>
@@ -68,7 +68,7 @@
             </div>
                 </footer>
 <div class="line"></div>
-    <script src="Javascript/app2.js"></script>
+    <script src="Javascript/app.js"></script>
 </body>
 
 </html>
