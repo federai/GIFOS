@@ -119,7 +119,7 @@
   border-bottom: 2px solid white;
 }
 
-#lightmode {
+#lightMode {
   display: none;
 }
 
@@ -347,6 +347,9 @@
   }
   .add-click {
     background-image: url(/images/CTA-crear-gifo-active.svg);
+  }
+  #lightMode {
+    display: none;
   }
   .title {
     font-size: 35px;

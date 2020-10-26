@@ -124,6 +124,14 @@ body {
   border-bottom: 2px solid white;
 }
 
+#lightMode {
+  display: unset;
+}
+
+#darkMode {
+  display: none;
+}
+
 .title {
   margin-top: 107px;
   font-family: "Montserrat", sans-serif;
@@ -322,6 +330,12 @@ body {
   }
   .add-click {
     background-image: url(/images/CTA-crear-gifo-active-modo-noc.svg);
+  }
+  #lightMode {
+    display: unset;
+  }
+  #darkMode {
+    display: none;
   }
   .title {
     font-size: 35px;

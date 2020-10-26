@@ -101,4 +101,9 @@
     border-bottom: 2px solid white;
     
   }
- 
+ #lightMode {
+   display: unset;
+ }
+ #darkMode{
+   display: none;
+ }

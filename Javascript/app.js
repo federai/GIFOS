@@ -23,40 +23,43 @@ menuLinks.forEach(
 
 //------------------------------------MODO NOCTURNO---------------------------------------------------------------------------
 
-var modooscuro = document.getElementById("darkmode");
-modooscuro.addEventListener("click", darkmode);
-const theme = document.querySelector("#theme-link");
-var modo = document.getElementById("mode");
+let mode = localStorage.getItem("colormode");
+var theme = document.querySelector("#theme-link");
 
+if (localStorage.getItem("colormode") == null) {
+    theme.href = "Style/lightmode/lightstyle.css";
+}
+else if (localStorage.getItem("colormode") == "Style/darkmode/darkstyle.css") {
+    var logomovil = document.getElementById("logomobile").src = "images/logo-mobile-modo-noct.svg";
+    var logo = document.getElementById("logo").src = "images/Logo-modo-noc.svg";
+    theme.href = localStorage.getItem("colormode");
+    
+}
 
-function darkmode() {
-    var cuerpo = document.body  //body
+const chooselightmode = () => {
+    theme.href = "Style/lightmode/lightstyle.css";
+    var linklightmode = theme.getAttribute("href");
+    console.log("El link es " + linklightmode)
+    localStorage.setItem("colormode", linklightmode);
+    var logomovil = document.getElementById("logomobile").src = "images/logo-mobile.svg";
+    var logo = document.getElementById("logo").src = "images/logo-desktop.svg";
+}
+const choosedarkmode = () => {
+    theme.href = "Style/darkmode/darkstyle.css";
+    var linkdarkmode = theme.getAttribute("href");
+    console.log("El link es " + linkdarkmode)
+    localStorage.setItem("colormode", linkdarkmode);
+    var logomovil = document.getElementById("logomobile").src = "images/logo-mobile-modo-noct.svg";
+    var logo = document.getElementById("logo").src = "images/Logo-modo-noc.svg";
 
-    cuerpo.classList.toggle('darkmodemobile');          // toggle clase fondo gris
+}
 
-    if (modo.innerHTML == "Nocturno") {
-        modo.innerHTML = "Diurno";
-    }
-    else {
-        modo.innerHTML = "Nocturno";
-    }
+function darkMode() {
+    choosedarkmode();
 
-    if (theme.getAttribute("href") == "Style/lightmode/lightstyle.css") {
-        // ... then switch it to "dark-theme.css"
-        theme.href = "Style/darkmode/darkstyle.css";
-        var logomovil = document.getElementById("logomobile").src = "images/logo-mobile-modo-noct.svg";
-        var logo = document.getElementById("logo").src = "images/Logo-modo-noc.svg";
-        hoverRedesNoc();
-       
-        
-        // Otherwise...
-    } else {
-        // ... switch it to "light-theme.css"
-        theme.href = "Style/lightmode/lightstyle.css";
-        var logomovil = document.getElementById("logomobile").src = "images/logo-mobile.svg";
-        var logo = document.getElementById("logo").src = "images/logo-desktop.svg";
-    }
-
+}
+function lightMode() {
+    chooselightmode();
 
 }
 //------------------------------------------------------HOVER MENU Y BOTON MAS----------------------------------------------------------
