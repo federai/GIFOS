@@ -28,12 +28,14 @@ var theme = document.querySelector("#theme-link");
 const styledark = "Style/darkmode/darkstyle.css";
 const stylelight = "Style/lightmode/lightstyle.css";
 
- if (localStorage.getItem("colormode") == 'dark') {
-     darkmodechanges();                                                      //Chequeo que hay en localStorage y aplico el Style
-     hoverRedesNoc();                                                        //Por defecto aplico lightstyle.css, si tengo guardado darkstyle 
-     theme.href = styledark;                         // lo aplico con theme.href  //Aplico hover redes dark y logos dark  
+ if (localStorage.colormode == 'dark') {
+    theme.href = styledark;  
+    darkmodechanges();                                                      //Chequeo que hay en localStorage y aplico el Style
+    hoverRedesNoc();                                                        //Por defecto aplico lightstyle.css, si tengo guardado darkstyle 
+                                                                             // lo aplico con theme.href  //Aplico hover redes dark y logos dark  
 }
 else{
+    theme.href = stylelight
     hoverRedes();                                                            //aplico hover redes modo diurno
 }
 
