@@ -25,12 +25,13 @@ menuLinks.forEach(
 
 let mode = localStorage.getItem("colormode");
 var theme = document.querySelector("#theme-link");
+const styledark = "Style/darkmode/darkstyle.css";
+const stylelight = "Style/lightmode/lightstyle.css";
 
-
- if (localStorage.getItem("colormode") == "Style/darkmode/darkstyle.css") {
+ if (localStorage.getItem("colormode") == 'dark') {
      darkmodechanges();                                                      //Chequeo que hay en localStorage y aplico el Style
      hoverRedesNoc();                                                        //Por defecto aplico lightstyle.css, si tengo guardado darkstyle 
-     theme.href = localStorage.getItem("colormode");                         // lo aplico con theme.href  //Aplico hover redes dark y logos dark  
+     theme.href = styledark;                         // lo aplico con theme.href  //Aplico hover redes dark y logos dark  
 }
 else{
     hoverRedes();                                                            //aplico hover redes modo diurno
@@ -42,9 +43,8 @@ else{
  -- Aplico cambios de logos con lightmodechanges
  */
 function chooselightmode ()  {
-    theme.href = "Style/lightmode/lightstyle.css";
-    var linklightmode = theme.getAttribute("href");              
-    localStorage.setItem("colormode", linklightmode);
+    theme.href = stylelight;             
+    localStorage.setItem("colormode", 'light');
     lightmodechanges();
     hoverRedes();
 }
@@ -54,9 +54,8 @@ function chooselightmode ()  {
  -- Guardo en localStorage href
  */
 function choosedarkmode () {
-    theme.href = "Style/darkmode/darkstyle.css";
-    var linkdarkmode = theme.getAttribute("href");
-    localStorage.setItem("colormode", linkdarkmode);
+    theme.href = styledark;
+    localStorage.setItem("colormode", 'dark');
     darkmodechanges();
     hoverRedesNoc();
 }
