@@ -8,17 +8,24 @@
     <link rel="stylesheet" href="Style/lightmode/lightstyle.css" id="theme-link">
 </head>
 
+<!-- ---------------------------------------------------HEADER---------------------------------------------------- -->
+
+
 <body id="principal">
     <div class="line"></div>
     <header>
-        <div class="logomobile"><a href="/index.html"><img src="images/logo-mobile.svg" alt="logomobile" id="logomobile" onclick="chooselightmode()"></a></div>
-        <div class="logo"><a href="/index.html"><img src="images/logo-desktop.svg" alt="logo" id="logo" onclick="chooselightmode()"></a></div>
+        <div class="logomobile"><a href="/index.html"><img src="images/logo-mobile.svg" alt="logomobile" id="logomobile"
+                    onclick="chooselightmode()"></a></div>
+        <div class="logo"><a href="/index.html"><img src="images/logo-desktop.svg" alt="logo" id="logo"
+                    onclick="chooselightmode()"></a></div>
 
         <button class="ham" id="ham"></button>
         <nav class="navbar">
             <ul class="menu" id="menu">
-                <li id="darkMode"><a class="menuLink" href="#" onclick="choosedarkmode()"><span >Modo Nocturno</span> </a></li>
-                <li id="lightMode"><a class="menuLink" href="#" onclick="chooselightmode()"><span >Modo Diurno</span> </a></li>
+                <li id="darkMode"><a class="menuLink" href="#" onclick="choosedarkmode()"><span>Modo Nocturno</span>
+                    </a></li>
+                <li id="lightMode"><a class="menuLink" href="#" onclick="chooselightmode()"><span>Modo Diurno</span>
+                    </a></li>
                 <li><a class="menuLink" href="/favoritos.html">Favoritos</a></li>
                 <li><a class="menuLink" href="/my-gifos.html">Mis GIFOS</a></li>
                 <li><button class="add" id="add"></button></li>
@@ -27,55 +34,70 @@
         </nav>
     </header>
     <main>
-        <div class="title">
+
+        <!-- -----------------------------------------------TITLE---------------------------------------------------------- -->
+
+        <div class="title" id="title">
             <p> Inspírate, busca, guarda, y crea <br id="br"> los mejores GIFOS</p>
+            <div class="imagen"><img src="images/ilustra_header.svg" alt=""></div>
         </div>
 
-        <div class="busqueda">
-            <div class="imagen"><img src="images/ilustra_header.svg" alt=""></div>
+
+        <!-- ----------------------------------------------------BUSQUEDA------------------------------------------------------- -->
+        <div class="busqueda" id="busqueda">
             <div class="container-search">
                 <input type="text" name="busqueda" id="search" class="search" placeholder="Busca GIFOS y más">
-                <button type="submit" class="icon-search"></button>
+                <button type="submit" class="icon-search" id="buttonsearch"></button>
             </div>
+
+            <p class="trending">Trending:</p>
             <div id="TT">
-                <p class="trending">Trending:</p>
-                <p class="mostsearch">Reactions, Entertainment, Sports, Stickers, Artists</p>
+
             </div>
+
+        </div>
+        <div id="searchresults">
+            <div id="searchimagesresults">
+                
+            </div>
+
         </div>
 
-            <article>
-                <div class="mostview">
-                    <div class="titlemostview">
-                        <p>Trending GIFOS</p>
-                    </div>
-                    <p class="desc">Mira los últimos GIFOS de nuestra comunidad.</p>
-                    <div class="slider" id="slider">
-                        <button class="closebutton" id="closebutton"></button>
-                        <img src="http://via.placeholder.com/250x200"" alt="img" id="imagen">
-                    </div>
+        <!----------------------------------------------------TRENDING GIFOS----------------------------------------------------- -->
+        <article>
+            <div class="mostview">
+                <div class="titlemostview">
+                    <p>Trending GIFOS</p>
                 </div>
-                
-            </article>
+                <p class="desc">Mira los últimos GIFOS de nuestra comunidad.</p>
+                <div class="slider" id="slider">
 
-        </main>
-        <footer>
-            <div class=" footer">
-                       
-                    
-                    <div class="socialnetworks">
-                        <p class="footer-text">Compartir en:</p>
-                        <a href="http://www.facebook.com.ar" target="_blank" > <img src="images/icon_facebook.svg"
-                                alt="facebook" id="facebook"></a>
-                        <a href="http://www.twitter.com.ar" target="_blank" ><img src="images/icon-twitter.svg"
-                                alt="twitter" id="twitter"></a>
-                        <a href="http://www.instagram.com" target="blank" ><img src="images/icon_instagram.svg"
-                                alt="instragram" id="instagram"></a>
-                    </div>
-                    <p class="copy">© GIFOS 2020 All Rights Reserved.</p>
                 </div>
-                    </footer>
-                    <div class="line"></div>
-                <script src=" Javascript/app.js"></script>
+            </div>
+
+        </article>
+
+    </main>
+
+    <!-- ----------------------------------------------------FOOTER---------------------------------------------------        -->
+    <footer>
+        <div class=" footer">
+
+
+            <div class="socialnetworks">
+                <p class="footer-text">Compartir en:</p>
+                <a href="http://www.facebook.com.ar" target="_blank"> <img src="images/icon_facebook.svg" alt="facebook"
+                        id="facebook"></a>
+                <a href="http://www.twitter.com.ar" target="_blank"><img src="images/icon-twitter.svg" alt="twitter"
+                        id="twitter"></a>
+                <a href="http://www.instagram.com" target="blank"><img src="images/icon_instagram.svg" alt="instragram"
+                        id="instagram"></a>
+            </div>
+            <p class="copy">© GIFOS 2020 All Rights Reserved.</p>
+        </div>
+    </footer>
+    <div class="line"></div>
+    <script src=" Javascript/app.js"></script>
 </body>
 
 </html>

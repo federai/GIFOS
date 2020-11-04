@@ -23,6 +23,26 @@
     right: 25%;
 }
 .trending{
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
+}
+.mostsearch{
+    font-size: 18px;
+}
+#TT{
+   margin:2% 33%;
+}
+.activesearch{
+    margin-top: 10%;
+
+}
+#searchimagesresults{  
+    grid-template-columns: 1fr 1fr 1fr 1fr;  
+}
+.borde{
+    margin-top: 5%;
+}
+.titlesearch{
+    margin-top: 5%;
+    font-size: 24px;
 }
