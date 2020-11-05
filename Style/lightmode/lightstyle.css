@@ -192,7 +192,8 @@
   font-weight: bold;
   font-size: 16px;
   color: #572EE5;
-  padding: 1%;
+  margin-right: 0.7%;
+  display: inline-block;
 }
 
 .br {
@@ -200,16 +201,16 @@
 }
 
 #TT {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 20%;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4%;
 }
 
 .activesearch {
@@ -280,7 +281,7 @@
   padding: 3% 10%;
 }
 
-.slider {
+.sliderimages {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -294,6 +295,7 @@
 .imgGif {
   width: 250px;
   height: 250px;
+  margin: 2%;
 }
 
 .footer-text {
@@ -457,7 +459,10 @@
     font-size: 18px;
   }
   #TT {
-    margin: 2% 33%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: unset;
   }
   .activesearch {
     margin-top: 10%;
@@ -479,6 +484,50 @@
   }
   .desc {
     font-size: 18px;
+  }
+  .slider {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 0.5fr 7fr 0.5fr;
+        grid-template-columns: 0.5fr 7fr 0.5fr;
+    margin: 1% 4%;
+  }
+  .sliderimages {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    overflow-x: unset;
+    gap: 2%;
+  }
+  .imgGif {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 100%;
+    height: 300px;
+  }
+  .left {
+    background-image: url(/images/button-slider-left.svg);
+    width: 40px;
+    height: 40px;
+    background-color: none;
+    border: none;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .right {
+    background-image: url(/images/Button-Slider-right.svg);
+    width: 40px;
+    height: 40px;
+    background-color: none;
+    border: none;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
   .footer {
     display: -webkit-box;

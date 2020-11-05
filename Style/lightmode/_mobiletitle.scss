@@ -57,16 +57,20 @@
     font-weight: bold;
     font-size: 16px;
     color: $colordiurno;
-    padding:1%;
+    margin-right: 0.7%;
+    display: inline-block;
+    
 }
 .br{
     display: none;
 }
 #TT{
+    width: 100%;
     display: flex;
-    margin-left: 20%;
-    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    padding: 4%;
+   
     
 }
 .activesearch{

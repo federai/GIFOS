@@ -20,7 +20,7 @@
     padding: 3% 10%;
 }
 
-.slider{
+.sliderimages{
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
@@ -28,4 +28,5 @@
 .imgGif{
     width: 250px;
     height: 250px;
+    margin: 2%;
 }
