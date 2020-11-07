@@ -42,13 +42,15 @@
 
         </div>
         <div class="imagen" id="imagen"><img src="images/ilustra_header.svg" alt=""></div>
+
         <!-- ----------------------------------------------------BUSQUEDA------------------------------------------------------- -->
         <div class="busqueda" id="busqueda">
             <div class="container-search">
                 <input type="text" name="busqueda" id="search" class="search" placeholder="Busca GIFOS y más">
                 <button type="submit" class="icon-search" id="buttonsearch"></button>
             </div>
-
+            <div id="suggestions" class="container-suggestions">
+            </div>
             <p class="trending">Trending:</p>
             <div id="TT">
 
@@ -72,12 +74,12 @@
 
 
                 <div class="slider" id="slider">
-                    <button id="left" class="left"></button>
+                    <button id="left" class="left" onclick="moveslides(-3)"></button>
                     <div class="sliderimages" id="sliderimages">
-                       
-                        
+
+
                     </div>
-                    <button id="right" class="right"></button>
+                    <button id="right" class="right" onclick="moveslides(3)"></button>
                 </div>
 
             </div>

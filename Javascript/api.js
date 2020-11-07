@@ -29,16 +29,32 @@ function gifTrendigs(limit, offset) {
         .then(r => r.json())
         .then((rsp) => {
             var contGif = document.getElementById("sliderimages");
+            console.log(rsp);
             for (i = 0; i < rsp.data.length; i++) {
                 var img = document.createElement("img");
                 img.setAttribute("src", rsp.data[i].images.original.url);
                 img.classList.add("imgGif");
                 contGif.appendChild(img);
             }
+        
         })
 };
 
+function trendingScreenSize(size) {
+    if (size > 768) {
+        var limit = 3;
+        var offset = 0;
+        gifTrendigs(limit,offset);
+    }
+    else{
+        var limit=25;
+        var offset=0;
+        gifTrendigs(limit,offset);
+    }
+};
 
+
+//-------------------------------------------------------API CONNECTION SEARCH----------------------------------
 
 async function search(busqueda) {
     var urlBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${busqueda}&limit=10`;
@@ -62,24 +78,10 @@ async function search(busqueda) {
 }
 
 
-function trendingScreenSize(size) {
-    if (size > 768) {
-        var limit = 3;
-        var offset = 0;
-        gifTrendigs(limit,offset);
-    }
-    else{
-        var limit=25;
-        var offset=0;
-        gifTrendigs(limit,offset);
-    }
-};
-
-
 var boton = document.getElementById("buttonsearch");
 
 boton.addEventListener("click", clickbotonbusqueda);
-var input = document.getElementById("search");
+const input = document.getElementById("search");
 function clickbotonbusqueda() {
     
     document.getElementById("imagen").style.display = "none";
@@ -94,15 +96,49 @@ input.addEventListener('keyup', ()=> {
     }
 });
 
- var carrouselButtonLeft = document.getElementById("left");
- var carrouselButtonRight = document.getElementById("right");
-
- carrouselButtonRight.addEventListener("click",() =>{
-
-    
- });
-
+//------------------------------------------------BOTONES CARUSEL ------------------------------------------------
  
+var index = 0;
+function moveslides(n){
+    var cant=index+=n
+    console.log("offset " + cant);
+    if (cant>=0){
+    var contGif = document.getElementById("sliderimages");
+    contGif.innerHTML= "";
+    //console.log ("valor n " + cont);
+    gifTrendigs(3,cant)
+   }
+   
+}
+
+
+//------------------------------------------------SUGGESTION BOX ------------------------------------------------
+
+
+
+
+input.addEventListener("keyup",()=>{
+var searchInput = input.value
+console.log(typeof(searchInput));
+var url = `http://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${searchInput}`;
+fetch (url)
+.then (r=>r.json())
+.then ((r)=>{
+    console.log(r);
+    var contsugg=document.getElementById("suggestions");
+    contsugg.innerHTML="";
+    for (i=0 ; i< r.data.length ; i++){
+
+        var txt = '<div class="suggestion" class="border"><div class="icon-suggestion"></div>'+
+                    '<div class="choice">'+r.data[i].name + '</div></div><br>'
+                    
+        contsugg.insertAdjacentHTML("afterbegin",txt);
+        
+   }
+    
+})
+})
+
 
 trendigs();
 trendingScreenSize(screen);
