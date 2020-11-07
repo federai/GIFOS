@@ -19,7 +19,7 @@ function trendigs() {
 };
 
 //-------------------------------------------------------API CONNECTION GIFS TRENDIGS----------------------------------
-var screen = screen.width;
+var screen = window.innerWidth;
 
 function gifTrendigs(limit, offset) {
 
@@ -31,17 +31,30 @@ function gifTrendigs(limit, offset) {
             var contGif = document.getElementById("sliderimages");
             console.log(rsp);
             for (i = 0; i < rsp.data.length; i++) {
-                var img = document.createElement("img");
-                img.setAttribute("src", rsp.data[i].images.original.url);
-                img.classList.add("imgGif");
-                contGif.appendChild(img);
+                // var img = document.createElement("img");
+                // img.setAttribute("src", rsp.data[i].images.original.url);
+                // img.classList.add("imgGif");
+                // contGif.appendChild(img);
+                var txt =
+                '<div class="card">' +
+                '<div class="contGif"><img src="'+ rsp.data[i].images.original.url + '" alt="Avatar" class="imgGif"></div>' +
+                 '<div class="overlay">' +
+                    '<div class="buttons">'+
+                    '<button class="heart"></button>'+
+                    '<button class="download"></button>'+
+                    '<button class="max"></button>'+
+                    '</div>'+
+                  '<div class="text">'+rsp.data[i].username.user + '<br> '+rsp.data[i].title + '</div>'+
+                '</div>'+
+                '</div>'    ;
+                contGif.insertAdjacentHTML('afterbegin',txt);
             }
         
         })
 };
 
-function trendingScreenSize(size) {
-    if (size > 768) {
+ 
+    if (window.innerWidth > 768) {
         var limit = 3;
         var offset = 0;
         gifTrendigs(limit,offset);
@@ -51,7 +64,7 @@ function trendingScreenSize(size) {
         var offset=0;
         gifTrendigs(limit,offset);
     }
-};
+
 
 
 //-------------------------------------------------------API CONNECTION SEARCH----------------------------------
@@ -141,4 +154,3 @@ fetch (url)
 
 
 trendigs();
-trendingScreenSize(screen);
