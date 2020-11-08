@@ -31,7 +31,8 @@
     font-size: 18px;
 }
 #TT{
-   margin:2% 33%;
+    justify-content: center;
+    margin: unset;
 }
 .activesearch{
     margin-top: 10%;
@@ -45,4 +46,7 @@
 .titlesearch{
     margin-top: 5%;
     font-size: 24px;
+}
+.container-suggestions{
+    margin: 0% 22%;
 }

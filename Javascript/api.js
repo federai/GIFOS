@@ -110,28 +110,29 @@ input.addEventListener('keyup', ()=> {
 });
 
 //------------------------------------------------BOTONES CARUSEL ------------------------------------------------
- 
+var buttonLeft = document.getElementById("left");
+var buttonRight = document.getElementById("right"); 
 var index = 0;
+
+
 function moveslides(n){
     var cant=index+=n
     console.log("offset " + cant);
     if (cant>=0){
+
     var contGif = document.getElementById("sliderimages");
     contGif.innerHTML= "";
     //console.log ("valor n " + cont);
     gifTrendigs(3,cant)
-   }
+    } 
    
 }
 
 
-//------------------------------------------------SUGGESTION BOX ------------------------------------------------
-
-
-
-
+//------------------------------------------------SUGGESTION BOX ------------------------------------------------   
 input.addEventListener("keyup",()=>{
 var searchInput = input.value
+
 console.log(typeof(searchInput));
 var url = `http://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${searchInput}`;
 fetch (url)
@@ -140,6 +141,7 @@ fetch (url)
     console.log(r);
     var contsugg=document.getElementById("suggestions");
     contsugg.innerHTML="";
+    
     for (i=0 ; i< r.data.length ; i++){
 
         var txt = '<div class="suggestion" class="border"><div class="icon-suggestion"></div>'+

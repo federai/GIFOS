@@ -19,14 +19,25 @@
     color: $colornocturno;
     padding: 5% 10%;
 }
-.slider{
+.sliderimages{
     display: flex;
     flex-direction: row;
-    
     overflow-x: scroll;
 }
 .imgGif{
-    margin: 1%;
     width: 250px;
     height: 250px;
+    margin: 2%;
+}
+.overlay{
+    display: none;
+}
+.text{
+    display: none;
+}
+.left{
+    display: none;
+}
+.right{
+    display: none;
 }

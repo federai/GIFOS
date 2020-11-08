@@ -48,34 +48,10 @@
     margin-top: 5%;
     font-size: 24px;
 }
-.choice{
-    margin-left: 10%;
-    margin-top: 3%;
-    font-family: $fontprincipal;
-    color: $colordiurno;
-}
+
 .container-suggestions{
     margin: 0% 22%;
-    display: flex;
-    flex-direction: column;
-    border:1px solid #572EE5;
-    border-top: none;
-    height: 100%;
-    border-radius: 27px;
-    background-color: transparent;
 
-}
-.icon-suggestion{
-    background-image: url(/images/icon-search.svg);
-    z-index: 4;
-    width: 20px;
-    height: 20px;
-    margin-left: 15px;
-    margin-top: 3%;
-}
-.suggestion{
-    display: flex;
-    flex-direction: row;
 }
 .border{
     border:1px solid #572EE5;
