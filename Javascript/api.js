@@ -40,7 +40,7 @@ function gifTrendigs(limit, offset) {
                 '<div class="contGif"><img src="'+ rsp.data[i].images.original.url + '" alt="Avatar" class="imgGif"></div>' +
                  '<div class="overlay">' +
                     '<div class="buttons">'+
-                    '<button class="heart"></button>'+
+                    "<button class='heart' onclick=add('"+rsp.data[i].images.original.url+"')></button>"+
                     '<button class="download"></button>'+
                     '<button class="max"></button>'+
                     '</div>'+
