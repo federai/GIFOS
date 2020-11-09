@@ -19,12 +19,14 @@
 }
 .container-search{
     display: flex;
+    flex-direction: column;
     padding: 0% 5%;
-    height: 50px;
+    
     
 }
 .search{
     width: 100%;
+    height: 50px;
     border-radius: 27px;
     background-color: transparent;
     border: 1px solid #572EE5;
@@ -58,8 +60,10 @@
     font-size: 16px;
     color: $colordiurno;
     margin-right: 0.7%;
-    display: inline-block;
-    
+    display: inline-block; 
+}
+.mostsearch:hover{
+    border-bottom: 2px solid #5ED7C6;
 }
 .br{
     display: none;
@@ -114,8 +118,9 @@
     margin: 0% 5%;
     display: flex;
     flex-direction: column;
-    border: 1px solid #572EE5 ;
+    border: 1px solid #572EE5;
     border-top: none;
+    border-bottom: none;
     height: 100%;
     border-radius: 27px;
     background-color: transparent;

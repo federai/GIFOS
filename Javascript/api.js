@@ -9,10 +9,8 @@ function trendigs() {
             console.log(rsp);
             var contTrendings = document.getElementById("TT");
             for (i = 0; i < 5; i++) {
-                var p = document.createElement("div");
-                p.classList.add("mostsearch")
-                p.innerHTML = rsp.data[i] + ',';
-                contTrendings.append(p);
+                var txt = `<div class="mostsearch" id="mostsearch" onclick="clickTT('${rsp.data[i]}')">${rsp.data[i]},</div>`;
+                contTrendings.insertAdjacentHTML("afterbegin",txt);
             }
 
         })
@@ -60,7 +58,7 @@ function gifTrendigs(limit, offset) {
         gifTrendigs(limit,offset);
     }
     else{
-        var limit=25;
+        var limit=15;
         var offset=0;
         gifTrendigs(limit,offset);
     }
@@ -70,10 +68,15 @@ function gifTrendigs(limit, offset) {
 //-------------------------------------------------------API CONNECTION SEARCH----------------------------------
 
 async function search(busqueda) {
+    var contgeneral = document.getElementById("searchresults");
+    contgeneral.innerHTML='<div id="titlesearchresult">'+
+    '<div id="searchimagesresults">'+                    //Borro imagenes anteriores en nueva busqueda
+    '</div>'+
+    '</div>';
     var urlBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${busqueda}&limit=10`;
     resp = await fetch(urlBusqueda);
     info = await resp.json();
-
+    
     var contimages = document.getElementById("searchimagesresults");
     console.log(info.data[1].images.original.url);
     for (i = 0; i < info.data.length; i++) {
@@ -84,30 +87,33 @@ async function search(busqueda) {
     }
 
 
-    var contgeneral = document.getElementById("searchresults")
-    var txt = '<div class="borde"></div>' +
-        '<h1 class="titlesearch">' + busqueda + '</h1>'
+    
+    var txt = '<div class="borde" id="borde"></div>' +
+        '<h1 class="titlesearch" id="titlesearch">' + busqueda + '</h1>'
     contgeneral.insertAdjacentHTML('afterbegin', txt);
 }
 
 
 var boton = document.getElementById("buttonsearch");
-
+var contgeneralsearch = document.getElementById("searchresults");
 boton.addEventListener("click", clickbotonbusqueda);
 const input = document.getElementById("search");
-function clickbotonbusqueda() {
-    
+
+
+function clickbotonbusqueda() {             
     document.getElementById("imagen").style.display = "none";
     document.getElementById("title").style.display = "none";
     document.getElementById("busqueda").classList.add("activesearch");
     boton.classList.add("icon-searchactive")
-    search(input.value);
+   
 }
 input.addEventListener('keyup', ()=> {
     if (event.which === 13 || event.keyCode == 13) {
         clickbotonbusqueda();
+        search(input.value);
     }
 });
+
 
 //------------------------------------------------BOTONES CARUSEL ------------------------------------------------
 var buttonLeft = document.getElementById("left");
@@ -130,29 +136,46 @@ function moveslides(n){
 
 
 //------------------------------------------------SUGGESTION BOX ------------------------------------------------   
+// input.addEventListener("input",()=>{
+//     const value = input.value;
+//     if (!value){
+//     var contsugg=document.getElementById("suggestions");
+//     console.log("valor vacio" + input.value);
+//     contsugg.style.borderBottom="1px solid #572EE5";
+    
+// }
+// })
+
 input.addEventListener("keyup",()=>{
 var searchInput = input.value
-
 console.log(typeof(searchInput));
 var url = `http://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${searchInput}`;
 fetch (url)
 .then (r=>r.json())
 .then ((r)=>{
     console.log(r);
+    
     var contsugg=document.getElementById("suggestions");
     contsugg.innerHTML="";
     
     for (i=0 ; i< r.data.length ; i++){
 
-        var txt = '<div class="suggestion" class="border"><div class="icon-suggestion"></div>'+
-                    '<div class="choice">'+r.data[i].name + '</div></div><br>'
+        var txt = `<div class="suggestion" class="border"><div class="icon-suggestion"></div>
+        <div class="choice" onclick="clickTT('${r.data[i].name}')">${r.data[i].name}</div></div><br>`
                     
         contsugg.insertAdjacentHTML("afterbegin",txt);
         
    }
     
 })
-})
+});
+
 
 
 trendigs();
+
+function clickTT(a){
+    search(a);
+    clickbotonbusqueda();
+    
+}

@@ -429,8 +429,13 @@ body {
   font-weight: bold;
 }
 
-.heart img {
-  background-color: transparent;
+.titlefavempty {
+  color: white;
+  font-size: 18px;
+}
+
+.heartfavempty {
+  width: 20%;
 }
 
 @media screen and (min-width: 768px) {
@@ -712,6 +717,9 @@ body {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 100%;
     margin-top: 5%;
+  }
+  .titlefavempty {
+    font-size: 22px;
   }
 }
 /*# sourceMappingURL=darkstyle.css.map */
