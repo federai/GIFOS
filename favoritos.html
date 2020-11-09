@@ -27,10 +27,10 @@
         </nav>
     </header>
     <main>
-        <div class="title">
-            <div class="heart"><img src="images/icon-favoritos.svg" alt="heart"></div>
-            <p class="title-fav">Favoritos</p>
+        <div class="conttitlefav">
+            <div class="heartpage"><img src="images/icon-favoritos.svg" alt="heart"></div>
         </div>
+        <p class="title-fav">Favoritos</p> 
         <div class="images-fav" id="containerfavs">
         </div>
         <article>
@@ -39,10 +39,17 @@
                     <p>Trending GIFOS</p>
                 </div>
                 <p class="desc">Mira los últimos GIFOS de nuestra comunidad.</p>
+
+
                 <div class="slider" id="slider">
-                    <button class="closebutton" id="closebutton"></button>
-                    <img src="http://via.placeholder.com/250x200"" alt=" img" id="imagen">
+                    <button id="left" class="left" onclick="moveslides(-3)"></button>
+                    <div class="sliderimages" id="sliderimages">
+
+
+                    </div>
+                    <button id="right" class="right" onclick="moveslides(3)"></button>
                 </div>
+
             </div>
 
         </article>
@@ -68,6 +75,8 @@
 <script src="Javascript/darkmode.js"></script>
 <script src="Javascript/hoverRedes.js"></script>
 <script src="Javascript/drawFavs.js"></script>
+<script src="Javascript/api.js"></script>
 </body>
 
 </html>
+

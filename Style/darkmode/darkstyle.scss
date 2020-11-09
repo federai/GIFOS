@@ -18,6 +18,7 @@ $colornocturno: #FFFFFF;
 @import 'mobiletitledark';
 @import 'mostviewdark';
 @import 'footermobiledark';
+@import 'favoritosmobiledark';
 
 @media screen and (min-width: 768px){
   @import 'navdesktopdark';
@@ -25,4 +26,5 @@ $colornocturno: #FFFFFF;
   @import 'mostviewdesktopdark';
   @import 'footerdesktopdark';
   @import 'hoverimagesdark';
+  @import 'favoritosdark';
 }

@@ -389,6 +389,50 @@ body {
   color: #FFFFFF;
 }
 
+.conttitlefav {
+  margin-top: 107px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 25px;
+  line-height: 33px;
+  font-weight: bold;
+}
+
+.images-fav {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin-top: 5%;
+}
+
+.imagesfavresults {
+  width: 100%;
+  height: 250px;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-bottom: 2%;
+}
+
+.imagesfav {
+  width: 100%;
+}
+
+.title-fav {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 25px;
+  line-height: 33px;
+  font-weight: bold;
+}
+
+.heart img {
+  background-color: transparent;
+}
+
 @media screen and (min-width: 768px) {
   header {
     height: 90px;
@@ -657,6 +701,17 @@ body {
     background-color: none;
     border-radius: 6px;
     margin-left: 6px;
+  }
+  .conttitlefav {
+    text-align: center;
+  }
+  .images-fav {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    margin-top: 5%;
   }
 }
 /*# sourceMappingURL=darkstyle.css.map */

@@ -53,6 +53,7 @@ function lightMode() {
 function darkmodechanges() {
     var logomovil = document.getElementById("logomobile").src = "images/logo-mobile-modo-noct.svg";
     var logo = document.getElementById("logo").src = "images/Logo-modo-noc.svg";
+    
 }
 
 function lightmodechanges() {

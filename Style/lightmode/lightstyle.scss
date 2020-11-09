@@ -18,10 +18,12 @@ $colordiurno:  #572EE5;
 
 
 
+
 @media screen and (min-width: 768px){
   @import 'navdesktop';
   @import 'titledesktop';
   @import 'mostviewdesktop';
   @import 'footerdesktop';
   @import 'hoverimages';
+  @import 'favoritos';
 }

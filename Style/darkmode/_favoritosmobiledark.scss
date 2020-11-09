@@ -2,10 +2,11 @@
     margin-top: 107px;
     font-family: $fontprincipal;
     text-align: center;
-    color: $colordiurno;
+    color: $colornocturno;
     font-size: 25px;
     line-height: 33px;
     font-weight: bold;
+    
 }
 .images-fav{
     display: grid;
@@ -28,10 +29,11 @@
 .title-fav{
     font-family: $fontprincipal;
     text-align: center;
-    color: $colordiurno;
+    color: $colornocturno;
     font-size: 25px;
     line-height: 33px;
     font-weight: bold;
-    
-
+}
+.heart img{
+    background-color: transparent;
 }
