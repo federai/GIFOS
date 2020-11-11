@@ -357,6 +357,14 @@
   display: none;
 }
 
+.left {
+  display: none;
+}
+
+.right {
+  display: none;
+}
+
 .footer-text {
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -585,6 +593,7 @@
     margin: 1% 4%;
   }
   .left {
+    display: unset;
     background-image: url(/images/button-slider-left.svg);
     width: 40px;
     height: 40px;
@@ -595,6 +604,7 @@
         align-self: center;
   }
   .right {
+    display: unset;
     background-image: url(/images/Button-Slider-right.svg);
     width: 40px;
     height: 40px;

@@ -14,6 +14,7 @@
 
 
 .left{
+    display: unset;
     background-image: url(/images/button-slider-left.svg);
     width: 40px;
     height: 40px;
@@ -23,6 +24,7 @@
    
 }
 .right{
+    display: unset;
     background-image: url(/images/Button-Slider-right.svg);
     width: 40px;
     height: 40px;
