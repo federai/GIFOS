@@ -309,6 +309,17 @@
   color: #572EE5;
 }
 
+.cardsearch {
+  width: 100%;
+}
+
+.imgsearchresult {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1%;
+  padding: 5%;
+}
+
 .mostview {
   background-color: #F3F5F8;
   margin-top: 5%;
@@ -555,6 +566,7 @@
   #searchimagesresults {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1%;
   }
   .borde {
     margin-top: 5%;
@@ -569,6 +581,37 @@
   .border {
     border: 1px solid #572EE5;
     border-top: none;
+  }
+  .cardsearch {
+    height: 350px;
+    position: relative;
+    margin: none;
+    padding: none;
+  }
+  .contGifsearch {
+    width: 100%;
+    height: 350px;
+  }
+  .imgsearchresult {
+    width: 100%;
+    height: 100%;
+    margin: unset;
+    padding: unset;
+  }
+  .overlaysearch {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 400;
+    opacity: 0;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    background-color: #5b5c5c;
+  }
+  .cardsearch:hover .overlaysearch {
+    opacity: 0.6;
   }
   .titlemostview {
     font-size: 25px;
@@ -693,6 +736,8 @@
     background-image: url(/images/icon-download.svg);
     width: 32px;
     height: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
     border: none;
     background-color: none;
     border-radius: 6px;
@@ -706,6 +751,19 @@
     background-color: none;
     border-radius: 6px;
     margin-left: 6px;
+  }
+  .heart:hover {
+    background-image: url(/images/icon-fav-hover.svg);
+    background-color: white;
+    width: 32px;
+    height: 32px;
+  }
+  .heart:active {
+    background-image: url(/images/icon-fav-active.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
   }
   .conttitlefav {
     text-align: center;
@@ -721,6 +779,115 @@
   .titlefavempty {
     color: #50E3C2;
     font-size: 22px;
+  }
+  #container {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #contbutton {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  #cross {
+    background-image: url(/images/close.svg);
+    width: 14px;
+    height: 14px;
+    background-repeat: none;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    background-color: none;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    margin-right: 15%;
+  }
+  .img {
+    width: 650px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .contimagemax {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 385px;
+  }
+  #titleMaxGif {
+    margin-right: 25%;
+  }
+  #download {
+    background-image: url(/images/icon-download.svg);
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: none;
+    border: none;
+    background-color: transparent;
+  }
+  #favoritos {
+    background-image: url(/images/icon-fav.svg);
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: none;
+    border: none;
+    background-color: transparent;
+  }
+  #botones {
+    margin-top: 2%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .titleGifMax {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+  }
+  .userGifMax {
+    font-family: "Roboto", sans-serif;
+  }
+  .page {
+    margin-left: 5%;
+    width: 34px;
+    height: 34px;
+    border: none;
+    color: #9CAFC3;
+    font-size: 16px;
+    background-color: transparent;
+    background-repeat: none;
+  }
+  .pages {
+    width: 100%;
+    text-align: center;
+  }
+  .page:hover {
+    border: 1px solid red;
+    border-radius: 50%;
   }
 }
 /*# sourceMappingURL=lightstyle.css.map */

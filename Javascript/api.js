@@ -1,5 +1,5 @@
 const apiKey = "Uc1F9kfal68vQWzdRi60gLKD2i59hyw0";
-
+// localStorage.clear();
 //-----------------------------------------------------API CONNECTION TRENDIGS----------------------------------------------------------------------
 function trendigs() {
     var urlTrendings = `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`;
@@ -9,7 +9,9 @@ function trendigs() {
             console.log(rsp);
             var contTrendings = document.getElementById("TT");
             for (i = 0; i < 5; i++) {
-                var txt = `<div class="mostsearch" id="mostsearch" onclick="clickTT('${rsp.data[i]}')">${rsp.data[i]},</div>`;
+                var txt = `<div class="mostsearch" id="mostsearch" onclick="clickTT('${rsp.data[i]}')">
+                ${rsp.data[i]},
+                </div>`;
                 contTrendings.insertAdjacentHTML("afterbegin",txt);
             }
 
@@ -34,17 +36,25 @@ function gifTrendigs(limit, offset) {
                 // img.classList.add("imgGif");
                 // contGif.appendChild(img);
                 var txt =
-                '<div class="card">' +
-                '<div class="contGif"><img src="'+ rsp.data[i].images.original.url + '" alt="Avatar" class="imgGif"></div>' +
-                 '<div class="overlay">' +
-                    '<div class="buttons">'+
-                    "<button class='heart' onclick=add('"+rsp.data[i].images.original.url+"')></button>"+
-                    '<button class="download"></button>'+
-                    '<button class="max"></button>'+
-                    '</div>'+
-                  '<div class="text">'+rsp.data[i].username.user + '<br> '+rsp.data[i].title + '</div>'+
-                '</div>'+
-                '</div>'    ;
+                `<div class="card">
+                    <div class="contGif">
+                        <img src="${rsp.data[i].images.original.url}" alt="Avatar" class="imgGif" 
+                        onclick="agrandar('${rsp.data[i].images.original.url}','${rsp.data[i].username.user}','${rsp.data[i].title}')">
+                        </div>
+                    <div class="overlay">
+                        <div class="buttons">
+                            <button class='heart' onclick=favorites('${rsp.data[i].images.original.url}','${rsp.data[i].id}')>
+                            </button>
+                            <button class="download">
+                            </button>
+                            <button class='max' 
+                            onclick="agrandar('${rsp.data[i].images.original.url}','${rsp.data[i].username.user}','${rsp.data[i].title}')">
+                            </button>
+                        </div>
+                        <div class="text">${rsp.data[i].username.user}<br> ${rsp.data[i].title}
+                        </div>
+                    </div>
+                </div>`;
                 contGif.insertAdjacentHTML('afterbegin',txt);
             }
         
@@ -61,38 +71,77 @@ function gifTrendigs(limit, offset) {
         var limit=15;
         var offset=0;
         gifTrendigs(limit,offset);
+        
     }
 
 
 
 //-------------------------------------------------------API CONNECTION SEARCH----------------------------------
 
-async function search(busqueda) {
+async function search(busqueda, offset) {
+    busquedaURI=encodeURIComponent(busqueda);
     var contgeneral = document.getElementById("searchresults");
-    contgeneral.innerHTML='<div id="titlesearchresult">'+
-    '<div id="searchimagesresults">'+                    //Borro imagenes anteriores en nueva busqueda
-    '</div>'+
-    '</div>';
-    var urlBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${busqueda}&limit=10`;
+    contgeneral.innerHTML = '<div id="titlesearchresult">' +
+        '<div id="searchimagesresults">' +                    //Borro imagenes anteriores en nueva busqueda
+        '</div>' +
+        '<div class="pages" id="pages"></div>' +
+        '</div>';
+    var urlBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${busqueda}&offset=${offset}`;
+    console.log(urlBusqueda);
     resp = await fetch(urlBusqueda);
     info = await resp.json();
-    
+    console.log(info);
+    var pages = document.getElementById("pages");
     var contimages = document.getElementById("searchimagesresults");
-    console.log(info.data[1].images.original.url);
-    for (i = 0; i < info.data.length; i++) {
-        var img = document.createElement("img");
-        img.setAttribute("src", info.data[i].images.original.url);
-        img.classList.add("imagesresults");
-        contimages.appendChild(img);
-    }
-
-
     
-    var txt = '<div class="borde" id="borde"></div>' +
-        '<h1 class="titlesearch" id="titlesearch">' + busqueda + '</h1>'
-    contgeneral.insertAdjacentHTML('afterbegin', txt);
+    //Condicion si el resultado que devuelve es mayor a 12 para que solo dibuje con for 12 por pagina
+    
+    if (info.pagination.count-info.pagination.offset > 12) {
+        for (i = 0; i < 12; i++) {
+           
+            var txt = `<img src="${info.data[i].images.original.url}" class="imagesresults" onclick=agrandar('${info.data[i].images.original.url}')></img>`;
+            contimages.insertAdjacentHTML("afterbegin", txt);
+
+        }
+        var txt = '<div class="borde" id="borde"></div>' +
+            '<h1 class="titlesearch" id="titlesearch">' + busqueda + '</h1>'
+        contgeneral.insertAdjacentHTML('afterbegin', txt);
+
+        //cuento la cantidad de paginas y redondeo para arriba
+        var total = info.pagination.count;
+        var paginas = Math.ceil(total / 12);
+        //dibujo la cantidad de botones necesarios
+        for (j = 1; j <= paginas; j++) {
+            var txt = `<button class="page" id="page" onclick="page('${busqueda}',${j - 1}*12)">${j}</button>`;
+            pages.insertAdjacentHTML('beforeend',txt);
+        }
+
+    }
+     //Cuando no es mayor a 12 hago lo mismo y le sumo condicion del total>12 para que si es menor no dibuje los botones
+     else { 
+        for (i = 0; i < info.pagination.count-info.pagination.offset; i++) {
+        var txt = `<img src="${info.data[i].images.original.url}" class="imagesresults" onclick=agrandar('${info.data[i].images.original.url}')></img>`;
+        contimages.insertAdjacentHTML("afterbegin", txt);
+        }
+        var txt = '<div class="borde" id="borde"></div>' +
+            '<h1 class="titlesearch" id="titlesearch">' + busqueda + '</h1>'
+        contgeneral.insertAdjacentHTML('afterbegin', txt);
+        var total = info.pagination.count;
+        var paginas = Math.ceil(total / 12);
+        if (total>12){
+        for (j = 1; j <= paginas; j++) {
+            var txt = `<button class="page" id="page" onclick="page('${busqueda}',${j - 1}*12)">${j}</button>`;
+            pages.insertAdjacentHTML("beforeend",txt);
+        }
+    }
+    
+    }
 }
 
+function page(busqueda,off) {
+    
+    search(busqueda, off);
+}
 
 var boton = document.getElementById("buttonsearch");
 var contgeneralsearch = document.getElementById("searchresults");
@@ -110,7 +159,7 @@ function clickbotonbusqueda() {
 input.addEventListener('keyup', ()=> {
     if (event.which === 13 || event.keyCode == 13) {
         clickbotonbusqueda();
-        search(input.value);
+        search(input.value,0);
     }
 });
 
@@ -161,7 +210,7 @@ fetch (url)
     for (i=0 ; i< r.data.length ; i++){
 
         var txt = `<div class="suggestion" class="border"><div class="icon-suggestion"></div>
-        <div class="choice" onclick="clickTT('${r.data[i].name}')">${r.data[i].name}</div></div><br>`
+        <div class="choice" onclick="clickTT("${r.data[i].name}")">${r.data[i].name}</div></div><br>`
                     
         contsugg.insertAdjacentHTML("afterbegin",txt);
         
@@ -179,3 +228,30 @@ function clickTT(a){
     clickbotonbusqueda();
     
 }
+
+//-----------------------------------------FUNCION AGRANDAR GIF-----------------------------------------
+function agrandar(gifmax,user,title) {
+    document.getElementById("max").innerHTML = "";
+    document.getElementById("max").style.display = "unset";
+    var cont = document.getElementById("max");
+    var txt = `<div id="contbutton"><button id="cross" onclick=volver()></button></div>
+    <div class="contimagemax"> 
+        <img src="${gifmax}" alt="" class="img">
+        <div id="botones">
+        <div id="titleMaxGif"> <div class="userGifMax"> ${user}</div><div class="titleGifMax">${title}</div> </div>
+        <button class='heart' onclick=add('${gifmax}')></button>
+        <button id="download"></button>
+       
+    </div>    
+    </div>`;
+    cont.insertAdjacentHTML("afterbegin", txt);
+    document.getElementById("all").style.display = "none";
+
+};
+
+//Cuando aprieto la cruz del GIF agrandado vuelve a la pagina principal
+function volver() {
+    document.getElementById("all").style.display = "unset";
+    document.getElementById("max").style.display = "none";
+}
+

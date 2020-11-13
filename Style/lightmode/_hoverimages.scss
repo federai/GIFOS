@@ -43,6 +43,7 @@
   }
 
   .heart{
+    
       background-image: url(/images/icon-fav.svg);
       width: 32px;
       height: 32px;
@@ -54,7 +55,9 @@
   .download{
     background-image: url(/images/icon-download.svg);
     width: 32px;
-      height: 32px;
+    height: 32px;
+    background-position: center;
+  background-repeat: no-repeat;
     border: none;
     background-color: none;
     border-radius: 6px;
@@ -68,4 +71,17 @@
     background-color: none;
     border-radius: 6px;
     margin-left: 6px;
+}
+.heart:hover{
+  background-image: url(/images/icon-fav-hover.svg);
+  background-color: white;
+     width: 32px;
+    height: 32px;
+}
+.heart:active{
+  background-image: url(/images/icon-fav-active.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
 }
