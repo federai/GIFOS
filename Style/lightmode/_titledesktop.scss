@@ -12,12 +12,14 @@
 .br{
     display: unset;
 }
-.container-search{
-    padding: 0% 22%;
+.section-one-div{
+    margin: 0% 25%;
+    width: 50%;
     
 }
-.search{
-    font-size: 16px;
+.div-search{
+    width: 90%; 
+    
 }
 .icon-search{
     right: 25%;
@@ -91,3 +93,4 @@
   .cardsearch:hover .overlaysearch{
     opacity: 0.6;
   }
+

@@ -143,25 +143,25 @@ function page(busqueda,off) {
     search(busqueda, off);
 }
 
-var boton = document.getElementById("buttonsearch");
-var contgeneralsearch = document.getElementById("searchresults");
-boton.addEventListener("click", clickbotonbusqueda);
-const input = document.getElementById("search");
+// var boton = document.getElementById("buttonsearch");
+// var contgeneralsearch = document.getElementById("searchresults");
+// boton.addEventListener("click", clickbotonbusqueda);
+// const input = document.getElementById("search");
 
 
 function clickbotonbusqueda() {             
     document.getElementById("imagen").style.display = "none";
     document.getElementById("title").style.display = "none";
-    document.getElementById("busqueda").classList.add("activesearch");
-    boton.classList.add("icon-searchactive")
+     document.getElementById("busqueda").classList.add("activesearch");
+    // boton.classList.add("icon-searchactive")
    
 }
-input.addEventListener('keyup', ()=> {
-    if (event.which === 13 || event.keyCode == 13) {
-        clickbotonbusqueda();
-        search(input.value,0);
-    }
-});
+// input.addEventListener('keyup', ()=> {
+//     if (event.which === 13 || event.keyCode == 13) {
+//         clickbotonbusqueda();
+//         search(input.value,0);
+//     }
+// });
 
 
 //------------------------------------------------BOTONES CARUSEL ------------------------------------------------
@@ -195,29 +195,29 @@ function moveslides(n){
 // }
 // })
 
-input.addEventListener("keyup",()=>{
-var searchInput = input.value
-console.log(typeof(searchInput));
-var url = `http://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${searchInput}`;
-fetch (url)
-.then (r=>r.json())
-.then ((r)=>{
-    console.log(r);
+// input.addEventListener("keyup",()=>{
+// var searchInput = input.value
+// console.log(typeof(searchInput));
+// var url = `http://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${searchInput}`;
+// fetch (url)
+// .then (r=>r.json())
+// .then ((r)=>{
+//     console.log(r);
     
-    var contsugg=document.getElementById("suggestions");
-    contsugg.innerHTML="";
+//     var contsugg=document.getElementById("suggestions");
+//     contsugg.innerHTML="";
     
-    for (i=0 ; i< r.data.length ; i++){
+//     for (i=0 ; i< r.data.length ; i++){
 
-        var txt = `<div class="suggestion" class="border"><div class="icon-suggestion"></div>
-        <div class="choice" onclick="clickTT("${r.data[i].name}")">${r.data[i].name}</div></div><br>`
+//         var txt = `<div class="suggestion" class="border"><div class="icon-suggestion"></div>
+//         <div class="choice" onclick="clickTT("${r.data[i].name}")">${r.data[i].name}</div></div><br>`
                     
-        contsugg.insertAdjacentHTML("afterbegin",txt);
+//         contsugg.insertAdjacentHTML("afterbegin",txt);
         
-   }
+//    }
     
-})
-});
+// })
+// });
 
 
 
@@ -255,3 +255,102 @@ function volver() {
     document.getElementById("max").style.display = "none";
 }
 
+//---------------------------------------------SUGGESTION BOX---------------------------------------
+let searchBar= document.getElementById('search-bar');
+        let searchBoton= document.getElementById('search-button');
+        let deleteBoton= document.getElementById('delete-button');
+        let containerSearch= document.getElementById('container-search');
+
+        // BORRAR EL INPUT CUANDO SE APRIETA EL BOTON CLOSE
+deleteBoton.addEventListener('click', () => {
+    searchBar.value= "";
+    containerSearch.innerHTML= "";
+    deleteBoton.style.display= "none"; 
+    searchBoton.style.display="inline-block";
+    document.getElementById("imagen").style.display = "flex";
+    document.getElementById("title").style.display = "block";
+    document.getElementById("busqueda").classList.remove("activesearch");
+
+})
+
+//BUSCAR CUANDO APRIETO EL BOTON BUSCAR
+searchBoton.addEventListener('click', () => {
+    clickbotonbusqueda();
+    search(searchBar.value,0);
+    searchBar.value= "";
+})
+
+// BUSCAR CUANDO APRIETO ENTER 
+searchBar.addEventListener('keydown', (e)=> {
+    if(e.keyCode == 13) {
+        containerSearch.innerHTML= "";
+        clickbotonbusqueda();
+        search(searchBar.value,0);
+        searchBar.value= "";
+    }
+});
+
+//SE MUESTRA EL BOTON DELETE PARA BORRAR EL INPUT
+searchBar.addEventListener('keydown', () => {
+    searchBoton.style.display= "none";
+    deleteBoton.style.display="inline-block";
+});
+
+//SI HAGO CLICK EN CUALQUIER LUGAR DE LA VENTANA QUE NO SEA EL SEARCHBAR, 
+// EL CONTAINER SEARCH O EL LOGO, ENTONCES VOY A VACIAR EL CONTAINER SEARCH, Y
+// MUESTRO EL BOTON BUSCAR
+window.addEventListener('click', (e) => {
+    if(e.target != containerSearch || e.target != searchBar || e.target != logo) {
+        containerSearch.innerHTML= "";
+        searchBoton.style.display= "inline-block";
+        deleteBoton.style.display="none";
+    }
+})
+
+
+searchBar.addEventListener('keyup', traerSugerencias); 
+
+function traerSugerencias() {
+    let searchValue= searchBar.value.trim().toLowerCase();
+        if (searchValue != '' || searchValue > 1) { 
+            let url_sug= `https://api.giphy.com/v1/tags/related/${searchValue}?api_key=${apiKey}`;
+            fetch(url_sug) 
+            .then(resp=> {
+                return resp.json()})
+            .then(j=> {
+                let data= j.data;
+                let ul= document.createElement('ul');
+                ul.classList.add('ulSearch');
+                let item= [];
+                for (let x= 0; x<4; x++) {
+                    let names= data[x].name;
+                    item.push(names);
+                };
+                for (let i= 0; i< item.length; i++) {
+                    containerSearch.innerHTML= ""; 
+                    var li= document.createElement('li');
+                    var icon= document.createElement('div');
+                    icon.classList.add('icon-div');
+                    icon.innerHTML= '<i class="fas fa-search"></i>';
+                    li.classList.add('searchSug');
+                    li.innerHTML = item[i];
+                    icon.appendChild(li);
+                    ul.appendChild(icon);
+                    }
+                containerSearch.appendChild(ul);
+                //ESTO ESCRIBE EN EL INPUT LA PALABRA SELECCIONADA
+                let lista= document.getElementsByClassName('searchSug');
+                for (let x=0; x<lista.length; x++) { 
+                    lista[x].addEventListener('click', () => {
+                        searchBar.value = lista[x].innerHTML;
+                        containerSearch.innerHTML= "";
+                        deleteBoton.style.display= "none";
+                        searchBoton.style.display= "inline-block";
+                        }); 
+                }
+        })
+            .catch(err=> console.log(err));
+            } else{
+                containerSearch.innerHTML = "";
+            }
+};

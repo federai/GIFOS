@@ -17,33 +17,106 @@
     width: 100%;
     padding-top: 5%;
 }
-.container-search{
+// .container-search{
+//     display: flex;
+//     flex-direction: column;
+//     padding: 0% 5%;
+    
+    
+// }
+// .search{
+//     width: 100%;
+//     height: 50px;
+//     border-radius: 27px;
+//     background-color: transparent;
+//     border: 1px solid #572EE5;
+//     text-indent: 14%;
+//     font-family: $fontsecundario;   
+// }
+// .icon-search{
+//     background-image: url(/images/icon-search.svg);
+//     z-index: 4;
+//     position: absolute;
+//     width: 20px;
+//     height: 20px;
+//     background-color: transparent;
+//     border: none;
+//     right: 11%;
+//     margin-top: 13px;
+// }
+.section-one-div {
+    width: 90%;
     display: flex;
     flex-direction: column;
-    padding: 0% 5%;
-    
-    
+    text-align: center;
+    align-items: center;
+    margin: 0px 4%; 
+    border-radius: 20px; 
+    border: 2px solid red;
 }
-.search{
-    width: 100%;
-    height: 50px;
-    border-radius: 27px;
-    background-color: transparent;
-    border: 1px solid #572EE5;
-    text-indent: 14%;
-    font-family: $fontsecundario;   
+.div-search {
+    height: 40px;
+    width: inherit; 
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-between;   
+    input {
+        width: 90%;
+        border: none;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 16px;
+        color: #000000;
+        text-align: left;
+        margin-left: 20px;
+        order: 2;
+    }
+    i{
+        display: none;
+        color: #9CAFC3;
+        order: 1;
+    }
+    input:focus{
+        outline: none;
+    }
+    input:focus ~ i {
+        display: inline;
+    }
+
+    #search-button {
+        order: 3;
+        border: none;
+        cursor:pointer;
+        padding: 0 15px;
+        display: inline-block;
+    }
+    #delete-button {
+        display: none;
+        order: 3;
+        cursor: pointer;
+        margin-right: 10px;
+    }
 }
-.icon-search{
-    background-image: url(/images/icon-search.svg);
-    z-index: 4;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    border: none;
-    right: 11%;
-    margin-top: 13px;
+
+#container-search {
+    position: relative;
+    width: inherit;
+    color: #9CAFC3;
+    li { 
+        cursor: pointer;
+    }
+    .icon-div {
+        display: flex;
+        padding: 10px 0;
+        margin-bottom: 5px;       
+    i {
+        width: 5%;
+        margin-right: 15px;
+    }
 }
+}
+
 .trending{
 
     text-align: center;
