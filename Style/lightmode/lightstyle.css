@@ -164,11 +164,11 @@
           align-items: center;
   margin: 0px 4%;
   border-radius: 20px;
-  border: 2px solid red;
+  border: 1px solid #572EE5;
 }
 
 .div-search {
-  height: 40px;
+  height: 45px;
   width: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -186,6 +186,7 @@
 }
 
 .div-search input {
+  height: 100%;
   width: 90%;
   border: none;
   text-align: center;
@@ -234,6 +235,10 @@
   margin-right: 10px;
 }
 
+.ulSearch {
+  list-style-type: none;
+}
+
 #container-search {
   position: relative;
   width: inherit;
@@ -241,6 +246,8 @@
 }
 
 #container-search li {
+  background: url(/images/icon-search.svg) no-repeat left top;
+  padding-left: 35px;
   cursor: pointer;
 }
 
@@ -309,18 +316,11 @@
   width: 100%;
 }
 
-.imagesresults {
+.cardSearch {
   width: 100%;
   height: 200px;
   margin-bottom: 1%;
   padding: 5%;
-}
-
-.icon-searchactive {
-  background-image: url(/images/close.svg);
-  width: 14px;
-  height: 14px;
-  margin-top: 18px;
 }
 
 .titlesearch {
@@ -523,6 +523,135 @@
   width: 20%;
 }
 
+#container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#contbutton {
+  width: 100%;
+  margin-top: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+#cross {
+  background-image: url(/images/close.svg);
+  width: 14px;
+  height: 14px;
+  background-repeat: none;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  background-color: none;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  margin-right: 8%;
+}
+
+.imgGifmax {
+  width: 90%;
+  height: 245px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.contimagemax {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 385px;
+}
+
+#titleMaxGif {
+  margin-right: 25%;
+}
+
+#download {
+  background-image: url(/images/icon-download.svg);
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: none;
+  border: none;
+  background-color: transparent;
+}
+
+#favoritos {
+  background-image: url(/images/icon-fav.svg);
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: none;
+  border: none;
+  background-color: transparent;
+}
+
+#legend {
+  margin-top: 2%;
+  padding: 0% 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.titleGifMax {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+.userGifMax {
+  font-family: "Roboto", sans-serif;
+}
+
+.heartMax {
+  margin-top: 7%;
+  background-image: url(/images/icon-fav.svg);
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: none;
+  border-radius: 6px;
+}
+
+.buttonsMaxGif {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.overlaysearch {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   header {
     height: 90px;
@@ -628,9 +757,6 @@
   .div-search {
     width: 90%;
   }
-  .icon-search {
-    right: 25%;
-  }
   .trending {
     font-size: 24px;
     font-weight: 700;
@@ -692,10 +818,16 @@
     opacity: 0;
     -webkit-transition: .5s ease;
     transition: .5s ease;
-    background-color: #5b5c5c;
+    background-color: #008CBA;
   }
   .cardsearch:hover .overlaysearch {
     opacity: 0.6;
+  }
+  #titlesearchresult {
+    margin: 0px 25px;
+  }
+  #container-search {
+    width: 100%;
   }
   .titlemostview {
     font-size: 25px;
@@ -802,7 +934,7 @@
     color: white;
     font-size: 20px;
     position: relative;
-    margin-top: 75%;
+    margin-top: 70%;
     margin-left: 10%;
   }
   .buttons {
@@ -851,6 +983,11 @@
     width: 32px;
     height: 32px;
   }
+  .max:hover {
+    background: white;
+    background-image: url(/images/icon-max-hover.svg);
+    opacity: 1;
+  }
   .conttitlefav {
     text-align: center;
   }
@@ -866,18 +1003,9 @@
     color: #50E3C2;
     font-size: 22px;
   }
-  #container {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
   #contbutton {
     width: 100%;
+    margin-top: 2%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -887,57 +1015,19 @@
             flex-direction: row-reverse;
   }
   #cross {
-    background-image: url(/images/close.svg);
-    width: 14px;
-    height: 14px;
-    background-repeat: none;
-    background-position: center;
-    background-color: transparent;
-    border: none;
-    background-color: none;
-    margin-top: 2%;
-    margin-bottom: 5%;
     margin-right: 15%;
   }
-  .img {
+  .imgGifmax {
     width: 650px;
+    height: 550px;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
   }
-  .contimagemax {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%;
-    height: 385px;
-  }
   #titleMaxGif {
     margin-right: 25%;
   }
-  #download {
-    background-image: url(/images/icon-download.svg);
-    width: 40px;
-    height: 40px;
-    background-position: center;
-    background-repeat: none;
-    border: none;
-    background-color: transparent;
-  }
-  #favoritos {
-    background-image: url(/images/icon-fav.svg);
-    width: 40px;
-    height: 40px;
-    background-position: center;
-    background-repeat: none;
-    border: none;
-    background-color: transparent;
-  }
-  #botones {
+  #legend {
     margin-top: 2%;
     display: -webkit-box;
     display: -ms-flexbox;

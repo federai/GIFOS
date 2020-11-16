@@ -15,15 +15,12 @@
 .section-one-div{
     margin: 0% 25%;
     width: 50%;
-    
 }
 .div-search{
     width: 90%; 
     
 }
-.icon-search{
-    right: 25%;
-}
+
 .trending{
     font-size: 24px;
     font-weight: 700;
@@ -54,7 +51,6 @@
 
 .container-suggestions{
     margin: 0% 22%;
-
 }
 .border{
     border:1px solid #572EE5;
@@ -63,7 +59,6 @@
 .cardsearch{
     height: 350px;
     position: relative;
-    
     margin: none;
     padding: none;
 }
@@ -87,10 +82,16 @@
     z-index: 400;
     opacity: 0;
     transition: .5s ease;
-    background-color: #5b5c5c;
+    background-color: #008CBA;
    
   }
   .cardsearch:hover .overlaysearch{
     opacity: 0.6;
   }
 
+#titlesearchresult{
+    margin: 0px 25px;
+}
+#container-search{
+    width: 100%;
+}

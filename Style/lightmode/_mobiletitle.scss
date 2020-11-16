@@ -52,16 +52,17 @@
     align-items: center;
     margin: 0px 4%; 
     border-radius: 20px; 
-    border: 2px solid red;
+    border: 1px solid #572EE5;
 }
 .div-search {
-    height: 40px;
+    height: 45px;
     width: inherit; 
     display: flex;
     flex-direction: row;
     align-items: center; 
     justify-content: space-between;   
     input {
+        height: 100%;
         width: 90%;
         border: none;
         text-align: center;
@@ -98,12 +99,18 @@
         margin-right: 10px;
     }
 }
+.ulSearch{
+    list-style-type: none;
+}
 
 #container-search {
     position: relative;
     width: inherit;
     color: #9CAFC3;
+    
     li { 
+        background: url(/images/icon-search.svg) no-repeat left top;
+        padding-left: 35px;
         cursor: pointer;
     }
     .icon-div {
@@ -159,18 +166,13 @@
     width: 100%;
     
 }
-.imagesresults{
+.cardSearch{
     width: 100%;
     height: 200px;
     margin-bottom: 1%;
     padding: 5%
 }
-.icon-searchactive{
-    background-image: url(/images/close.svg);
-    width: 14px;
-    height: 14px;
-    margin-top: 18px;
-}
+
 .titlesearch{
     margin-top: 8%;
     font-family: $fontprincipal;

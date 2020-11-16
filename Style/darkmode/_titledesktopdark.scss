@@ -13,15 +13,13 @@
 .br{
     display: unset;
 }
-.container-search{
-    padding: 0% 22%;
+.section-one-div{
+    margin: 0% 25%;
+    width: 50%;
+}
+.div-search{
+    width: 90%; 
     
-}
-.search{
-    font-size: 16px;
-}
-.icon-search{
-    right: 25%;
 }
 .trending{
     font-size: 18px;
@@ -47,6 +45,11 @@
     margin-top: 5%;
     font-size: 24px;
 }
-.container-suggestions{
-    margin: 0% 22%;
+
+#container-search{
+    width: 100%;
 }
+#TT{
+    justify-content: center;
+    margin: unset;
+ }

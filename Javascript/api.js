@@ -1,7 +1,10 @@
 const apiKey = "Uc1F9kfal68vQWzdRi60gLKD2i59hyw0";
+var buttonLeft = document.getElementById("left");
+var buttonRight = document.getElementById("right");
+var index = 0;
 // localStorage.clear();
 //-----------------------------------------------------API CONNECTION TRENDIGS----------------------------------------------------------------------
-function trendigs() {
+function trendings() {
     var urlTrendings = `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`;
     fetch(urlTrendings)
         .then(r => r.json())
@@ -12,7 +15,7 @@ function trendigs() {
                 var txt = `<div class="mostsearch" id="mostsearch" onclick="clickTT('${rsp.data[i]}')">
                 ${rsp.data[i]},
                 </div>`;
-                contTrendings.insertAdjacentHTML("afterbegin",txt);
+                contTrendings.insertAdjacentHTML("afterbegin", txt);
             }
 
         })
@@ -21,7 +24,7 @@ function trendigs() {
 //-------------------------------------------------------API CONNECTION GIFS TRENDIGS----------------------------------
 var screen = window.innerWidth;
 
-function gifTrendigs(limit, offset) {
+function gifTrendings(limit, offset) {
 
     var urlGifTrendigs = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=${limit}&offset=${offset}`;
     console.log(urlGifTrendigs);
@@ -31,12 +34,8 @@ function gifTrendigs(limit, offset) {
             var contGif = document.getElementById("sliderimages");
             console.log(rsp);
             for (i = 0; i < rsp.data.length; i++) {
-                // var img = document.createElement("img");
-                // img.setAttribute("src", rsp.data[i].images.original.url);
-                // img.classList.add("imgGif");
-                // contGif.appendChild(img);
                 var txt =
-                `<div class="card">
+                    `<div class="card">
                     <div class="contGif">
                         <img src="${rsp.data[i].images.original.url}" alt="Avatar" class="imgGif" 
                         onclick="agrandar('${rsp.data[i].images.original.url}','${rsp.data[i].username.user}','${rsp.data[i].title}')">
@@ -55,31 +54,31 @@ function gifTrendigs(limit, offset) {
                         </div>
                     </div>
                 </div>`;
-                contGif.insertAdjacentHTML('afterbegin',txt);
+                contGif.insertAdjacentHTML('afterbegin', txt);
             }
-        
+
         })
 };
 
- 
-    if (window.innerWidth > 768) {
-        var limit = 3;
-        var offset = 0;
-        gifTrendigs(limit,offset);
-    }
-    else{
-        var limit=15;
-        var offset=0;
-        gifTrendigs(limit,offset);
-        
-    }
+
+if (window.innerWidth > 768) {
+    var limit = 3;
+    var offset = 0;
+    gifTrendings(limit, offset);
+}
+else {
+    var limit = 15;
+    var offset = 0;
+    gifTrendings(limit, offset);
+
+}
 
 
 
 //-------------------------------------------------------API CONNECTION SEARCH----------------------------------
 
 async function search(busqueda, offset) {
-    busquedaURI=encodeURIComponent(busqueda);
+    busquedaURI = encodeURIComponent(busqueda);
     var contgeneral = document.getElementById("searchresults");
     contgeneral.innerHTML = '<div id="titlesearchresult">' +
         '<div id="searchimagesresults">' +                    //Borro imagenes anteriores en nueva busqueda
@@ -93,13 +92,31 @@ async function search(busqueda, offset) {
     console.log(info);
     var pages = document.getElementById("pages");
     var contimages = document.getElementById("searchimagesresults");
-    
+
     //Condicion si el resultado que devuelve es mayor a 12 para que solo dibuje con for 12 por pagina
-    
-    if (info.pagination.count-info.pagination.offset > 12) {
+
+    if (info.pagination.count - info.pagination.offset > 12) {
         for (i = 0; i < 12; i++) {
-           
-            var txt = `<img src="${info.data[i].images.original.url}" class="imagesresults" onclick=agrandar('${info.data[i].images.original.url}')></img>`;
+
+            var txt = `<div class="cardsearch">
+            <div class="contGifsearch">
+                <img src="${info.data[i].images.original.url}" alt="Avatar" class="imgsearchresult" 
+                onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                </div>
+            <div class="overlaysearch">
+                <div class="buttons">
+                    <button class='heart' onclick=favorites('${info.data[i].images.original.url}','${info.data[i].id}')>
+                    </button>
+                    <button class="download">
+                    </button>
+                    <button class='max' 
+                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                    </button>
+                </div>
+                <div class="text">${info.data[i].username.user}<br> ${info.data[i].title}
+                </div>
+            </div>
+        </div>`;
             contimages.insertAdjacentHTML("afterbegin", txt);
 
         }
@@ -113,137 +130,90 @@ async function search(busqueda, offset) {
         //dibujo la cantidad de botones necesarios
         for (j = 1; j <= paginas; j++) {
             var txt = `<button class="page" id="page" onclick="page('${busqueda}',${j - 1}*12)">${j}</button>`;
-            pages.insertAdjacentHTML('beforeend',txt);
+            pages.insertAdjacentHTML('beforeend', txt);
         }
 
     }
-     //Cuando no es mayor a 12 hago lo mismo y le sumo condicion del total>12 para que si es menor no dibuje los botones
-     else { 
-        for (i = 0; i < info.pagination.count-info.pagination.offset; i++) {
-        var txt = `<img src="${info.data[i].images.original.url}" class="imagesresults" onclick=agrandar('${info.data[i].images.original.url}')></img>`;
-        contimages.insertAdjacentHTML("afterbegin", txt);
+    //Cuando no es mayor a 12 hago lo mismo y le sumo condicion del total>12 para que si es menor no dibuje los botones
+    else {
+        for (i = 0; i < info.pagination.count - info.pagination.offset; i++) {
+            var txt = `<img src="${info.data[i].images.original.url}" class="imagesresults" onclick=agrandar('${info.data[i].images.original.url}')></img>`;
+            contimages.insertAdjacentHTML("afterbegin", txt);
         }
         var txt = '<div class="borde" id="borde"></div>' +
             '<h1 class="titlesearch" id="titlesearch">' + busqueda + '</h1>'
         contgeneral.insertAdjacentHTML('afterbegin', txt);
         var total = info.pagination.count;
         var paginas = Math.ceil(total / 12);
-        if (total>12){
-        for (j = 1; j <= paginas; j++) {
-            var txt = `<button class="page" id="page" onclick="page('${busqueda}',${j - 1}*12)">${j}</button>`;
-            pages.insertAdjacentHTML("beforeend",txt);
+        if (total > 12) {
+            for (j = 1; j <= paginas; j++) {
+                var txt = `<button class="page" id="page" onclick="page('${busqueda}',${j - 1}*12)">${j}</button>`;
+                pages.insertAdjacentHTML("beforeend", txt);
+            }
         }
-    }
-    
+
     }
 }
 
-function page(busqueda,off) {
-    
+function page(busqueda, off) {
     search(busqueda, off);
 }
 
-// var boton = document.getElementById("buttonsearch");
-// var contgeneralsearch = document.getElementById("searchresults");
-// boton.addEventListener("click", clickbotonbusqueda);
-// const input = document.getElementById("search");
-
-
-function clickbotonbusqueda() {             
+function clickbotonbusqueda() {
     document.getElementById("imagen").style.display = "none";
     document.getElementById("title").style.display = "none";
-     document.getElementById("busqueda").classList.add("activesearch");
-    // boton.classList.add("icon-searchactive")
-   
+    document.getElementById("busqueda").classList.add("activesearch");
+
 }
-// input.addEventListener('keyup', ()=> {
-//     if (event.which === 13 || event.keyCode == 13) {
-//         clickbotonbusqueda();
-//         search(input.value,0);
-//     }
-// });
 
 
 //------------------------------------------------BOTONES CARUSEL ------------------------------------------------
-var buttonLeft = document.getElementById("left");
-var buttonRight = document.getElementById("right"); 
-var index = 0;
 
 
-function moveslides(n){
-    var cant=index+=n
+
+function moveslides(n) {
+    var cant = index += n
     console.log("offset " + cant);
-    if (cant>=0){
+    if (cant >= 0) {
+        buttonLeft.style.display="unset";
+        var contGif = document.getElementById("sliderimages");
+        contGif.innerHTML = "";
+        //console.log ("valor n " + cont);
+        gifTrendings(3, cant)
+    }
 
-    var contGif = document.getElementById("sliderimages");
-    contGif.innerHTML= "";
-    //console.log ("valor n " + cont);
-    gifTrendigs(3,cant)
-    } 
-   
+
 }
 
+trendings();
 
-//------------------------------------------------SUGGESTION BOX ------------------------------------------------   
-// input.addEventListener("input",()=>{
-//     const value = input.value;
-//     if (!value){
-//     var contsugg=document.getElementById("suggestions");
-//     console.log("valor vacio" + input.value);
-//     contsugg.style.borderBottom="1px solid #572EE5";
-    
-// }
-// })
-
-// input.addEventListener("keyup",()=>{
-// var searchInput = input.value
-// console.log(typeof(searchInput));
-// var url = `http://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${searchInput}`;
-// fetch (url)
-// .then (r=>r.json())
-// .then ((r)=>{
-//     console.log(r);
-    
-//     var contsugg=document.getElementById("suggestions");
-//     contsugg.innerHTML="";
-    
-//     for (i=0 ; i< r.data.length ; i++){
-
-//         var txt = `<div class="suggestion" class="border"><div class="icon-suggestion"></div>
-//         <div class="choice" onclick="clickTT("${r.data[i].name}")">${r.data[i].name}</div></div><br>`
-                    
-//         contsugg.insertAdjacentHTML("afterbegin",txt);
-        
-//    }
-    
-// })
-// });
-
-
-
-trendigs();
-
-function clickTT(a){
+function clickTT(a) {
     search(a);
     clickbotonbusqueda();
-    
+
 }
 
 //-----------------------------------------FUNCION AGRANDAR GIF-----------------------------------------
-function agrandar(gifmax,user,title) {
+function agrandar(gifmax, user, title) {
     document.getElementById("max").innerHTML = "";
     document.getElementById("max").style.display = "unset";
     var cont = document.getElementById("max");
-    var txt = `<div id="contbutton"><button id="cross" onclick=volver()></button></div>
-    <div class="contimagemax"> 
-        <img src="${gifmax}" alt="" class="img">
-        <div id="botones">
-        <div id="titleMaxGif"> <div class="userGifMax"> ${user}</div><div class="titleGifMax">${title}</div> </div>
-        <button class='heart' onclick=add('${gifmax}')></button>
-        <button id="download"></button>
-       
-    </div>    
-    </div>`;
+    var txt = `<div id="contbutton">
+                <button id="cross" onclick=volver()></button>
+                </div>
+                <div class="contimagemax"> 
+                    <img src="${gifmax}" alt="" class="imgGifmax">
+                         <div id="legend">
+                              <div id="titleMaxGif">
+                                    <div class="userGifMax"> ${user}</div>
+                                    <div class="titleGifMax">${title}</div> 
+                                </div>
+                                <div class="buttonsMaxGif">
+                                    <button class='heartMax' onclick=add('${gifmax}')></button>
+                                     <button id="download"></button>
+                                </div> 
+                         </div>    
+                 </div>`;
     cont.insertAdjacentHTML("afterbegin", txt);
     document.getElementById("all").style.display = "none";
 
@@ -255,18 +225,19 @@ function volver() {
     document.getElementById("max").style.display = "none";
 }
 
-//---------------------------------------------SUGGESTION BOX---------------------------------------
-let searchBar= document.getElementById('search-bar');
-        let searchBoton= document.getElementById('search-button');
-        let deleteBoton= document.getElementById('delete-button');
-        let containerSearch= document.getElementById('container-search');
+//---------------------------------------------SUGGESTION BOX AND SEARCH BOX---------------------------------------
 
-        // BORRAR EL INPUT CUANDO SE APRIETA EL BOTON CLOSE
+let searchBar = document.getElementById('search-bar');
+let searchBoton = document.getElementById('search-button');
+let deleteBoton = document.getElementById('delete-button');
+let containerSearch = document.getElementById('container-search');
+
+// BORRAR EL INPUT CUANDO SE APRIETA EL BOTON CLOSE
 deleteBoton.addEventListener('click', () => {
-    searchBar.value= "";
-    containerSearch.innerHTML= "";
-    deleteBoton.style.display= "none"; 
-    searchBoton.style.display="inline-block";
+    searchBar.value = "";
+    containerSearch.innerHTML = "";
+    deleteBoton.style.display = "none";
+    searchBoton.style.display = "inline-block";
     document.getElementById("imagen").style.display = "flex";
     document.getElementById("title").style.display = "block";
     document.getElementById("busqueda").classList.remove("activesearch");
@@ -276,81 +247,82 @@ deleteBoton.addEventListener('click', () => {
 //BUSCAR CUANDO APRIETO EL BOTON BUSCAR
 searchBoton.addEventListener('click', () => {
     clickbotonbusqueda();
-    search(searchBar.value,0);
-    searchBar.value= "";
+    search(searchBar.value, 0);
+    searchBar.value = "";
 })
 
 // BUSCAR CUANDO APRIETO ENTER 
-searchBar.addEventListener('keydown', (e)=> {
-    if(e.keyCode == 13) {
-        containerSearch.innerHTML= "";
+searchBar.addEventListener('keydown', (e) => {
+    if (e.keyCode == 13) {
+        containerSearch.innerHTML = "";
         clickbotonbusqueda();
-        search(searchBar.value,0);
-        searchBar.value= "";
+        search(searchBar.value, 0);
+        searchBar.value = "";
     }
 });
 
 //SE MUESTRA EL BOTON DELETE PARA BORRAR EL INPUT
 searchBar.addEventListener('keydown', () => {
-    searchBoton.style.display= "none";
-    deleteBoton.style.display="inline-block";
+    searchBoton.style.display = "none";
+    deleteBoton.style.display = "inline-block";
 });
 
 //SI HAGO CLICK EN CUALQUIER LUGAR DE LA VENTANA QUE NO SEA EL SEARCHBAR, 
 // EL CONTAINER SEARCH O EL LOGO, ENTONCES VOY A VACIAR EL CONTAINER SEARCH, Y
 // MUESTRO EL BOTON BUSCAR
 window.addEventListener('click', (e) => {
-    if(e.target != containerSearch || e.target != searchBar || e.target != logo) {
-        containerSearch.innerHTML= "";
-        searchBoton.style.display= "inline-block";
-        deleteBoton.style.display="none";
+    if (e.target != containerSearch || e.target != searchBar || e.target != logo) {
+        containerSearch.innerHTML = "";
+        searchBoton.style.display = "inline-block";
+        deleteBoton.style.display = "none";
     }
 })
 
 
-searchBar.addEventListener('keyup', traerSugerencias); 
+searchBar.addEventListener('keyup', traerSugerencias);
 
 function traerSugerencias() {
-    let searchValue= searchBar.value.trim().toLowerCase();
-        if (searchValue != '' || searchValue > 1) { 
-            let url_sug= `https://api.giphy.com/v1/tags/related/${searchValue}?api_key=${apiKey}`;
-            fetch(url_sug) 
-            .then(resp=> {
-                return resp.json()})
-            .then(j=> {
-                let data= j.data;
-                let ul= document.createElement('ul');
+    let searchValue = searchBar.value.toLowerCase();
+    if (searchValue != '' || searchValue > 1) {
+        let url_sug = `https://api.giphy.com/v1/tags/related/${searchValue}?api_key=${apiKey}`;
+        fetch(url_sug)
+            .then(resp => {
+                return resp.json()
+            })
+            .then(j => {
+                let data = j.data;
+                let ul = document.createElement('ul');
                 ul.classList.add('ulSearch');
-                let item= [];
-                for (let x= 0; x<4; x++) {
-                    let names= data[x].name;
+                let item = [];
+                for (let x = 0; x < 4; x++) {
+                    let names = data[x].name;
                     item.push(names);
                 };
-                for (let i= 0; i< item.length; i++) {
-                    containerSearch.innerHTML= ""; 
-                    var li= document.createElement('li');
-                    var icon= document.createElement('div');
+                for (let i = 0; i < item.length; i++) {
+                    containerSearch.innerHTML = "";
+                    var li = document.createElement('li');
+                    var icon = document.createElement('div');
                     icon.classList.add('icon-div');
-                    icon.innerHTML= '<i class="fas fa-search"></i>';
+                    icon.innerHTML = '<i class="fas fa-search"></i>';
                     li.classList.add('searchSug');
                     li.innerHTML = item[i];
                     icon.appendChild(li);
                     ul.appendChild(icon);
-                    }
+                }
                 containerSearch.appendChild(ul);
                 //ESTO ESCRIBE EN EL INPUT LA PALABRA SELECCIONADA
-                let lista= document.getElementsByClassName('searchSug');
-                for (let x=0; x<lista.length; x++) { 
+                let lista = document.getElementsByClassName('searchSug');
+                for (let x = 0; x < lista.length; x++) {
                     lista[x].addEventListener('click', () => {
                         searchBar.value = lista[x].innerHTML;
-                        containerSearch.innerHTML= "";
-                        deleteBoton.style.display= "none";
-                        searchBoton.style.display= "inline-block";
-                        }); 
+                        containerSearch.innerHTML = "";
+                        deleteBoton.style.display = "none";
+                        searchBoton.style.display = "inline-block";
+                    });
                 }
-        })
-            .catch(err=> console.log(err));
-            } else{
-                containerSearch.innerHTML = "";
-            }
+            })
+            .catch(err => console.log(err));
+    } else {
+        containerSearch.innerHTML = "";
+    }
 };

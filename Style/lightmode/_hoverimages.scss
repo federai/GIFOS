@@ -32,7 +32,7 @@
     color: white;
     font-size: 20px;
     position: relative;
-    margin-top: 75%;
+    margin-top: 70%;
     margin-left: 10%;
   
   }
@@ -57,7 +57,7 @@
     width: 32px;
     height: 32px;
     background-position: center;
-  background-repeat: no-repeat;
+    background-repeat: no-repeat;
     border: none;
     background-color: none;
     border-radius: 6px;
@@ -84,4 +84,9 @@
   background-repeat: no-repeat;
   width: 32px;
   height: 32px;
+}
+.max:hover{
+  background: white;
+  background-image: url(/images/icon-max-hover.svg);
+  opacity: 1;
 }
