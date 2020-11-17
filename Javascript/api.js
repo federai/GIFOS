@@ -116,7 +116,7 @@ async function search(busqueda, offset) {
                 </div>
             <div class="overlaysearch">
                 <div class="buttons">
-                    <button class='heart' onclick=favorites('${info.data[i].images.original.url}','${info.data[i].id}')>
+                    <button class='heart' id='heartfav${i}' onclick="favorites(${i},'${info.data[i].id}')">
                     </button>
                     <button class="download">
                     </button>
@@ -129,7 +129,17 @@ async function search(busqueda, offset) {
             </div>
         </div>`;
             contimages.insertAdjacentHTML("afterbegin", txt);
+            if (ids != null) {
+                var searchid = ids.includes(info.data[i].id);
+                if (searchid) {
+                    var x = document.getElementById("heartfav"+i);
+                    x.classList.add("heartactive")
+                }
+                else {
+                    console.log("no existe");
+                }
 
+            }
         }
         var txt = '<div class="borde" id="borde"></div>' +
             '<h1 class="titlesearch" id="titlesearch">' + busqueda + '</h1>'
@@ -155,7 +165,7 @@ async function search(busqueda, offset) {
                 </div>
             <div class="overlaysearch">
                 <div class="buttons">
-                    <button class='heart' onclick=favorites('${info.data[i].images.original.url}','${info.data[i].id}')>
+                    <button class='heart' id='heartfav${i}' onclick="favorites(${i},'${info.data[i].id}')">
                     </button>
                     <button class="download">
                     </button>
@@ -168,6 +178,17 @@ async function search(busqueda, offset) {
             </div>
         </div>`;
             contimages.insertAdjacentHTML("afterbegin", txt);
+            if (ids != null) {
+                var searchid = ids.includes(info.data[i].id);
+                if (searchid) {
+                    var x = document.getElementById("heartfav"+i);
+                    x.classList.add("heartactive")
+                }
+                else {
+                    console.log("no existe");
+                }
+
+            }
         }
         var txt = '<div class="borde" id="borde"></div>' +
             '<h1 class="titlesearch" id="titlesearch">' + busqueda + '</h1>'
