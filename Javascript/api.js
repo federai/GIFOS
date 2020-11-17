@@ -2,7 +2,6 @@ const apiKey = "Uc1F9kfal68vQWzdRi60gLKD2i59hyw0";
 var buttonLeft = document.getElementById("left");
 var buttonRight = document.getElementById("right");
 var index = 0;
-// localStorage.clear();
 //-----------------------------------------------------API CONNECTION TRENDIGS----------------------------------------------------------------------
 function trendings() {
     var urlTrendings = `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`;
@@ -23,9 +22,9 @@ function trendings() {
 
 //-------------------------------------------------------API CONNECTION GIFS TRENDIGS----------------------------------
 var screen = window.innerWidth;
+var ids = JSON.parse(localStorage.getItem("ids"));
 
 function gifTrendings(limit, offset) {
-
     var urlGifTrendigs = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=${limit}&offset=${offset}`;
     console.log(urlGifTrendigs);
     fetch(urlGifTrendigs)
@@ -42,7 +41,7 @@ function gifTrendings(limit, offset) {
                         </div>
                     <div class="overlay">
                         <div class="buttons">
-                            <button class='heart' onclick=favorites('${rsp.data[i].images.original.url}','${rsp.data[i].id}')>
+                            <button class='heart' id='heartfav${i}' onclick="favorites(${i},'${rsp.data[i].id}')">
                             </button>
                             <button class="download">
                             </button>
@@ -55,7 +54,19 @@ function gifTrendings(limit, offset) {
                     </div>
                 </div>`;
                 contGif.insertAdjacentHTML('afterbegin', txt);
+                if (ids != null) {
+                    var searchid = ids.includes(rsp.data[i].id);
+                    if (searchid) {
+                        var x = document.getElementById("heartfav"+i);
+                        x.classList.add("heartactive")
+                    }
+                    else {
+                        console.log("no existe");
+                    }
+
+                }
             }
+
 
         })
 };
@@ -137,7 +148,25 @@ async function search(busqueda, offset) {
     //Cuando no es mayor a 12 hago lo mismo y le sumo condicion del total>12 para que si es menor no dibuje los botones
     else {
         for (i = 0; i < info.pagination.count - info.pagination.offset; i++) {
-            var txt = `<img src="${info.data[i].images.original.url}" class="imagesresults" onclick=agrandar('${info.data[i].images.original.url}')></img>`;
+            var txt = `<div class="cardsearch">
+            <div class="contGifsearch">
+                <img src="${info.data[i].images.original.url}" alt="Avatar" class="imgsearchresult" 
+                onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                </div>
+            <div class="overlaysearch">
+                <div class="buttons">
+                    <button class='heart' onclick=favorites('${info.data[i].images.original.url}','${info.data[i].id}')>
+                    </button>
+                    <button class="download">
+                    </button>
+                    <button class='max' 
+                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                    </button>
+                </div>
+                <div class="text">${info.data[i].username.user}<br> ${info.data[i].title}
+                </div>
+            </div>
+        </div>`;
             contimages.insertAdjacentHTML("afterbegin", txt);
         }
         var txt = '<div class="borde" id="borde"></div>' +
@@ -147,7 +176,7 @@ async function search(busqueda, offset) {
         var paginas = Math.ceil(total / 12);
         if (total > 12) {
             for (j = 1; j <= paginas; j++) {
-                var txt = `<button class="page" id="page" onclick="page('${busqueda}',${j - 1}*12)">${j}</button>`;
+                var txt = `<button class="page" id="buttonpagination" onclick="page('${busqueda}',${j - 1}*12)">${j}</button>`;
                 pages.insertAdjacentHTML("beforeend", txt);
             }
         }
@@ -157,6 +186,7 @@ async function search(busqueda, offset) {
 
 function page(busqueda, off) {
     search(busqueda, off);
+
 }
 
 function clickbotonbusqueda() {
@@ -172,17 +202,16 @@ function clickbotonbusqueda() {
 
 
 function moveslides(n) {
-    var cant = index += n
+    var cant = index += n;
+    var contGif = document.getElementById("sliderimages");
     console.log("offset " + cant);
+    contGif.style.transition = "all 2s ease-out 2s"
     if (cant >= 0) {
-        buttonLeft.style.display="unset";
-        var contGif = document.getElementById("sliderimages");
+
         contGif.innerHTML = "";
         //console.log ("valor n " + cont);
         gifTrendings(3, cant)
     }
-
-
 }
 
 trendings();

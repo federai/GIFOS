@@ -24,11 +24,12 @@
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
+    gap: 5%;
 }
 .imgGif{
     width: 250px;
     height: 250px;
-    margin: 2%;
+    margin: 6%;
 }
 .overlay{
     display: none;

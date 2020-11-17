@@ -1,0 +1,20 @@
+.pages{
+    width: 95%;
+    text-align: center;
+    margin-top: 5%;
+}
+.page{
+    margin-left: 5%;
+    width: 34px;
+    height: 34px;
+    border: none;
+    color: #9CAFC3;
+    font-size: 16px; 
+    background-color: transparent;
+    background-repeat: none;
+}
+
+.page:hover{
+    border:1px solid $colornocturno;
+    border-radius: 50%;
+}

@@ -7,11 +7,13 @@
     line-height: 33px;
     font-weight: bold;
 }
-.images-fav{
+.containersfav{
+    margin-top: 5%;
+}
+.imagesfavs{
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    margin-top: 5%;
 }
 
 .imagesfavresults{

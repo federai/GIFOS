@@ -21,7 +21,7 @@
     background-color: none;
     border: none;
     align-self: center;
-   
+    
 }
 .right{
     display: unset;
@@ -32,6 +32,7 @@
     border: none;
     justify-self: end;
     align-self: center;
+   
 }
 .leftHover{
     background-image: url(/images/button-slider-left-hover.svg);
@@ -39,3 +40,5 @@
 .rigthHover{
     background-image: url(/images/Button-Slider-right-hover.svg);
 }
+
+

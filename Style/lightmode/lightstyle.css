@@ -427,12 +427,13 @@
       -ms-flex-direction: row;
           flex-direction: row;
   overflow-x: scroll;
+  gap: 5%;
 }
 
 .imgGif {
   width: 250px;
   height: 250px;
-  margin: 2%;
+  margin: 6%;
 }
 
 .overlay {
@@ -484,13 +485,16 @@
   font-weight: bold;
 }
 
-.images-fav {
+.containersfav {
+  margin-top: 5%;
+}
+
+.imagesfavs {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   width: 100%;
-  margin-top: 5%;
 }
 
 .imagesfavresults {
@@ -652,6 +656,28 @@
   display: none;
 }
 
+.pages {
+  width: 95%;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.page {
+  margin-left: 5%;
+  width: 34px;
+  height: 34px;
+  border: none;
+  color: #9CAFC3;
+  font-size: 16px;
+  background-color: transparent;
+  background-repeat: none;
+}
+
+.page:hover {
+  border: 1px solid #572EE5;
+  border-radius: 50%;
+}
+
 @media screen and (min-width: 768px) {
   header {
     height: 90px;
@@ -779,7 +805,7 @@
     gap: 1%;
   }
   .borde {
-    margin-top: 5%;
+    margin-top: unset;
   }
   .titlesearch {
     margin-top: 5%;
@@ -976,7 +1002,7 @@
     width: 32px;
     height: 32px;
   }
-  .heart:active {
+  .heartactive {
     background-image: url(/images/icon-fav-active.svg);
     background-position: center;
     background-repeat: no-repeat;
@@ -991,13 +1017,16 @@
   .conttitlefav {
     text-align: center;
   }
-  .images-fav {
+  .containersfav {
+    margin: 5% 2%;
+  }
+  .imagesfavs {
     display: -ms-grid;
     display: grid;
+    gap: 2%;
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 100%;
-    margin-top: 5%;
   }
   .titlefavempty {
     color: #50E3C2;
@@ -1039,6 +1068,7 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin-bottom: 10%;
   }
   .titleGifMax {
     font-family: "Roboto", sans-serif;
@@ -1047,23 +1077,8 @@
   .userGifMax {
     font-family: "Roboto", sans-serif;
   }
-  .page {
-    margin-left: 5%;
-    width: 34px;
-    height: 34px;
-    border: none;
-    color: #9CAFC3;
-    font-size: 16px;
-    background-color: transparent;
-    background-repeat: none;
-  }
   .pages {
-    width: 100%;
-    text-align: center;
-  }
-  .page:hover {
-    border: 1px solid red;
-    border-radius: 50%;
+    margin-top: 10%;
   }
 }
 /*# sourceMappingURL=lightstyle.css.map */

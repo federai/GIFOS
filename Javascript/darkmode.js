@@ -53,12 +53,17 @@ function lightMode() {
 function darkmodechanges() {
     var logomovil = document.getElementById("logomobile").src = "images/logo-mobile-modo-noct.svg";
     var logo = document.getElementById("logo").src = "images/Logo-modo-noc.svg";
-    
+    var searchbutton=document.getElementById("search-button").src = "images/icon-search-modo-noct.svg"
+    var deletebutton = document.getElementById("delete-button").src="images/close-modo-noct.svg"
+
 }
 
 function lightmodechanges() {
     var logomovil = document.getElementById("logomobile").src = "images/logo-mobile.svg";
     var logo = document.getElementById("logo").src = "images/logo-desktop.svg";
+    var searchbutton=document.getElementById("search-button").src = "images/icon-search.svg"
+    var deletebutton = document.getElementById("delete-button").src="images/close.svg"
+
 }
 //------------------------------------------------------HOVER MENU Y BOTON MAS----------------------------------------------------------
 

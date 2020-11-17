@@ -37,19 +37,51 @@
 }
 #searchimagesresults{  
     grid-template-columns: 1fr 1fr 1fr 1fr;  
+    gap: 1%;
 }
-.borde{
-    margin-top: 5%;
+.cardsearch{
+    height: 350px;
+    position: relative;
+    margin: none;
+    padding: none;
 }
-.titlesearch{
-    margin-top: 5%;
-    font-size: 24px;
+.contGifsearch{
+    width: 100%;
+    height: 350px;
+   
 }
+.imgsearchresult{
+    width: 100%;
+    height: 100%;
+    margin: unset;
+    padding: unset;
+}
+.overlaysearch {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 400;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+   
+  }
+  .cardsearch:hover .overlaysearch{
+    opacity: 0.6;
+  }
 
+#titlesearchresult{
+    margin: 0px 25px;
+}
 #container-search{
     width: 100%;
 }
 #TT{
     justify-content: center;
     margin: unset;
+ }
+ .borde{
+     margin-top: unset;
  }

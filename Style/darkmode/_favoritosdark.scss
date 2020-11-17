@@ -2,11 +2,14 @@
     text-align: center;
     
 }
-.images-fav{
+.containersfav{
+    margin: 5% 2%;
+}
+.imagesfavs{
     display: grid;
+    gap: 2%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 100%;
-    margin-top: 5%;
 }
 .titlefavempty{
     font-size: 22px;

@@ -173,7 +173,7 @@ body {
           align-items: center;
   margin: 0px 4%;
   border-radius: 20px;
-  border: 1px solid #572EE5;
+  border: 1px solid #FFFFFF;
 }
 
 .div-search {
@@ -256,7 +256,7 @@ body {
 }
 
 #container-search li {
-  background: url(/images/icon-search.svg) no-repeat left top;
+  background: url(/images/icon-search-modo-noct.svg) no-repeat left top;
   padding-left: 35px;
   cursor: pointer;
 }
@@ -396,6 +396,17 @@ body {
   color: #9CAFC3;
 }
 
+.cardsearch {
+  width: 100%;
+}
+
+.imgsearchresult {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1%;
+  padding: 5%;
+}
+
 .mostview {
   background-color: #222326;
   margin-top: 5%;
@@ -428,12 +439,13 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   overflow-x: scroll;
+  gap: 5%;
 }
 
 .imgGif {
   width: 250px;
   height: 250px;
-  margin: 2%;
+  margin: 6%;
 }
 
 .overlay {
@@ -486,13 +498,16 @@ body {
   font-weight: bold;
 }
 
-.images-fav {
+.containersfav {
+  margin-top: 5%;
+}
+
+.imagesfavs {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   width: 100%;
-  margin-top: 5%;
 }
 
 .imagesfavresults {
@@ -655,6 +670,28 @@ body {
   display: none;
 }
 
+.pages {
+  width: 95%;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.page {
+  margin-left: 5%;
+  width: 34px;
+  height: 34px;
+  border: none;
+  color: #9CAFC3;
+  font-size: 16px;
+  background-color: transparent;
+  background-repeat: none;
+}
+
+.page:hover {
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+}
+
 @media screen and (min-width: 768px) {
   header {
     height: 90px;
@@ -778,13 +815,41 @@ body {
   #searchimagesresults {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1%;
   }
-  .borde {
-    margin-top: 5%;
+  .cardsearch {
+    height: 350px;
+    position: relative;
+    margin: none;
+    padding: none;
   }
-  .titlesearch {
-    margin-top: 5%;
-    font-size: 24px;
+  .contGifsearch {
+    width: 100%;
+    height: 350px;
+  }
+  .imgsearchresult {
+    width: 100%;
+    height: 100%;
+    margin: unset;
+    padding: unset;
+  }
+  .overlaysearch {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 400;
+    opacity: 0;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+  .cardsearch:hover .overlaysearch {
+    opacity: 0.6;
+  }
+  #titlesearchresult {
+    margin: 0px 25px;
   }
   #container-search {
     width: 100%;
@@ -794,6 +859,9 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     margin: unset;
+  }
+  .borde {
+    margin-top: unset;
   }
   .titlemostview {
     font-size: 25px;
@@ -894,7 +962,7 @@ body {
     color: white;
     font-size: 20px;
     position: relative;
-    margin-top: 75%;
+    margin-top: 70%;
     margin-left: 10%;
   }
   .buttons {
@@ -931,13 +999,16 @@ body {
   .conttitlefav {
     text-align: center;
   }
-  .images-fav {
+  .containersfav {
+    margin: 5% 2%;
+  }
+  .imagesfavs {
     display: -ms-grid;
     display: grid;
+    gap: 2%;
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 100%;
-    margin-top: 5%;
   }
   .titlefavempty {
     font-size: 22px;
@@ -958,7 +1029,7 @@ body {
   }
   .imgGifmax {
     width: 650px;
-    height: 550px;
+    height: 100%;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -985,6 +1056,9 @@ body {
   }
   .userGifMax {
     font-family: "Roboto", sans-serif;
+  }
+  .contimagemax {
+    margin-bottom: 10%;
   }
 }
 /*# sourceMappingURL=darkstyle.css.map */

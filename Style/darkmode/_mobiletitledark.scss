@@ -26,7 +26,7 @@
     align-items: center;
     margin: 0px 4%; 
     border-radius: 20px; 
-    border: 1px solid #572EE5;
+    border: 1px solid #FFFFFF;
     
 }
 .div-search {
@@ -85,7 +85,7 @@
     color: #9CAFC3;
     
     li { 
-        background: url(/images/icon-search.svg) no-repeat left top;
+        background: url(/images/icon-search-modo-noct.svg) no-repeat left top;
         padding-left: 35px;
         cursor: pointer;
     }
@@ -199,4 +199,14 @@
     margin-top: 3%;
     font-family: $fontprincipal;
     color: #9CAFC3;
+}
+.cardsearch{
+    width: 100%;
+    
+}
+.imgsearchresult{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 1%;
+    padding: 5%
 }

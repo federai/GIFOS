@@ -43,7 +43,6 @@
   }
 
   .heart{
-    
       background-image: url(/images/icon-fav.svg);
       width: 32px;
       height: 32px;
@@ -78,7 +77,7 @@
      width: 32px;
     height: 32px;
 }
-.heart:active{
+.heartactive{
   background-image: url(/images/icon-fav-active.svg);
   background-position: center;
   background-repeat: no-repeat;
