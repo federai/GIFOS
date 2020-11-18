@@ -13,8 +13,13 @@
     background-color: transparent;
     background-repeat: none;
 }
-
-.page:hover{
-    border:1px solid #572EE5;
+.actualpage{
+    margin-left: 5%;
+    width: 34px;
+    height: 34px;
+    border: none;
+    font-size: 16px;
+    background-color: $colordiurno;
+    color: white;
     border-radius: 50%;
 }

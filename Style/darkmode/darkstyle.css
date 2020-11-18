@@ -603,12 +603,12 @@ body {
 
 #download {
   background-image: url(/images/icon-download.svg);
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   background-position: center;
   background-repeat: none;
   border: none;
-  background-color: transparent;
+  border-radius: 6px;
 }
 
 #favoritos {
@@ -648,12 +648,12 @@ body {
 }
 
 .heartMax {
-  margin-right: 2%;
   background-image: url(/images/icon-fav.svg);
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: none;
   border: none;
-  background-color: transparent;
   border-radius: 6px;
 }
 
@@ -687,8 +687,14 @@ body {
   background-repeat: none;
 }
 
-.page:hover {
-  border: 1px solid #FFFFFF;
+.actualpage {
+  margin-left: 5%;
+  width: 34px;
+  height: 34px;
+  border: none;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  color: black;
   border-radius: 50%;
 }
 

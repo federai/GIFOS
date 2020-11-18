@@ -21,7 +21,7 @@
                 <li id="lightMode"><a class="menuLink" href="#" onclick="chooselightmode()"><span >Modo Diurno</span> </a></li>
                 <li><a class="menuLink" href="/favoritos.html">Favoritos</a></li>
                 <li><a class="menuLink" href="/my-gifos.html">Mis GIFOS</a></li>
-                <li><button class="add" id="add"></button></li>
+                <li><button class="add" id="add" onclick="window.location.href='/crearGif.html'"></button></li>
 
             </ul>
         </nav>
@@ -31,11 +31,8 @@
             <div class="heart"><img src="images/icon-mis-gifos.svg" alt="my-gifos"></div>
             <p class="title-fav">Mis GIFOS</p>
         </div>
-        <div class="images-fav">
-            <img src="http://via.placeholder.com/200x200"" alt=" img" id="imagen">
-            <img src="http://via.placeholder.com/200x200"" alt=" img" id="imagen">
-            <img src="http://via.placeholder.com/200x200"" alt=" img" id="imagen">
-            <img src="http://via.placeholder.com/200x200"" alt=" img" id="imagen">
+        <div class="images-misGifos" id="misGifos">
+
         </div>
         <article>
             <div class="mostview">
@@ -71,7 +68,7 @@
     <script src="Javascript/burgermenu.js"></script>
     <script src="Javascript/darkmode.js"></script>
     <script src="Javascript/hoverRedes.js"></script>
-    <script src="Javascript/drawFavs.js"></script>
+    <script src="Javascript/drawmisGifos.js"></script>
 </body>
 
 </html>

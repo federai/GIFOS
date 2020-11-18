@@ -40,12 +40,12 @@
 }
 #download{
     background-image: url(/images/icon-download.svg);
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     background-position: center;
     background-repeat: none;
     border: none;
-    background-color: transparent;
+    border-radius: 6px;
 
 }
 #favoritos{
@@ -78,12 +78,13 @@
 
 }
 .heartMax{
-    margin-right: 2%;
+    
     background-image: url(/images/icon-fav.svg);
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: none;
     border: none;
-    background-color: transparent;
     border-radius: 6px;
     
 }

@@ -633,12 +633,13 @@
 }
 
 .heartMax {
-  margin-top: 7%;
   background-image: url(/images/icon-fav.svg);
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border: none;
-  background-color: none;
+  background-position: center;
+  background-repeat: none;
+  background-color: transparent;
   border-radius: 6px;
 }
 
@@ -673,8 +674,14 @@
   background-repeat: none;
 }
 
-.page:hover {
-  border: 1px solid #572EE5;
+.actualpage {
+  margin-left: 5%;
+  width: 34px;
+  height: 34px;
+  border: none;
+  font-size: 16px;
+  background-color: #572EE5;
+  color: white;
   border-radius: 50%;
 }
 
@@ -973,7 +980,6 @@
     width: 32px;
     height: 32px;
     border: none;
-    background-color: none;
     border-radius: 6px;
   }
   .download {
@@ -983,7 +989,6 @@
     background-position: center;
     background-repeat: no-repeat;
     border: none;
-    background-color: none;
     border-radius: 6px;
     margin-left: 6px;
   }
@@ -992,7 +997,6 @@
     width: 32px;
     height: 32px;
     border: none;
-    background-color: none;
     border-radius: 6px;
     margin-left: 6px;
   }
@@ -1013,6 +1017,9 @@
     background: white;
     background-image: url(/images/icon-max-hover.svg);
     opacity: 1;
+  }
+  .download:hover {
+    background-image: url(/images/icon-download-hover.svg);
   }
   .conttitlefav {
     text-align: center;
@@ -1079,6 +1086,218 @@
   }
   .pages {
     margin-top: 10%;
+  }
+  .miGif {
+    padding: 5%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 6fr 1fr;
+        grid-template-columns: 1fr 6fr 1fr;
+    gap: 4%;
+  }
+  .camara {
+    -ms-flex-item-align: center;
+        align-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .rectanglerecord {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    border: 1px solid #572EE5;
+    height: 500px;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+  }
+  .rollograbacion {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .box1 {
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+  }
+  .box2 {
+    border-top: 1px solid grey;
+    border-right: 1px solid grey;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+  }
+  .box3 {
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 90%;
+    left: 5%;
+  }
+  .box4 {
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 90%;
+    left: 90%;
+  }
+  .containertitle {
+    text-align: center;
+    padding: 5%;
+    width: 100%;
+  }
+  .titlemygif {
+    font-family: "Montserrat", sans-serif;
+    color: #572EE5;
+  }
+  .subtitle {
+    font-family: "Roboto", sans-serif;
+    color: black;
+    font-size: 16px;
+  }
+  .controles {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 4%;
+    padding: 0% 5%;
+    margin-left: 1%;
+  }
+  .botones {
+    text-align: center;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 10%;
+    margin-bottom: 5%;
+  }
+  .botones > p {
+    border: 1px solid #572EE5;
+    width: 32px;
+    height: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    color: #572EE5;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+  }
+  .breakline {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 70%;
+    padding: 7px 5%;
+    background-color: #572EE5;
+    margin-bottom: 3%;
+  }
+  .buttonstart {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    color: #572EE5;
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    padding: 1.5%;
+    font-weight: bold;
+    margin-bottom: 10%;
+  }
+  .activecamara {
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin-left: 10%;
+    width: 80%;
+    height: 85%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: none;
+  }
+  .activecamara > video {
+    width: 100%;
+  }
+  .buttonrecord {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    color: #572EE5;
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    padding: 1.5%;
+    font-weight: bold;
+    margin-bottom: 10%;
+    display: none;
+  }
+  .buttonend {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    color: #572EE5;
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    padding: 1.5%;
+    font-weight: bold;
+    margin-bottom: 10%;
+    display: none;
+  }
+  .buttonupload {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    color: #572EE5;
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    padding: 1.5%;
+    font-weight: bold;
+    margin-bottom: 10%;
+    display: none;
+  }
+  .gifograbado {
+    display: none;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 /*# sourceMappingURL=lightstyle.css.map */

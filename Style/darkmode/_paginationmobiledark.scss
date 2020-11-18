@@ -14,7 +14,13 @@
     background-repeat: none;
 }
 
-.page:hover{
-    border:1px solid $colornocturno;
+.actualpage{
+    margin-left: 5%;
+    width: 34px;
+    height: 34px;
+    border: none;
+    font-size: 16px;
+    background-color: $colornocturno;
+    color: black;
     border-radius: 50%;
 }

@@ -74,12 +74,14 @@
     font-family: $fontsecundario;
 }
 .heartMax{
-    margin-top: 7%;
+    
     background-image: url(/images/icon-fav.svg);
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     border: none;
-    background-color: none;
+    background-position: center;
+    background-repeat: none;
+    background-color: transparent;
     border-radius: 6px;
     
 }

@@ -1,0 +1,180 @@
+.miGif{
+  padding: 5%;
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  gap: 4%;
+
+}
+.camara{
+  align-self: center;
+  display: flex;
+}
+.rectanglerecord{
+  display: flex;
+  flex-direction: row;
+  border: 1px solid $colordiurno;
+  height: 500px;
+  width: 100%;
+  align-items:center;
+  position: relative;
+}
+.rollograbacion{
+  align-self: flex-end;
+}
+
+.box1{
+  border-top: 1px solid grey;
+  border-left: 1px solid grey;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+.box2{
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 5%;
+  left: 90%;
+}
+.box3{
+  border-bottom: 1px solid grey;
+  border-left: 1px solid grey;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 90%;
+  left: 5%;
+}
+.box4{
+  border-bottom: 1px solid grey;
+  border-right: 1px solid grey;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 90%;
+  left: 90%;
+}
+
+.containertitle{
+  text-align: center;
+  padding: 5%;
+  width: 100%;
+  
+}
+.titlemygif{
+  font-family: $fontprincipal;
+  color: $colordiurno;
+  
+}
+.subtitle{
+  font-family: $fontsecundario;
+  color: black;
+  font-size: 16px;
+}
+
+.controles{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4%;
+  padding: 0% 5%;
+  margin-left: 1%;
+}
+.botones{
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+  margin-bottom: 5%;
+  
+}
+.botones > p{
+  border:1px solid $colordiurno;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: $colordiurno;
+  font-size: 18px;
+  font-family: $fontsecundario;
+}
+.breakline{
+  align-self: center;
+  width: 70%;
+  padding: 7px 5%;
+  background-color: $colordiurno;
+  margin-bottom: 3%;
+  
+}
+.buttonstart{
+  align-self: center;
+  font-family: $fontprincipal;
+  font-size: 13px;
+  color: $colordiurno;
+  border: 1px solid $colordiurno;
+  border-radius: 25px;
+  padding: 1.5%;
+  font-weight: bold;
+  margin-bottom: 10%;
+}
+.activecamara{
+  align-content: center;
+  margin-left: 10%;
+  width: 80%;
+  height: 85%;
+  justify-content: center;
+  display: none;
+}
+.activecamara > video{
+  width: 100%;
+  
+}
+.buttonrecord{
+  align-self: center;
+  font-family: $fontprincipal;
+  font-size: 13px;
+  color: $colordiurno;
+  border: 1px solid $colordiurno;
+  border-radius: 25px;
+  padding: 1.5%;
+  font-weight: bold;
+  margin-bottom: 10%;
+  display: none;
+}
+.buttonend{
+  align-self: center;
+  font-family: $fontprincipal;
+  font-size: 13px;
+  color: $colordiurno;
+  border: 1px solid $colordiurno;
+  border-radius: 25px;
+  padding: 1.5%;
+  font-weight: bold;
+  margin-bottom: 10%;
+  display: none;
+}
+.buttonupload{
+  align-self: center;
+  font-family: $fontprincipal;
+  font-size: 13px;
+  color: $colordiurno;
+  border: 1px solid $colordiurno;
+  border-radius: 25px;
+  padding: 1.5%;
+  font-weight: bold;
+  margin-bottom: 10%;
+  display: none;
+}
+.gifograbado{
+  display: none;
+  
+  align-self: center;
+  
+}

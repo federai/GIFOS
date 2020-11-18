@@ -1,9 +1,9 @@
 const apiKey = "Uc1F9kfal68vQWzdRi60gLKD2i59hyw0";
-var contfav = document.getElementById("containerfavs");
-var ids = JSON.parse(localStorage.getItem("ids"));
+var contfav = document.getElementById("misGifos");
+var misgifos = JSON.parse(localStorage.getItem("misgifos"));
 
 
-if (ids != null) {
+if (misgifos != null) {
     async function drawFavorites(array, valorpasado) {
         console.log(typeof (array));
         console.log(valorpasado);
@@ -97,8 +97,8 @@ if (ids != null) {
                 </div>
             </div>`;
                 containerfavs.insertAdjacentHTML("beforeend", txt);
-                if (ids != null) {
-                    var searchid = ids.includes(info.data[i].id);
+                if (misgifos != null) {
+                    var searchid = misgifos.includes(info.data[i].id);
                     if (searchid) {
                         var x = document.getElementById("heartfav" + i);
                         x.classList.add("heartactive")
@@ -109,7 +109,7 @@ if (ids != null) {
 
                 }
             }
-            var total = ids.length;
+            var total = misgifos.length;
             console.log(total);
             var paginas = Math.ceil(total / 12);
             
@@ -127,21 +127,21 @@ if (ids != null) {
         }
     }
 
-    drawFavorites(ids, 0);
+    drawFavorites(misgifos, 0);
 
     function pagefav(off) {
         containerfavs = document.getElementById("imagesfavs");
         containerfavs.innerHTML = "";
-        drawFavorites(ids, off);
+        drawFavorites(misgifos, off);
 
     }
 }
 
-if (ids == null) {
-    var iconheartpage = document.getElementById("iconheartpage");
-    iconheartpage.src = "/images/icon-fav-sin-contenido.svg"
-    iconheartpage.classList.add("heartfavempty");
-    var titlefav = document.getElementById("title-fav");
-    titlefav.innerHTML = "¡Guarda tu primer GIFO en Favoritos <br> para que se muestre aquí!";
-    titlefav.classList.add("titlefavempty");
-}
+// if (ids == null) {
+//     var iconheartpage = document.getElementById("iconheartpage");
+//     iconheartpage.src = "/images/icon-fav-sin-contenido.svg"
+//     iconheartpage.classList.add("heartfavempty");
+//     var titlefav = document.getElementById("title-fav");
+//     titlefav.innerHTML = "¡Guarda tu primer GIFO en Favoritos <br> para que se muestre aquí!";
+//     titlefav.classList.add("titlefavempty");
+// }

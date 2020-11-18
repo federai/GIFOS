@@ -43,8 +43,7 @@ function gifTrendings(limit, offset) {
                         <div class="buttons">
                             <button class='heart' id='heartfav${i}' onclick="favorites(${i},'${rsp.data[i].id}')">
                             </button>
-                            <button class="download">
-                            </button>
+                            <button class="download" onclick="downloadGif('${rsp.data[i].id}')">  </button>
                             <button class='max' 
                             onclick="agrandar('${rsp.data[i].images.original.url}','${rsp.data[i].username.user}','${rsp.data[i].title}','${rsp.data[i].id}')">
                             </button>
@@ -118,7 +117,7 @@ async function search(busqueda, offset) {
                 <div class="buttons">
                     <button class='heart' id='heartfav${i}' onclick="favorites(${i},'${info.data[i].id}')">
                     </button>
-                    <button class="download">
+                    <a href="${info.data[i].images.original.url}" download><button class="download"></a>
                     </button>
                     <button class='max' 
                     onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}','${info.data[i].id}')">
@@ -154,7 +153,7 @@ async function search(busqueda, offset) {
             var txt = `<button class="page" id="page${j}" onclick="page('${busqueda}',${j - 1}*12)">${j}</button>`;
             pages.insertAdjacentHTML('beforeend', txt);
             if ((j-1)*12 == offset){
-                document.getElementById(`page${j}`).style.border="6px solid red";
+                document.getElementById(`page${j}`).classList.add("actualpage");
             }
         }
 
@@ -172,7 +171,7 @@ async function search(busqueda, offset) {
                 <div class="buttons">
                     <button class='heart' id='heartfav${i}' onclick="favorites(${i},'${info.data[i].id}')">
                     </button>
-                    <button class="download">
+                    <a href="${info.data[i].images.original.url}" download><button class="download"></a>
                     </button>
                     <button class='max' 
                     onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}','${info.data[i].id}')">
@@ -204,10 +203,10 @@ async function search(busqueda, offset) {
             for (j = 1; j <= paginas; j++) {
                 
 
-             var txt = `<button class="page" id="buttonpagination" onclick="page('${busqueda}',${j - 1}*12)">${j}</button>`;
+             var txt = `<button class="page" id="page${j}" onclick="page('${busqueda}',${j - 1}*12)">${j}</button>`;
               pages.insertAdjacentHTML("beforeend", txt);
               if ((j-1)*12 == offset){
-                document.getElementById(`page${j}`).style.border="6px solid red";
+                document.getElementById(`page${j}`).classList.add("actualpage");
             }
               
             }
@@ -389,3 +388,13 @@ function traerSugerencias() {
         containerSearch.innerHTML = "";
     }
 };
+
+
+//----------------------------------------------Descargar GIF------------------------------------------
+let blob;
+async function downloadGif(gifoImg) {
+    let blob = await fetch(
+      "https://media.giphy.com/media/" + gifoImg + "/giphy.gif"
+    ).then((img) => img.blob());
+    invokeSaveAsDialog(blob, "myGifo.gif");
+  }

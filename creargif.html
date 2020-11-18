@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Gif</title>
+  <link rel="stylesheet" href="Style/lightmode/lightstyle.css" id="theme-link">
+</head>
+
+<body>
+  <header>
+    <div class="logomobile"><a href="/index.html"><img src="images/logo-mobile.svg" alt="logomobile" id="logomobile"
+          onclick="chooselightmode()"></a></div>
+    <div class="logo"><a href="/index.html"><img src="images/logo-desktop.svg" alt="logo" id="logo"
+          onclick="chooselightmode()"></a></div>
+
+    <button class="ham" id="ham"></button>
+    <nav class="navbar">
+      <ul class="menu" id="menu">
+        <li id="darkMode"><a class="menuLink" href="#" onclick="choosedarkmode()"><span>Modo Nocturno</span>
+          </a></li>
+        <li id="lightMode"><a class="menuLink" href="#" onclick="chooselightmode()"><span>Modo Diurno</span>
+          </a></li>
+        <li><a class="menuLink" href="/favoritos.html">Favoritos</a></li>
+        <li><a class="menuLink" href="/my-gifos.html">Mis GIFOS</a></li>
+        <li><button class="add" id="add" onclick="window.location.href='/crearGif.html'"></button></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="miGif">
+      <div class="camara">
+        <img src="/images/camara.svg" alt="camara">
+        <img src="images/element-luz-camara.svg" alt="luzcamara">
+      </div>
+      <div class="rectanglerecord">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="containertitle" id="containertitle">
+          <h1 class="titlemygif" id="titlemygif">Aquí podrás <br> crear tus propios GIFOS</h1>
+          <h2 class="subtitle" id="subtitle">¡Crea tu GIFO en sólo 3 pasos! (sólo necesitas una cámara para grabar un video)
+          </h2>
+          
+        </div>
+        <div class="activecamara" id="activecamara">
+          <video src="" id="video"></video>
+          <img src="" alt="gifograbado" id="gifograbado" class="gifograbado">
+          
+        </div>
+      </div>
+      <div class="rollograbacion">
+        <img src="images/pelicula.svg" alt="pelicula">
+      </div>
+    </div>
+
+
+    <div class="controles">
+      <div class="botones">
+        <p class="firststep" id="fiststep">1</p>
+        <p class="secondstep" id="secondstep">2</p>
+        <p class="thirdstep" id="thirdstep">3</p>
+      </div>
+      <div class="breakline"></div>
+      <div class="buttonstart" id="buttonstart" onclick="getStreamAndRecord()">Comenzar</div>
+      <div class="buttonrecord" id="buttonrecord">Grabar</div>
+      <div class="buttonend" id="buttonend">Finalizar</div>
+      <div class="buttonupload" id="buttonupload">Subir</div>
+
+
+    </div>
+
+    
+  </main>
+  <script src="Javascript/crearGif.js"></script>
+  <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+
+</body>
+
+</html>
