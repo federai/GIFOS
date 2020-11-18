@@ -5,6 +5,7 @@ function favorites(valor, id) {
     changeHeart(valor, id);
 }
 
+//Agrega ID a LocalStorage
 function addId(numero) {
     console.log("id= " + numero)
     ids = localStorage.getItem('ids');
@@ -13,11 +14,14 @@ function addId(numero) {
     } else {
         ids = JSON.parse(ids);
     }
+   //Busca numero en array de ids guardados. includes devuelve TRUE o False
     var searchid = ids.includes(numero);
     if (searchid) {
+        //Si ya existe no hace nada
         console.log("Existe");
     }
     else {
+        //si no existe lo mete en el array
         ids.push(numero);
     }
     localStorage.setItem('ids', JSON.stringify(ids));
@@ -25,8 +29,10 @@ function addId(numero) {
 
 
 function changeHeart(contador, id) {
+    // Paso a Array ids de localstorage
     ids = localStorage.getItem('ids');
     ids = JSON.parse(ids);
+    
     var x = document.getElementById("heartfav" + contador);
 
     if (x.classList.contains('heartactive')) {

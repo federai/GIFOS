@@ -37,7 +37,7 @@ function gifTrendings(limit, offset) {
                     `<div class="card">
                     <div class="contGif">
                         <img src="${rsp.data[i].images.original.url}" alt="Avatar" class="imgGif" 
-                        onclick="agrandar('${rsp.data[i].images.original.url}','${rsp.data[i].username.user}','${rsp.data[i].title}')">
+                        onclick="agrandar('${rsp.data[i].images.original.url}','${rsp.data[i].username.user}','${rsp.data[i].title}','${rsp.data[i].id}')">
                         </div>
                     <div class="overlay">
                         <div class="buttons">
@@ -46,7 +46,7 @@ function gifTrendings(limit, offset) {
                             <button class="download">
                             </button>
                             <button class='max' 
-                            onclick="agrandar('${rsp.data[i].images.original.url}','${rsp.data[i].username.user}','${rsp.data[i].title}')">
+                            onclick="agrandar('${rsp.data[i].images.original.url}','${rsp.data[i].username.user}','${rsp.data[i].title}','${rsp.data[i].id}')">
                             </button>
                         </div>
                         <div class="text">${rsp.data[i].username.user}<br> ${rsp.data[i].title}
@@ -112,7 +112,7 @@ async function search(busqueda, offset) {
             var txt = `<div class="cardsearch">
             <div class="contGifsearch">
                 <img src="${info.data[i].images.original.url}" alt="Avatar" class="imgsearchresult" 
-                onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}','${info.data[i].id}')">
                 </div>
             <div class="overlaysearch">
                 <div class="buttons">
@@ -121,7 +121,7 @@ async function search(busqueda, offset) {
                     <button class="download">
                     </button>
                     <button class='max' 
-                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}','${info.data[i].id}')">
                     </button>
                 </div>
                 <div class="text">${info.data[i].username.user}<br> ${info.data[i].title}
@@ -150,18 +150,23 @@ async function search(busqueda, offset) {
         var paginas = Math.ceil(total / 12);
         //dibujo la cantidad de botones necesarios
         for (j = 1; j <= paginas; j++) {
-            var txt = `<button class="page" id="page" onclick="page('${busqueda}',${j - 1}*12)">${j}</button>`;
+           
+            var txt = `<button class="page" id="page${j}" onclick="page('${busqueda}',${j - 1}*12)">${j}</button>`;
             pages.insertAdjacentHTML('beforeend', txt);
+            if ((j-1)*12 == offset){
+                document.getElementById(`page${j}`).style.border="6px solid red";
+            }
         }
 
     }
     //Cuando no es mayor a 12 hago lo mismo y le sumo condicion del total>12 para que si es menor no dibuje los botones
     else {
         for (i = 0; i < info.pagination.count - info.pagination.offset; i++) {
+            
             var txt = `<div class="cardsearch">
             <div class="contGifsearch">
                 <img src="${info.data[i].images.original.url}" alt="Avatar" class="imgsearchresult" 
-                onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}','${info.data[i].id}')">
                 </div>
             <div class="overlaysearch">
                 <div class="buttons">
@@ -170,7 +175,7 @@ async function search(busqueda, offset) {
                     <button class="download">
                     </button>
                     <button class='max' 
-                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}','${info.data[i].id}')">
                     </button>
                 </div>
                 <div class="text">${info.data[i].username.user}<br> ${info.data[i].title}
@@ -197,8 +202,14 @@ async function search(busqueda, offset) {
         var paginas = Math.ceil(total / 12);
         if (total > 12) {
             for (j = 1; j <= paginas; j++) {
-                var txt = `<button class="page" id="buttonpagination" onclick="page('${busqueda}',${j - 1}*12)">${j}</button>`;
-                pages.insertAdjacentHTML("beforeend", txt);
+                
+
+             var txt = `<button class="page" id="buttonpagination" onclick="page('${busqueda}',${j - 1}*12)">${j}</button>`;
+              pages.insertAdjacentHTML("beforeend", txt);
+              if ((j-1)*12 == offset){
+                document.getElementById(`page${j}`).style.border="6px solid red";
+            }
+              
             }
         }
 
@@ -244,7 +255,9 @@ function clickTT(a) {
 }
 
 //-----------------------------------------FUNCION AGRANDAR GIF-----------------------------------------
-function agrandar(gifmax, user, title) {
+function agrandar(gifmax, user, title, idmax) {
+    console.log(idmax);
+    console.log(gifmax);
     document.getElementById("max").innerHTML = "";
     document.getElementById("max").style.display = "unset";
     var cont = document.getElementById("max");
@@ -259,8 +272,8 @@ function agrandar(gifmax, user, title) {
                                     <div class="titleGifMax">${title}</div> 
                                 </div>
                                 <div class="buttonsMaxGif">
-                                    <button class='heartMax' onclick=add('${gifmax}')></button>
-                                     <button id="download"></button>
+                                <button class='heartMax' id='heartfav1' onclick="favorites(1,'${idmax}')">
+                                <button id="download"></button>
                                 </div> 
                          </div>    
                  </div>`;
