@@ -1,4 +1,3 @@
-const apiKey = "Uc1F9kfal68vQWzdRi60gLKD2i59hyw0";
 var contfav = document.getElementById("containerfavs");
 var ids = JSON.parse(localStorage.getItem("ids"));
 

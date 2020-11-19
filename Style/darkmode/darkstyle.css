@@ -603,8 +603,8 @@ body {
 
 #download {
   background-image: url(/images/icon-download.svg);
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   background-position: center;
   background-repeat: none;
   border: none;
@@ -649,8 +649,8 @@ body {
 
 .heartMax {
   background-image: url(/images/icon-fav.svg);
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   background-position: center;
   background-repeat: none;
   border: none;
@@ -1001,6 +1001,13 @@ body {
     background-color: none;
     border-radius: 6px;
     margin-left: 6px;
+  }
+  .heartactive {
+    background-image: url(/images/icon-fav-active.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
   }
   .conttitlefav {
     text-align: center;

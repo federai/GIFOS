@@ -93,7 +93,7 @@
   margin-bottom: 5%;
   
 }
-.botones > p{
+.firststep{
   border:1px solid $colordiurno;
   width: 32px;
   height: 32px;
@@ -105,6 +105,31 @@
   font-size: 18px;
   font-family: $fontsecundario;
 }
+.secondstep{
+  border:1px solid $colordiurno;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: $colordiurno;
+  font-size: 18px;
+  font-family: $fontsecundario;
+}
+.thirdstep{
+  border:1px solid $colordiurno;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: $colordiurno;
+  font-size: 18px;
+  font-family: $fontsecundario;
+}
+
 .breakline{
   align-self: center;
   width: 70%;
@@ -123,6 +148,10 @@
   padding: 1.5%;
   font-weight: bold;
   margin-bottom: 10%;
+}
+.buttonstart:hover , .buttonrecord:hover, .buttonend:hover, .buttonupload:hover{
+  background-color: $colordiurno;
+  color: white;
 }
 .activecamara{
   align-content: center;
@@ -174,7 +203,24 @@
 }
 .gifograbado{
   display: none;
-  
   align-self: center;
+  width: 600px;
   
+}
+.stepactive{
+  background-color: $colordiurno;
+  color: white; 
+}
+
+.repetir{
+  position: absolute;
+  right: 20%;
+  margin-top: 7px;
+  font-family: $fontprincipal;
+  color: $colordiurno;
+  font-weight: bold;
+  display: none;
+}
+.repetir:hover{
+  border-bottom: 2px solid $colordiurno ;
 }

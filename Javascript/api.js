@@ -37,7 +37,7 @@ function gifTrendings(limit, offset) {
                     `<div class="card">
                     <div class="contGif">
                         <img src="${rsp.data[i].images.original.url}" alt="Avatar" class="imgGif" 
-                        onclick="agrandar('${rsp.data[i].images.original.url}','${rsp.data[i].username.user}','${rsp.data[i].title}','${rsp.data[i].id}')">
+                        onclick="agrandar('${rsp.data[i].images.original.url}','${rsp.data[i].username}','${rsp.data[i].title}','${rsp.data[i].id}')">
                         </div>
                     <div class="overlay">
                         <div class="buttons">
@@ -45,10 +45,10 @@ function gifTrendings(limit, offset) {
                             </button>
                             <button class="download" onclick="downloadGif('${rsp.data[i].id}')">  </button>
                             <button class='max' 
-                            onclick="agrandar('${rsp.data[i].images.original.url}','${rsp.data[i].username.user}','${rsp.data[i].title}','${rsp.data[i].id}')">
+                            onclick="agrandar('${rsp.data[i].images.original.url}','${rsp.data[i].username}','${rsp.data[i].title}','${rsp.data[i].id}')">
                             </button>
                         </div>
-                        <div class="text">${rsp.data[i].username.user}<br> ${rsp.data[i].title}
+                        <div class="text">${rsp.data[i].username}<br> ${rsp.data[i].title}
                         </div>
                     </div>
                 </div>`;
@@ -111,7 +111,7 @@ async function search(busqueda, offset) {
             var txt = `<div class="cardsearch">
             <div class="contGifsearch">
                 <img src="${info.data[i].images.original.url}" alt="Avatar" class="imgsearchresult" 
-                onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}','${info.data[i].id}')">
+                onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username}','${info.data[i].title}','${info.data[i].id}')">
                 </div>
             <div class="overlaysearch">
                 <div class="buttons">
@@ -120,10 +120,10 @@ async function search(busqueda, offset) {
                     <a href="${info.data[i].images.original.url}" download><button class="download"></a>
                     </button>
                     <button class='max' 
-                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}','${info.data[i].id}')">
+                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username}','${info.data[i].title}','${info.data[i].id}')">
                     </button>
                 </div>
-                <div class="text">${info.data[i].username.user}<br> ${info.data[i].title}
+                <div class="text">${info.data[i].username}<br> ${info.data[i].title}
                 </div>
             </div>
         </div>`;
@@ -165,7 +165,7 @@ async function search(busqueda, offset) {
             var txt = `<div class="cardsearch">
             <div class="contGifsearch">
                 <img src="${info.data[i].images.original.url}" alt="Avatar" class="imgsearchresult" 
-                onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}','${info.data[i].id}')">
+                onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username}','${info.data[i].title}','${info.data[i].id}')">
                 </div>
             <div class="overlaysearch">
                 <div class="buttons">
@@ -174,10 +174,10 @@ async function search(busqueda, offset) {
                     <a href="${info.data[i].images.original.url}" download><button class="download"></a>
                     </button>
                     <button class='max' 
-                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}','${info.data[i].id}')">
+                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username}','${info.data[i].title}','${info.data[i].id}')">
                     </button>
                 </div>
-                <div class="text">${info.data[i].username.user}<br> ${info.data[i].title}
+                <div class="text">${info.data[i].username}<br> ${info.data[i].title}
                 </div>
             </div>
         </div>`;
@@ -254,9 +254,13 @@ function clickTT(a) {
 }
 
 //-----------------------------------------FUNCION AGRANDAR GIF-----------------------------------------
+
+
+
 function agrandar(gifmax, user, title, idmax) {
     console.log(idmax);
     console.log(gifmax);
+    
     document.getElementById("max").innerHTML = "";
     document.getElementById("max").style.display = "unset";
     var cont = document.getElementById("max");
@@ -278,6 +282,12 @@ function agrandar(gifmax, user, title, idmax) {
                  </div>`;
     cont.insertAdjacentHTML("afterbegin", txt);
     document.getElementById("all").style.display = "none";
+    ids = localStorage.getItem('ids');
+    ids = JSON.parse(ids);
+    var search = ids.includes(idmax);
+    if (search){
+        document.getElementById("heartfav1").classList.add("heartactive");
+    }
 
 };
 

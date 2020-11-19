@@ -3,6 +3,7 @@
 function favorites(valor, id) {
     addId(id);
     changeHeart(valor, id);
+    
 }
 
 //Agrega ID a LocalStorage
@@ -30,11 +31,12 @@ function addId(numero) {
 
 function changeHeart(contador, id) {
     // Paso a Array ids de localstorage
+    console.log("en la funcion changeHeart");
     ids = localStorage.getItem('ids');
     ids = JSON.parse(ids);
     
     var x = document.getElementById("heartfav" + contador);
-
+    console.log(x);
     if (x.classList.contains('heartactive')) {
         x.classList.remove('heartactive');
         for (var i = 0; i < ids.length; i++) {
@@ -49,5 +51,7 @@ function changeHeart(contador, id) {
         x.classList.add("heartactive");
     }
 }
+
+
 
 

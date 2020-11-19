@@ -1,3 +1,6 @@
+const apiKey = "Uc1F9kfal68vQWzdRi60gLKD2i59hyw0";
+
+
 var navbar = document.querySelector(".navbar");
 var ham = document.querySelector(".ham");
 

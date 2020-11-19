@@ -40,8 +40,8 @@
 }
 #download{
     background-image: url(/images/icon-download.svg);
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     background-position: center;
     background-repeat: none;
     border: none;
@@ -50,8 +50,8 @@
 }
 #favoritos{
     background-image: url(/images/icon-fav.svg);
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     background-position: center;
     background-repeat: none;
     border: none;
@@ -74,10 +74,9 @@
     font-family: $fontsecundario;
 }
 .heartMax{
-    
     background-image: url(/images/icon-fav.svg);
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     border: none;
     background-position: center;
     background-repeat: none;
@@ -92,3 +91,10 @@
 .overlaysearch{
     display: none;
 }
+.heartactive{
+    background-image: url(/images/icon-fav-active.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+  }

@@ -10,9 +10,12 @@ var button_record = document.getElementById("buttonrecord");
 var button_end = document.getElementById("buttonend");
 var button_upload = document.getElementById("buttonupload");
 var gifo_grabado = document.getElementById("gifograbado");
+var repeatcapture = document.getElementById("repeat");
+
 let form = new FormData();
 
 function getStreamAndRecord () {
+  firststep.classList.add("stepactive");
   titlemygif.innerHTML='¿Nos das acceso a tu cámara?';
   subtitle.innerHTML='El acceso a tu camara será válido sólo por el tiempo en el que estés creando el GIFO.'
   navigator.mediaDevices.getUserMedia({
@@ -24,7 +27,6 @@ function getStreamAndRecord () {
 })
 
 .then(function(stream) {
-  
   document.getElementById("containertitle").style.display="none";
   document.getElementById("activecamara").style.display="flex"; 
   button_start.style.display="none";
@@ -52,13 +54,15 @@ function grabarGif(){
     recorder.startRecording();
     button_record.style.display="none";
     button_end.style.display="unset";
-    
+    firststep.classList.remove("stepactive");
+    secondstep.classList.add("stepactive");
+
 }
 
 button_end.addEventListener("click",stopgifrecording);
 
 function stopgifrecording(){
-  
+  repeatcapture.style.display="unset";
   button_end.style.display="none";
   button_upload.style.display="unset";
   recorder.stopRecording(function(){
@@ -80,6 +84,9 @@ function stopgifrecording(){
 button_upload.addEventListener("click",upload);
 
 function upload(){
+  secondstep.classList.remove("stepactive");
+  thirdstep.classList.add("stepactive");
+
   fetch(`https://upload.giphy.com/v1/gifs`, {
         method: "POST",
         body: form,
@@ -101,8 +108,46 @@ function upload(){
           localStorage.setItem('misgifos', JSON.stringify(misgifos));
 
 })
-}
+};
 
+repeatcapture.addEventListener("click",repeat);
+
+function repeat(){
+    
+  recorder.clearRecordedData();
+    navigator.mediaDevices.getUserMedia({
+    audio: false,
+    video: {
+       height: { max: 480 }
+    }
+   
+  })
+  .then(function(stream) {
+    document.getElementById("containertitle").style.display="none";
+    gifo_grabado.style.display="none";
+    video.style.display="unset";
+    document.getElementById("activecamara").style.display="flex"; 
+    button_record.style.display="unset";
+    button_upload.style.display="none";
+    video.srcObject = stream;
+    video.play();
+  
+    recorder = RecordRTC(stream, {
+      type: 'gif',
+      frameRate: 1,
+      quality: 10,
+      width: 360,
+      hidden: 240,
+      onGifRecordingStarted: function() {
+       console.log('started')
+     },
+    });
+    
+
+ 
+  
+  });
+}
 
 
 

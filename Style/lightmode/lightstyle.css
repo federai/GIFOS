@@ -527,6 +527,14 @@
   width: 20%;
 }
 
+.heartactive {
+  background-image: url(/images/icon-fav-active.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+}
+
 #container {
   width: 100%;
   display: -webkit-box;
@@ -590,8 +598,8 @@
 
 #download {
   background-image: url(/images/icon-download.svg);
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   background-position: center;
   background-repeat: none;
   border: none;
@@ -600,8 +608,8 @@
 
 #favoritos {
   background-image: url(/images/icon-fav.svg);
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   background-position: center;
   background-repeat: none;
   border: none;
@@ -634,8 +642,8 @@
 
 .heartMax {
   background-image: url(/images/icon-fav.svg);
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border: none;
   background-position: center;
   background-repeat: none;
@@ -655,6 +663,14 @@
 
 .overlaysearch {
   display: none;
+}
+
+.heartactive {
+  background-image: url(/images/icon-fav-active.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
 }
 
 .pages {
@@ -900,10 +916,10 @@
         -ms-grid-row-align: center;
         align-self: center;
   }
-  .leftHover {
+  .left:hover {
     background-image: url(/images/button-slider-left-hover.svg);
   }
-  .rigthHover {
+  .right:hover {
     background-image: url(/images/Button-Slider-right-hover.svg);
   }
   .footer {
@@ -940,19 +956,20 @@
     gap: 1%;
   }
   .imgGif {
-    height: 350px;
+    height: 400px;
     width: 100%;
     margin: unset;
   }
   .card {
     position: relative;
+    height: 400px;
   }
   .overlay {
     display: block;
     position: absolute;
     top: 0;
     width: 100%;
-    height: 99%;
+    height: 100%;
     z-index: 400;
     opacity: 0;
     -webkit-transition: .5s ease;
@@ -1197,7 +1214,43 @@
     gap: 10%;
     margin-bottom: 5%;
   }
-  .botones > p {
+  .firststep {
+    border: 1px solid #572EE5;
+    width: 32px;
+    height: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    color: #572EE5;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+  }
+  .secondstep {
+    border: 1px solid #572EE5;
+    width: 32px;
+    height: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    color: #572EE5;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+  }
+  .thirdstep {
     border: 1px solid #572EE5;
     width: 32px;
     height: 32px;
@@ -1236,6 +1289,10 @@
     padding: 1.5%;
     font-weight: bold;
     margin-bottom: 10%;
+  }
+  .buttonstart:hover, .buttonrecord:hover, .buttonend:hover, .buttonupload:hover {
+    background-color: #572EE5;
+    color: white;
   }
   .activecamara {
     -ms-flex-line-pack: center;
@@ -1298,6 +1355,23 @@
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
+    width: 600px;
+  }
+  .stepactive {
+    background-color: #572EE5;
+    color: white;
+  }
+  .repetir {
+    position: absolute;
+    right: 20%;
+    margin-top: 7px;
+    font-family: "Montserrat", sans-serif;
+    color: #572EE5;
+    font-weight: bold;
+    display: none;
+  }
+  .repetir:hover {
+    border-bottom: 2px solid #572EE5;
   }
 }
 /*# sourceMappingURL=lightstyle.css.map */

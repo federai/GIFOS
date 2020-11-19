@@ -10,73 +10,83 @@
 
 <body>
     <div class="line"></div>
-    <header>
-        <div class="logomobile"><a href="/index.html"><img src="images/logo-mobile.svg" alt="logomobile" id="logomobile" onclick="chooselightmode()"></a></div>
-        <div class="logo"><a href="/index.html"><img src="images/logo-desktop.svg" alt="logo" id="logo" onclick="chooselightmode()"></a></div>
+    <div id="max"></div>
+    <div id="all">
+        <header>
+            <div class="logomobile"><a href="/index.html"><img src="images/logo-mobile.svg" alt="logomobile"
+                        id="logomobile" onclick="chooselightmode()"></a></div>
+            <div class="logo"><a href="/index.html"><img src="images/logo-desktop.svg" alt="logo" id="logo"
+                        onclick="chooselightmode()"></a></div>
 
-        <button class="ham" id="ham"></button>
-        <nav class="navbar">
-            <ul class="menu" id="menu">
-                <li id="darkMode"><a class="menuLink" href="#" onclick="choosedarkmode()"><span >Modo Nocturno</span> </a></li>
-                <li id="lightMode"><a class="menuLink" href="#" onclick="chooselightmode()"><span >Modo Diurno</span> </a></li>
-                <li><a class="menuLink" href="/favoritos.html">Favoritos</a></li>
-                <li><a class="menuLink" href="/my-gifos.html">Mis GIFOS</a></li>
-                <li><button class="add" id="add" onclick="window.location.href='/crearGif.html'"></button></li>
+            <button class="ham" id="ham"></button>
+            <nav class="navbar">
+                <ul class="menu" id="menu">
+                    <li id="darkMode"><a class="menuLink" href="#" onclick="choosedarkmode()"><span>Modo Nocturno</span>
+                        </a></li>
+                    <li id="lightMode"><a class="menuLink" href="#" onclick="chooselightmode()"><span>Modo Diurno</span>
+                        </a></li>
+                    <li><a class="menuLink" href="/favoritos.html">Favoritos</a></li>
+                    <li><a class="menuLink" href="/my-gifos.html">Mis GIFOS</a></li>
+                    <li><button class="add" id="add" onclick="window.location.href='/crearGif.html'"></button></li>
 
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="conttitlefav" id="conttitlefav">
-            <div class="heartpage"><img src="images/icon-favoritos.svg" alt="heart" id="iconheartpage"></div>
-        </div>
-        <p class="title-fav" id="title-fav">Favoritos</p> 
-        <div class="containersfav" id="containerfavs">
-        </div>
-        <article>
-            <div class="mostview">
-                <div class="titlemostview">
-                    <p>Trending GIFOS</p>
-                </div>
-                <p class="desc">Mira los últimos GIFOS de nuestra comunidad.</p>
-
-
-                <div class="slider" id="slider">
-                    <button id="left" class="left" onclick="moveslides(-3)"></button>
-                    <div class="sliderimages" id="sliderimages">
-
-
-                    </div>
-                    <button id="right" class="right" onclick="moveslides(3)"></button>
-                </div>
-
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="conttitlefav" id="conttitlefav">
+                <div class="heartpage"><img src="images/icon-favoritos.svg" alt="heart" id="iconheartpage"></div>
             </div>
+            <p class="title-fav" id="title-fav">Favoritos</p>
+            <div class="containersfav" id="containerfavs">
+            </div>
+            <article>
+                <div class="mostview">
+                    <div class="titlemostview">
+                        <p>Trending GIFOS</p>
+                    </div>
+                    <p class="desc">Mira los últimos GIFOS de nuestra comunidad.</p>
 
-        </article>
-    </main>
-    <footer>
-        <div class=" footer">
-                   
-                
+
+                    <div class="slider" id="slider">
+                        <button id="left" class="left" onclick="moveslides(-3)"></button>
+                        <div class="sliderimages" id="sliderimages">
+
+
+                        </div>
+                        <button id="right" class="right" onclick="moveslides(3)"></button>
+                    </div>
+
+                </div>
+
+            </article>
+        </main>
+        <footer>
+            <div class=" footer">
+
+
                 <div class="socialnetworks">
                     <p class="footer-text">Compartir en:</p>
-                    <a href="http://www.facebook.com.ar" target="_blank" > <img src="images/icon_facebook.svg"
+                    <a href="http://www.facebook.com.ar" target="_blank"> <img src="images/icon_facebook.svg"
                             alt="facebook" id="facebook"></a>
-                    <a href="http://www.twitter.com.ar" target="_blank" ><img src="images/icon-twitter.svg"
-                            alt="twitter" id="twitter"></a>
-                    <a href="http://www.instagram.com" target="blank" ><img src="images/icon_instagram.svg"
+                    <a href="http://www.twitter.com.ar" target="_blank"><img src="images/icon-twitter.svg" alt="twitter"
+                            id="twitter"></a>
+                    <a href="http://www.instagram.com" target="blank"><img src="images/icon_instagram.svg"
                             alt="instragram" id="instagram"></a>
                 </div>
                 <p class="copy">© GIFOS 2020 All Rights Reserved.</p>
             </div>
-                </footer>
-<div class="line"></div>
-<script src="Javascript/burgermenu.js"></script>
-<script src="Javascript/darkmode.js"></script>
-<script src="Javascript/hoverRedes.js"></script>
-<script src="Javascript/drawFavs.js"></script>
-<script src="Javascript/localStoragefavs.js"></script>
+        </footer>
+    
+    <div class="line"></div>
+</div>
+    <script src="Javascript/burgermenu.js"></script>
+    <script src="Javascript/darkmode.js"></script>
+    <script src="Javascript/hoverRedes.js"></script>
+    <script src="Javascript/carrusel.js"></script>
+    <script src="Javascript/gifmax.js"></script>
+    <script src="Javascript/drawFavs.js"></script>
+    <script src="Javascript/localStoragefavs.js"></script>
+    <!-- <script src="Javascript/api.js"></script> -->
 </body>
 
 </html>
-

@@ -15,3 +15,6 @@
 [1117/182724.322:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
 [1117/182756.616:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
 [1117/183241.009:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[1119/131306.991:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[1119/131956.656:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[1119/132138.117:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: Ha terminado la canalización. (0x6D)

@@ -1,4 +1,3 @@
-const apiKey = "Uc1F9kfal68vQWzdRi60gLKD2i59hyw0";
 var contfav = document.getElementById("misGifos");
 var misgifos = JSON.parse(localStorage.getItem("misgifos"));
 
@@ -92,7 +91,7 @@ if (misgifos != null) {
                         onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
                         </button>
                     </div>
-                    <div class="text">${info.data[i].username.user}<br> ${info.data[i].title}
+                    <div class="text">${info.data[i].user.username}<br> ${info.data[i].title}
                     </div>
                 </div>
             </div>`;
@@ -137,11 +136,11 @@ if (misgifos != null) {
     }
 }
 
-// if (ids == null) {
-//     var iconheartpage = document.getElementById("iconheartpage");
-//     iconheartpage.src = "/images/icon-fav-sin-contenido.svg"
-//     iconheartpage.classList.add("heartfavempty");
-//     var titlefav = document.getElementById("title-fav");
-//     titlefav.innerHTML = "¡Guarda tu primer GIFO en Favoritos <br> para que se muestre aquí!";
-//     titlefav.classList.add("titlefavempty");
-// }
+ if (misgifos == null) {
+     var iconmisgifos = document.getElementById("iconmisgifos");
+     iconmisgifos.src = "/images/icon-mis-gifos-sin-contenido.svg"
+     iconmisgifos.classList.add("heartfavempty");
+     var titlemisgifos = document.getElementById("titlemisgifos");
+     titlemisgifos.innerHTML = "¡Anímate a crear tu primer GIFO!";
+       titlemisgifos.classList.add("titlefavempty");
+ }
