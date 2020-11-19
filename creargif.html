@@ -43,14 +43,23 @@
         <div class="box4"></div>
         <div class="containertitle" id="containertitle">
           <h1 class="titlemygif" id="titlemygif">Aquí podrás <br> crear tus propios GIFOS</h1>
-          <h2 class="subtitle" id="subtitle">¡Crea tu GIFO en sólo 3 pasos! (sólo necesitas una cámara para grabar un video)
+          <h2 class="subtitle" id="subtitle">¡Crea tu GIFO en sólo 3 pasos! (sólo necesitas una cámara para grabar un
+            video)
           </h2>
-          
+
         </div>
         <div class="activecamara" id="activecamara">
           <video src="" id="video"></video>
-          <img src="" alt="gifograbado" id="gifograbado" class="gifograbado">
-          
+          <div class="containerGifo">
+            <img src="" alt="gifograbado" id="gifograbado" class="gifograbado">
+            <div class="overlaygifupload" id="overlaygifupload">
+              <div class="containerupload">
+                <div class="logoupload"> <img src="images/loader.svg" alt="loader">
+                </div>
+                <div class="titleupload"> Estamos subiendo tu GIFO </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="rollograbacion">
@@ -64,7 +73,7 @@
         <p class="firststep" id="firststep">1</p>
         <p class="secondstep" id="secondstep">2</p>
         <p class="thirdstep" id="thirdstep">3</p>
-        
+
       </div>
       <p class="repetir" id="repeat">Repetir Captura</p>
       <div class="breakline"></div>
@@ -76,7 +85,7 @@
 
     </div>
 
-    
+
   </main>
   <script src="Javascript/crearGif.js"></script>
   <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>

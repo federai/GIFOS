@@ -11,67 +11,69 @@ var button_end = document.getElementById("buttonend");
 var button_upload = document.getElementById("buttonupload");
 var gifo_grabado = document.getElementById("gifograbado");
 var repeatcapture = document.getElementById("repeat");
-
+var containercamara = document.getElementById("activecamara");
+var overlayGifUpload = document.getElementById("overlaygifupload");
 let form = new FormData();
 
-function getStreamAndRecord () {
+function getStreamAndRecord() {
   firststep.classList.add("stepactive");
-  titlemygif.innerHTML='¿Nos das acceso a tu cámara?';
-  subtitle.innerHTML='El acceso a tu camara será válido sólo por el tiempo en el que estés creando el GIFO.'
+  titlemygif.innerHTML = '¿Nos das acceso a tu cámara?';
+  subtitle.innerHTML = 'El acceso a tu camara será válido sólo por el tiempo en el que estés creando el GIFO.'
   navigator.mediaDevices.getUserMedia({
-  audio: false,
-  video: {
-     height: { max: 480 }
-  }
- 
-})
+    audio: false,
+    video: {
+      height: { max: 480 },
+      width: { max: 480 }
+    }
 
-.then(function(stream) {
-  document.getElementById("containertitle").style.display="none";
-  document.getElementById("activecamara").style.display="flex"; 
-  button_start.style.display="none";
-  button_record.style.display="unset";
-  video.srcObject = stream;
-  video.play();
+  })
 
-  recorder = RecordRTC(stream, {
-    type: 'gif',
-    frameRate: 1,
-    quality: 10,
-    width: 360,
-    hidden: 240,
-    onGifRecordingStarted: function() {
-     console.log('started')
-   },
-  });
+    .then(function (stream) {
+      document.getElementById("containertitle").style.display = "none";
+      containercamara.style.display = "flex";
+      button_start.style.display = "none";
+      button_record.style.display = "unset";
+      video.srcObject = stream;
+      video.play();
 
-});
+      recorder = RecordRTC(stream, {
+        type: 'gif',
+        frameRate: 1,
+        quality: 10,
+        width: 360,
+        hidden: 240,
+        onGifRecordingStarted: function () {
+          console.log('started')
+        },
+      });
+
+    });
 }
 
 button_record.addEventListener("click", grabarGif);
 
-function grabarGif(){
-    recorder.startRecording();
-    button_record.style.display="none";
-    button_end.style.display="unset";
-    firststep.classList.remove("stepactive");
-    secondstep.classList.add("stepactive");
+function grabarGif() {
+  recorder.startRecording();
+  button_record.style.display = "none";
+  button_end.style.display = "unset";
+  firststep.classList.remove("stepactive");
+  secondstep.classList.add("stepactive");
 
 }
 
-button_end.addEventListener("click",stopgifrecording);
+button_end.addEventListener("click", stopgifrecording);
 
-function stopgifrecording(){
-  repeatcapture.style.display="unset";
-  button_end.style.display="none";
-  button_upload.style.display="unset";
-  recorder.stopRecording(function(){
-    video.style.display="none";
-    
-    
+function stopgifrecording() {
+  repeatcapture.style.display = "unset";
+  button_end.style.display = "none";
+  button_upload.style.display = "unset";
+  recorder.stopRecording(function () {
+    video.style.display = "none";
+
+
     blob = recorder.getBlob();
     gifo_grabado.src = URL.createObjectURL(recorder.getBlob());
-    gifo_grabado.style.display="unset";
+    gifo_grabado.style.display = "unset";
 
     form.append("file", recorder.getBlob(), "myGifo.gif");
     form.append("api_key", apiKey);
@@ -81,73 +83,70 @@ function stopgifrecording(){
 
 }
 
-button_upload.addEventListener("click",upload);
+button_upload.addEventListener("click", upload);
 
-function upload(){
+function upload() {
   secondstep.classList.remove("stepactive");
   thirdstep.classList.add("stepactive");
-
+  overlayGifUpload.style.display="unset";
   fetch(`https://upload.giphy.com/v1/gifs`, {
-        method: "POST",
-        body: form,
-      })
-        .then((response) => {
-          return response.json();
-        })
-        .then((gifo) => {
-          let myGifoId = gifo.data.id;
-          console.log(myGifoId);
-          misgifos = localStorage.getItem('misgifos');
-          if (misgifos == null) {
-            misgifos = [];
-          } else {
-            misgifos = JSON.parse(misgifos);
-          }
-            misgifos.push(myGifoId);
-          
-          localStorage.setItem('misgifos', JSON.stringify(misgifos));
+    method: "POST",
+    body: form,
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((gifo) => {
+      let myGifoId = gifo.data.id;
+      console.log(myGifoId);
+      misgifos = localStorage.getItem('misgifos');
+      if (misgifos == null) {
+        misgifos = [];
+      } else {
+        misgifos = JSON.parse(misgifos);
+      }
+      misgifos.push(myGifoId);
 
-})
+      localStorage.setItem('misgifos', JSON.stringify(misgifos));
+
+    })
 };
 
-repeatcapture.addEventListener("click",repeat);
+repeatcapture.addEventListener("click", repeat);
 
-function repeat(){
-    
+function repeat() {
+
   recorder.clearRecordedData();
-    navigator.mediaDevices.getUserMedia({
+  navigator.mediaDevices.getUserMedia({
     audio: false,
     video: {
-       height: { max: 480 }
+      height: { max: 480 }
     }
-   
-  })
-  .then(function(stream) {
-    document.getElementById("containertitle").style.display="none";
-    gifo_grabado.style.display="none";
-    video.style.display="unset";
-    document.getElementById("activecamara").style.display="flex"; 
-    button_record.style.display="unset";
-    button_upload.style.display="none";
-    video.srcObject = stream;
-    video.play();
-  
-    recorder = RecordRTC(stream, {
-      type: 'gif',
-      frameRate: 1,
-      quality: 10,
-      width: 360,
-      hidden: 240,
-      onGifRecordingStarted: function() {
-       console.log('started')
-     },
-    });
-    
 
- 
-  
-  });
+  })
+    .then(function (stream) {
+      document.getElementById("containertitle").style.display = "none";
+      gifo_grabado.style.display = "none";
+      video.style.display = "unset";
+      containercamara.style.display = "flex";
+      button_record.style.display = "unset";
+      button_upload.style.display = "none";
+      video.srcObject = stream;
+      video.play();
+
+      recorder = RecordRTC(stream, {
+        type: 'gif',
+        frameRate: 1,
+        quality: 10,
+        width: 360,
+        hidden: 240,
+        onGifRecordingStarted: function () {
+          console.log('started')
+        },
+      });
+    });
 }
+
 
 
 

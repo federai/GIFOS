@@ -64,6 +64,7 @@
   padding: 5%;
   width: 100%;
   
+  
 }
 .titlemygif{
   font-family: $fontprincipal;
@@ -160,6 +161,8 @@
   height: 85%;
   justify-content: center;
   display: none;
+  
+  
 }
 .activecamara > video{
   width: 100%;
@@ -203,8 +206,10 @@
 }
 .gifograbado{
   display: none;
+  position: relative;
   align-self: center;
-  width: 90%;
+  width: 480px;
+  height: 100%;
   
 }
 .stepactive{
@@ -223,4 +228,37 @@
 }
 .repetir:hover{
   border-bottom: 2px solid $colordiurno ;
+}
+.containerGifo{
+  position: relative;
+
+}
+.overlaygifupload{
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 400;
+    opacity: 0.6;
+    transition: .5s ease;
+    background-color: #572EE5;
+    
+}
+.containerupload{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.logoupload{
+  align-self: center;
+}
+.titleupload{
+  align-self: center;
+  font-family: $fontprincipal;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
 }

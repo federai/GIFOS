@@ -1352,10 +1352,12 @@
   }
   .gifograbado {
     display: none;
+    position: relative;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
-    width: 90%;
+    width: 480px;
+    height: 100%;
   }
   .stepactive {
     background-color: #572EE5;
@@ -1372,6 +1374,49 @@
   }
   .repetir:hover {
     border-bottom: 2px solid #572EE5;
+  }
+  .containerGifo {
+    position: relative;
+  }
+  .overlaygifupload {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 400;
+    opacity: 0.6;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    background-color: #572EE5;
+  }
+  .containerupload {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  .logoupload {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .titleupload {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
   }
 }
 /*# sourceMappingURL=lightstyle.css.map */
