@@ -1,5 +1,4 @@
 
-
 //-------------------------------------------------------API CONNECTION GIFS TRENDIGS----------------------------------
 var screen = window.innerWidth;
 var ids = JSON.parse(localStorage.getItem("ids"));

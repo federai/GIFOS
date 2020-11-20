@@ -1418,5 +1418,18 @@
     font-size: 15px;
     color: white;
   }
+  .erase {
+    background-image: url(/images/icon-trash-normal.svg);
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-position: center;
+    background-repeat: none;
+    background-color: transparent;
+    border-radius: 6px;
+  }
+  .erase:hover {
+    background-image: url(/images/icon-trash-hover.svg);
+  }
 }
 /*# sourceMappingURL=lightstyle.css.map */

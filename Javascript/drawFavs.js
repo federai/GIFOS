@@ -1,8 +1,8 @@
 var contfav = document.getElementById("containerfavs");
-var ids = JSON.parse(localStorage.getItem("ids"));
+var favssave = JSON.parse(localStorage.getItem("ids"));
 
 
-if (ids != null) {
+if (favssave != null && favssave!= []) {
     async function drawFavorites(array, valorpasado) {
         console.log(typeof (array));
         console.log(valorpasado);
@@ -25,7 +25,7 @@ if (ids != null) {
                 var txt = `<div class="cardsearch">
                 <div class="contGifsearch">
                     <img src="${info.data[i].images.original.url}" alt="Avatar" class="imgsearchresult" 
-                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}','${info.data[i].id}')">
                     </div>
                 <div class="overlaysearch">
                     <div class="buttons">
@@ -88,7 +88,7 @@ if (ids != null) {
                         <button class="download">
                         </button>
                         <button class='max' 
-                        onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                        onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}','${info.data[i].id}')">
                         </button>
                     </div>
                     <div class="text">${info.data[i].username.user}<br> ${info.data[i].title}
@@ -126,17 +126,17 @@ if (ids != null) {
         }
     }
 
-    drawFavorites(ids, 0);
+    drawFavorites(favssave, 0);
 
     function pagefav(off) {
         containerfavs = document.getElementById("imagesfavs");
         containerfavs.innerHTML = "";
-        drawFavorites(ids, off);
+        drawFavorites(favssave, off);
 
     }
 }
 
-if (ids == null) {
+if (favssave == null || favssave== "") {
     var iconheartpage = document.getElementById("iconheartpage");
     iconheartpage.src = "/images/icon-fav-sin-contenido.svg"
     iconheartpage.classList.add("heartfavempty");

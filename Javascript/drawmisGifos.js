@@ -29,7 +29,7 @@ if (misgifos != null) {
                     </div>
                 <div class="overlaysearch">
                     <div class="buttons">
-                    <button class='heart' id='heartfav${i}' onclick="favorites(${i},'${info.data[i].id}')">
+                    <button class='erase' id='erasemygif${i}' onclick="erase(${i},'${info.data[i].id}')">
                     </button>
                         <button class="download">
                         </button>
@@ -83,8 +83,8 @@ if (misgifos != null) {
                     </div>
                 <div class="overlaysearch">
                     <div class="buttons">
-                    <button class='heart' id='heartfav${i}' onclick="favorites(${i},'${info.data[i].id}')">
-                        </button>
+                    <button class='erase' id='erasemygif${i}' onclick="erase(${i},'${info.data[i].id}')">
+                    </button>
                         <button class="download">
                         </button>
                         <button class='max' 
@@ -96,17 +96,17 @@ if (misgifos != null) {
                 </div>
             </div>`;
                 containerfavs.insertAdjacentHTML("beforeend", txt);
-                if (misgifos != null) {
-                    var searchid = misgifos.includes(info.data[i].id);
-                    if (searchid) {
-                        var x = document.getElementById("heartfav" + i);
-                        x.classList.add("heartactive")
-                    }
-                    else {
-                        console.log("no existe");
-                    }
+                // if (misgifos != null) {
+                //     var searchid = misgifos.includes(info.data[i].id);
+                //     if (searchid) {
+                //         var x = document.getElementById("heartfav" + i);
+                //         x.classList.add("heartactive")
+                //     }
+                //     else {
+                //         console.log("no existe");
+                //     }
 
-                }
+                // }
             }
             var total = misgifos.length;
             console.log(total);

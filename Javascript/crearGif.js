@@ -106,7 +106,7 @@ function upload() {
         misgifos = JSON.parse(misgifos);
       }
       misgifos.push(myGifoId);
-
+      
       localStorage.setItem('misgifos', JSON.stringify(misgifos));
 
     })

@@ -20,7 +20,7 @@ function agrandar(gifmax, user, title, idmax) {
                                     <div class="titleGifMax">${title}</div> 
                                 </div>
                                 <div class="buttonsMaxGif">
-                                <button class='heartMax' id='heartfav1' onclick="favorites(1,'${idmax}')">
+                                <button class='heartMax' id='heartfav777' onclick="favorites(777,'${idmax}')">
                                 <button id="download"></button>
                                 </div> 
                          </div>    
@@ -31,7 +31,7 @@ function agrandar(gifmax, user, title, idmax) {
     ids = JSON.parse(ids);
     var search = ids.includes(idmax);
     if (search){
-        document.getElementById("heartfav1").classList.add("heartactive");
+        document.getElementById("heartfav777").classList.add("heartactive");
     }
 
 };
