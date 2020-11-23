@@ -21,3 +21,4 @@ menuLinks.forEach(
         menuLink.addEventListener("click", toggleHamburger);
     }
 )
+

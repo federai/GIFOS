@@ -34,9 +34,13 @@
         </header>
         <main>
             <div class="conttitlefav" id="conttitlefav">
-                <div class="heartpage"><img src="images/icon-favoritos.svg" alt="heart" id="iconheartpage"></div>
+                <div class="heartpage">
+                    <img src="images/icon-favoritos.svg" alt="heart" id="iconheartpage">
+                    <img src="images/icon-fav-sin-contenido.svg" alt="sincontenido" id="iconsincontenido" class="heartfavempty">
+                </div>
             </div>
             <p class="title-fav" id="title-fav">Favoritos</p>
+            <p class="title-fav titlefavempty" id="titlefavempty">¡Guarda tu primer GIFO en Favoritos <br> para que se muestre aquí! </p>
             <div class="containersfav" id="containerfavs">
             </div>
             <article>
@@ -79,12 +83,16 @@
     
     <div class="line"></div>
 </div>
+          
     <script src="Javascript/burgermenu.js"></script>
+    <script src="Javascript/carruselfavs.js"></script> 
     <script src="Javascript/darkmode.js"></script>
-    <script src="Javascript/carrusel.js"></script>
-    <script src="Javascript/gifmax.js"></script>
     <script src="Javascript/drawFavs.js"></script>
     <script src="Javascript/localStoragefavs.js"></script>
+    <script src="Javascript/gifmax.js"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="Javascript/downloadgif.js"></script>
+
     <!-- <script src="Javascript/api.js"></script> -->
 </body>
 </html>

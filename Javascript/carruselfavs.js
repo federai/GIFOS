@@ -1,12 +1,11 @@
-
-//-------------------------------------------------------API CONNECTION GIFS TRENDIGS----------------------------------
 var screen = window.innerWidth;
 var favssave = JSON.parse(localStorage.getItem("ids"));
 var buttonLeft = document.getElementById("left");
 var buttonRight = document.getElementById("right");
 var index = 0;
-var x = document.getElementById("heartfav2");
-function gifTrendings(limit, offset) {
+
+
+function gifTrendingsfavs(limit, offset) {
     var urlGifTrendigs = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=${limit}&offset=${offset}`;
     console.log(urlGifTrendigs);
     fetch(urlGifTrendigs)
@@ -23,7 +22,7 @@ function gifTrendings(limit, offset) {
                         </div>
                     <div class="overlay">
                         <div class="buttons">
-                            <button class='heart' id='heartfav${i}' onclick="favorites(${i},'${rsp.data[i].id}')">
+                            <button class='heart' id='heartfavcarrusel${i}' onclick="favorites(${i},'${rsp.data[i].id}')">
                             </button>
                             <button class="download" onclick="downloadGif('${rsp.data[i].id}')">  </button>
                             <button class='max' 
@@ -38,7 +37,7 @@ function gifTrendings(limit, offset) {
                 if (favssave != null) {
                     var searchid = favssave.includes(rsp.data[i].id);
                     if (searchid) {
-                        var x = document.getElementById("heartfav"+i);
+                        var x = document.getElementById("heartfavcarrusel"+i);
                         x.classList.add("heartactive")
                     }
                     else {
@@ -61,12 +60,12 @@ function gifTrendings(limit, offset) {
 if (window.innerWidth > 768) {
     var limit = 3;
     var offset = 0;
-    gifTrendings(limit, offset);
+    gifTrendingsfavs(limit, offset);
 }
 else {
     var limit = 15;
     var offset = 0;
-    gifTrendings(limit, offset);
+    gifTrendingsfavs(limit, offset);
 
 }
 //------------------------------------------------BOTONES CARUSEL ------------------------------------------------
@@ -80,7 +79,8 @@ function moveslides(n) {
 
         contGif.innerHTML = "";
         //console.log ("valor n " + cont);
-        gifTrendings(3, cant)
+        gifTrendingsfavs(3, cant)
     }
 }
+
 

@@ -13,6 +13,11 @@ var gifo_grabado = document.getElementById("gifograbado");
 var repeatcapture = document.getElementById("repeat");
 var containercamara = document.getElementById("activecamara");
 var overlayGifUpload = document.getElementById("overlaygifupload");
+var logoupload = document.getElementById("logoupload");
+var logouploadsuccess = document.getElementById("logosuccess");
+var titleupload = document.getElementById("titleupload");
+var titleuploadsuccess = document.getElementById("titleuploadsuccess");
+
 let form = new FormData();
 
 function getStreamAndRecord() {
@@ -86,9 +91,11 @@ function stopgifrecording() {
 button_upload.addEventListener("click", upload);
 
 function upload() {
+  button_upload.style.display="none";
   secondstep.classList.remove("stepactive");
   thirdstep.classList.add("stepactive");
   overlayGifUpload.style.display="unset";
+  repeatcapture.style.display="none";
   fetch(`https://upload.giphy.com/v1/gifs`, {
     method: "POST",
     body: form,
@@ -97,6 +104,10 @@ function upload() {
       return response.json();
     })
     .then((gifo) => {
+      logoupload.style.display="none";
+      titleupload.style.display="none";
+      logouploadsuccess.style.display="unset";
+      titleuploadsuccess.style.display="unset";
       let myGifoId = gifo.data.id;
       console.log(myGifoId);
       misgifos = localStorage.getItem('misgifos');
@@ -146,7 +157,6 @@ function repeat() {
       });
     });
 }
-
 
 
 

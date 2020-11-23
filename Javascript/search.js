@@ -1,15 +1,25 @@
 async function search(busqueda, offset) {
+    var ids = JSON.parse(localStorage.getItem("ids"));
+
     busquedaURI = encodeURIComponent(busqueda);
     var contgeneral = document.getElementById("searchresults");
-    contgeneral.innerHTML = '<div id="titlesearchresult">' +
-        '<div id="searchimagesresults">' +                    //Borro imagenes anteriores en nueva busqueda
-        '</div>' +
-        '<div class="pages" id="pages"></div>' +
-        '</div>';
+    
     var urlBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${busqueda}&offset=${offset}`;
     console.log(urlBusqueda);
     resp = await fetch(urlBusqueda);
     info = await resp.json();
+    if (info.data.length == 0){
+        contgeneral.innerHTML = `<div class="borde" id="borde"></div> 
+                                <h1 class="titlesearch" id="titlesearch">${busqueda}</h1>
+                                <div class="noresults"><img src="images/icon-busqueda-sin-resultado.svg" alt="noresults"></div>
+                                <div class="titlenoresults">Intenta con otra busqueda.</div>` /*Borro imagenes anteriores en nueva busqueda*/;
+    }
+    else{
+        contgeneral.innerHTML = '<div id="titlesearchresult">' +
+        '<div id="searchimagesresults">' +                    //Borro imagenes anteriores en nueva busqueda
+        '</div>' +
+        '<div class="pages" id="pages"></div>' +
+        '</div>';
     console.log(info);
     var pages = document.getElementById("pages");
     var contimages = document.getElementById("searchimagesresults");
@@ -28,8 +38,7 @@ async function search(busqueda, offset) {
                 <div class="buttons">
                     <button class='heart' id='heartfav${i}' onclick="favorites(${i},'${info.data[i].id}')">
                     </button>
-                    <a href="${info.data[i].images.original.url}" download><button class="download"></a>
-                    </button>
+                    <button class="download" onclick="downloadGif('${info.data[i].id}')">  </button>
                     <button class='max' 
                     onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username}','${info.data[i].title}','${info.data[i].id}')">
                     </button>
@@ -82,8 +91,7 @@ async function search(busqueda, offset) {
                 <div class="buttons">
                     <button class='heart' id='heartfav${i}' onclick="favorites(${i},'${info.data[i].id}')">
                     </button>
-                    <a href="${info.data[i].images.original.url}" download><button class="download"></a>
-                    </button>
+                    <button class="download" onclick="downloadGif('${info.data[i].id}')">  </button>
                     <button class='max' 
                     onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username}','${info.data[i].title}','${info.data[i].id}')">
                     </button>
@@ -124,6 +132,7 @@ async function search(busqueda, offset) {
         }
 
     }
+}
 }
 
 function page(busqueda, off) {

@@ -395,6 +395,20 @@
   padding: 5%;
 }
 
+.noresults {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.titlenoresults {
+  margin-top: 5%;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #50E3C2;
+  font-size: 22px;
+}
+
 .mostview {
   background-color: #F3F5F8;
   margin-top: 5%;
@@ -877,6 +891,12 @@
   }
   #container-search {
     width: 100%;
+  }
+  .noresults {
+    margin-top: 5%;
+  }
+  .noresults img {
+    width: 20%;
   }
   .titlemostview {
     font-size: 25px;
@@ -1417,6 +1437,22 @@
     font-weight: bold;
     font-size: 15px;
     color: white;
+  }
+  .logosuccess {
+    display: none;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .titleuploadsuccess {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    display: none;
   }
   .erase {
     background-image: url(/images/icon-trash-normal.svg);

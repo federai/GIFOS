@@ -1,9 +1,20 @@
-var contfav = document.getElementById("misGifos");
+var contmisgifos = document.getElementById("misGifos");
 var misgifos = JSON.parse(localStorage.getItem("misgifos"));
 
 
-if (misgifos != null) {
-    async function drawFavorites(array, valorpasado) {
+
+    async function drawmisgifos(array, valorpasado) {
+
+        if (array == null || array=="") {
+            contmisgifos.innerHTML="";
+            var iconmisgifos = document.getElementById("iconmisgifos");
+            iconmisgifos.src = "/images/icon-mis-gifos-sin-contenido.svg"
+            iconmisgifos.classList.add("heartfavempty");
+            var titlemisgifos = document.getElementById("titlemisgifos");
+            titlemisgifos.innerHTML = "¡Anímate a crear tu primer GIFO!";
+              titlemisgifos.classList.add("titlefavempty");
+        }
+else{
         console.log(typeof (array));
         console.log(valorpasado);
         var urlBusqueda = `https://api.giphy.com/v1/gifs?api_key=${apiKey}&ids=${array}`;
@@ -12,11 +23,11 @@ if (misgifos != null) {
         info = await resp.json();
         console.log(info);
         
-        contfav.innerHTML = `<div class="imagesfavs" id="imagesfavs"></div>
+        contmisgifos.innerHTML = `<div class="imagesfavs" id="imagesmisgifs"></div>
                                  <div class="pages" id="pages"></div>`;
         info.pagination.offset=valorpasado;
         console.log("valor offset " + info.pagination.offset);
-        containerfavs = document.getElementById("imagesfavs");
+        containermisgifs = document.getElementById("imagesmisgifs");
         var pages = document.getElementById("pages");
         if (info.pagination.count - info.pagination.offset > 12) {
 
@@ -29,19 +40,19 @@ if (misgifos != null) {
                     </div>
                 <div class="overlaysearch">
                     <div class="buttons">
-                    <button class='erase' id='erasemygif${i}' onclick="erase(${i},'${info.data[i].id}')">
+                    <button class='erase' id='erasemygif' onclick="erase('${info.data[i].id}')">
                     </button>
                         <button class="download">
                         </button>
                         <button class='max' 
-                        onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                        onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username}','${info.data[i].title}')">
                         </button>
                     </div>
                     <div class="text">${info.data[i].username.user}<br> ${info.data[i].title}
                     </div>
                 </div>
             </div>`;
-                containerfavs.insertAdjacentHTML("beforeend", txt);
+            containermisgifs.insertAdjacentHTML("beforeend", txt);
                 //Chequeo si existe algun dato en el localstorage
                 if (ids != null) {
                     // Si existe con includes busco si el string de id esta en el array de ids
@@ -83,7 +94,7 @@ if (misgifos != null) {
                     </div>
                 <div class="overlaysearch">
                     <div class="buttons">
-                    <button class='erase' id='erasemygif${i}' onclick="erase(${i},'${info.data[i].id}')">
+                    <button class='erase' id='erasemygif' onclick="erase('${info.data[i].id}')">
                     </button>
                         <button class="download">
                         </button>
@@ -95,7 +106,7 @@ if (misgifos != null) {
                     </div>
                 </div>
             </div>`;
-                containerfavs.insertAdjacentHTML("beforeend", txt);
+            containermisgifs.insertAdjacentHTML("beforeend", txt);
                 // if (misgifos != null) {
                 //     var searchid = misgifos.includes(info.data[i].id);
                 //     if (searchid) {
@@ -125,22 +136,30 @@ if (misgifos != null) {
 
         }
     }
-
-    drawFavorites(misgifos, 0);
+}
+    drawmisgifos(misgifos, 0);
 
     function pagefav(off) {
         containerfavs = document.getElementById("imagesfavs");
         containerfavs.innerHTML = "";
-        drawFavorites(misgifos, off);
+        drawmisgifos(misgifos, off);
 
     }
-}
 
- if (misgifos == null) {
-     var iconmisgifos = document.getElementById("iconmisgifos");
-     iconmisgifos.src = "/images/icon-mis-gifos-sin-contenido.svg"
-     iconmisgifos.classList.add("heartfavempty");
-     var titlemisgifos = document.getElementById("titlemisgifos");
-     titlemisgifos.innerHTML = "¡Anímate a crear tu primer GIFO!";
-       titlemisgifos.classList.add("titlefavempty");
+
+
+
+ function erase(idmygif){
+    //Busca numero en array de ids guardados. includes devuelve TRUE o False 
+    var searchid = misgifos.includes(idmygif);
+    if (searchid) {
+        //Si ya existe no hace nada
+        console.log("Existe");
+        const index = misgifos.indexOf(idmygif);
+        if (index > -1) {
+            misgifos.splice(index, 1);
+        }
+    }
+    localStorage.setItem('misgifos', JSON.stringify(misgifos));
+    drawmisgifos(misgifos,0);
  }
