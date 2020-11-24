@@ -31,7 +31,7 @@ else{
                 var txt = `<div class="cardsearch">
                 <div class="contGifsearch">
                     <img src="${info.data[i].images.original.url}" alt="Avatar" class="imgsearchresult" 
-                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username}','${info.data[i].title}')">
                     </div>
                 <div class="overlaysearch">
                     <div class="buttons">
@@ -71,7 +71,7 @@ else{
                 var txt = `<div class="cardsearch">
                 <div class="contGifsearch">
                     <img src="${info.data[i].images.original.url}" alt="Avatar" class="imgsearchresult" 
-                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username}','${info.data[i].title}')">
                     </div>
                 <div class="overlaysearch">
                     <div class="buttons">

@@ -19,7 +19,7 @@ function agrandar(gifmax, user, title, idmax) {
                                 </div>
                                 <div class="buttonsMaxGif">
                                 <button class='heartMax' id='heartfav777' onclick="favorites(777,'${idmax}')">
-                                <button class="download" onclick="downloadGif('${idmax}')">  </button>
+                                <button class="download" id="download" onclick="downloadGif('${idmax}')">  </button>
                                 </div> 
                          </div>    
                  </div>`;
