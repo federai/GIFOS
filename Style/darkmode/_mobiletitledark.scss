@@ -62,6 +62,7 @@
     }
 
     #search-button {
+        content:url(/images/icon-search-modo-noct.svg);
         order: 3;
         border: none;
         cursor:pointer;
@@ -69,6 +70,7 @@
         display: inline-block;
     }
     #delete-button {
+        content:url(/images/close-modo-noct.svg);
         display: none;
         order: 3;
         cursor: pointer;

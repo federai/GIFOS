@@ -8,12 +8,10 @@ var index = 0;
 var x = document.getElementById("heartfav2");
 function gifTrendings(limit, offset) {
     var urlGifTrendigs = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=${limit}&offset=${offset}`;
-    console.log(urlGifTrendigs);
     fetch(urlGifTrendigs)
         .then(r => r.json())
         .then((rsp) => {
             var contGif = document.getElementById("sliderimages");
-            console.log(rsp);
             for (i = 0; i < rsp.data.length; i++) {
                 var txt =
                     `<div class="card">
@@ -42,7 +40,7 @@ function gifTrendings(limit, offset) {
                         x.classList.add("heartactive")
                     }
                     else {
-                        console.log("no existe");
+                        
                     }
 
                 }
@@ -74,12 +72,10 @@ else {
 function moveslides(n) {
     var cant = index += n;
     var contGif = document.getElementById("sliderimages");
-    console.log("offset " + cant);
     contGif.style.transition = "all 2s ease-out 2s"
     if (cant >= 0) {
 
         contGif.innerHTML = "";
-        //console.log ("valor n " + cont);
         gifTrendings(3, cant)
     }
 }

@@ -24,8 +24,8 @@
           </a></li>
         <li><a class="menuLink" href="/favoritos.html">Favoritos</a></li>
         <li><a class="menuLink" href="/my-gifos.html">Mis GIFOS</a></li>
-        <li><button class="add" id="add" onclick="window.location.href='/crearGif.html'"></button></li>
-
+        <li><button class="addactive" id="add" onclick="window.location.href='/crearGif.html'"></button></li>
+         
       </ul>
     </nav>
   </header>
@@ -33,8 +33,8 @@
   <main>
     <div class="miGif">
       <div class="camara">
-        <img src="/images/camara.svg" alt="camara">
-        <img src="images/element-luz-camara.svg" alt="luzcamara">
+        <img src="/images/camara.svg" alt="camara" id="camara">
+        <img src="images/element-luz-camara.svg" alt="luzcamara" id="luzcamara">
       </div>
       <div class="rectanglerecord">
         <div class="box1"></div>
@@ -54,6 +54,10 @@
             <img src="" alt="gifograbado" id="gifograbado" class="gifograbado">
             <div class="overlaygifupload" id="overlaygifupload">
               <div class="containerupload">
+                <div class="buttonsgifupload" id="buttonsgifupload">
+                <button class="downloadmygifo" id="downloadmygifo"></button>
+                <button class="linkmygifo" id="linkmygifo"></button>
+              </div>
                 <div class="logoupload" id="logoupload"> <img src="images/loader.svg" alt="loader">
                 </div>
                 <div class="logosuccess" id="logosuccess"><img src="images/check.svg" alt="check"></div>
@@ -65,7 +69,7 @@
         </div>
       </div>
       <div class="rollograbacion">
-        <img src="images/pelicula.svg" alt="pelicula">
+        <img src="images/pelicula.svg" alt="pelicula" id="pelicula">
       </div>
     </div>
 
@@ -77,6 +81,10 @@
         <p class="thirdstep" id="thirdstep">3</p>
 
       </div>
+      
+        <p class="counter_recording" id="counter_recording" >
+          0:00:00
+        </p>
       <p class="repetir" id="repeat">Repetir Captura</p>
       <div class="breakline"></div>
       <div class="buttonstart" id="buttonstart" onclick="getStreamAndRecord()">Comenzar</div>
@@ -87,9 +95,26 @@
 
     </div>
 
+<!-- ----------------------------------------------------FOOTER---------------------------------------------------        -->
+<footer>
+  <div class=" footer">
 
+
+      <div class="socialnetworks">
+          <p class="footer-text">Compartir en:</p>
+          <a href="http://www.facebook.com.ar" target="_blank"> <img src="images/icon_facebook.svg" alt="facebook"
+                  id="facebook"></a>
+          <a href="http://www.twitter.com.ar" target="_blank"><img src="images/icon-twitter.svg" alt="twitter"
+                  id="twitter"></a>
+          <a href="http://www.instagram.com" target="blank"><img src="images/icon_instagram.svg" alt="instragram"
+                  id="instagram"></a>
+      </div>
+      <p class="copy">© GIFOS 2020 All Rights Reserved.</p>
+  </div>
+</footer>
   </main>
-  
+  <script src="Javascript/darkmode.js"></script>
+  <script src="Javascript/downloadgif.js"></script>
   <script src="Javascript/crearGif.js"></script>
   <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
 

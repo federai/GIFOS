@@ -47,7 +47,6 @@ function addId(numero) {
     var searchid = ids.includes(numero);
     if (searchid) {
         //Si ya existe no hace nada
-        console.log("Existe");
         const index = ids.indexOf(numero);
         if (index > -1) {
             ids.splice(index, 1);
@@ -87,7 +86,6 @@ function changeHeart(contador, id) {
     //Paso a Array ids de localstorage
     var x = document.getElementById("heartfav" + contador);
     var y = document.getElementById("heartfavcarrusel" + contador);
-    console.log("en la funcion changeHeart");
     let ids = localStorage.getItem('ids');
     ids = JSON.parse(ids);
 
@@ -129,20 +127,6 @@ function changeHeart(contador, id) {
             y.classList.add("heartactive");
         }
     }
-    //     console.log(x);
-    //     if (x.classList.contains('heartactive')) {
-    //         x.classList.remove('heartactive');
-    //         for (var i = 0; i < ids.length; i++) {
-    //             if (ids[i] == id) {
-    //                 ids.splice(i, 1);
-    //             }
-    //         }
-    //         localStorage.setItem('ids', JSON.stringify(ids));
-    //     }
-    //     else {
-    //         console.log(x);
-    //         x.classList.add("heartactive");
-    //     }
 }
 
 

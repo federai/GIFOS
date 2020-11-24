@@ -3,8 +3,6 @@
 
 
 function agrandar(gifmax, user, title, idmax) {
-    console.log(idmax);
-    console.log(gifmax);
     
     document.getElementById("max").innerHTML = "";
     document.getElementById("max").style.display = "unset";

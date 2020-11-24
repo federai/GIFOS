@@ -2,20 +2,17 @@
 async function drawFavorites(array, valorpasado) {
 
     var favssave = JSON.parse(localStorage.getItem("ids"));
-    console.log(typeof (array));
-    console.log(valorpasado);
     var urlBusqueda = `https://api.giphy.com/v1/gifs?api_key=${apiKey}&ids=${array}`;
-    console.log(urlBusqueda);
     resp = await fetch(urlBusqueda);
     info = await resp.json();
-    console.log(info);
 
     contfav.innerHTML = `<div class="imagesfavs" id="imagesfavs"></div>
                              <div class="pages" id="pages"></div>`;
     info.pagination.offset = valorpasado;
-    console.log("valor offset " + info.pagination.offset);
     containerfavs = document.getElementById("imagesfavs");
     var pages = document.getElementById("pages");
+   
+   //Cuando son mas de 12 GIFS dibujo con i hasta 12.
     if (info.pagination.count - info.pagination.offset > 12) {
 
         for (i = 0; i < 12; i++) {
@@ -23,7 +20,7 @@ async function drawFavorites(array, valorpasado) {
             var txt = `<div class="cardsearch">
             <div class="contGifsearch">
                 <img src="${info.data[i].images.original.url}" alt="Avatar" class="imgsearchresult" 
-                onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}','${info.data[i].id}')">
+                onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username}','${info.data[i].title}','${info.data[i].id}')">
                 </div>
             <div class="overlaysearch">
                 <div class="buttons">
@@ -32,10 +29,10 @@ async function drawFavorites(array, valorpasado) {
                 <button class="download" onclick="downloadGif('${info.data[i].id}')">  </button>
 
                     <button class='max' 
-                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username}','${info.data[i].title}')">
                     </button>
                 </div>
-                <div class="text">${info.data[i].username.user}<br> ${info.data[i].title}
+                <div class="text">${info.data[i].username}<br> ${info.data[i].title}
                 </div>
             </div>
         </div>`;
@@ -50,7 +47,7 @@ async function drawFavorites(array, valorpasado) {
                     x.classList.add("heartactive")
                 }
                 else {
-                    console.log("no existe");
+                    //console.log("no existe");
                 }
 
             }
@@ -71,13 +68,16 @@ async function drawFavorites(array, valorpasado) {
         }
 
     }
+    
     //Cuando no es mayor a 12 hago lo mismo y le sumo condicion del total>12 para que si es menor no dibuje los botones
     else {
+        //dibujo desde el valor pasado hasta el count porque las paginas que tienen menos de 12 resultados caen aca.
+        // Por ejemplo si tengo 15 gif los ultimos 3 caen en esta condicion.
         for (i = valorpasado; i < info.pagination.count; i++) {
             var txt = `<div class="cardsearch">
             <div class="contGifsearch">
                 <img src="${info.data[i].images.original.url}" alt="Avatar" class="imgsearchresult" 
-                onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}')">
+                onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username}','${info.data[i].title}')">
                 </div>
             <div class="overlaysearch">
                 <div class="buttons">
@@ -85,10 +85,10 @@ async function drawFavorites(array, valorpasado) {
                     </button>
                     <button class="download" onclick="downloadGif('${info.data[i].id}')">  </button>
                     <button class='max' 
-                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username.user}','${info.data[i].title}','${info.data[i].id}')">
+                    onclick="agrandar('${info.data[i].images.original.url}','${info.data[i].username}','${info.data[i].title}','${info.data[i].id}')">
                     </button>
                 </div>
-                <div class="text">${info.data[i].username.user}<br> ${info.data[i].title}
+                <div class="text">${info.data[i].username}<br> ${info.data[i].title}
                 </div>
             </div>
         </div>`;
@@ -100,13 +100,12 @@ async function drawFavorites(array, valorpasado) {
                     x.classList.add("heartactive")
                 }
                 else {
-                    console.log("no existe");
+                    //console.log("no existe");
                 }
 
             }
         }
         var total = favssave.length;
-        console.log(total);
         var paginas = Math.ceil(total / 12);
 
         if (total > 12) {

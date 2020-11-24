@@ -69,10 +69,25 @@
     border-radius: 6px;
     margin-left: 6px;
 }
+.heart:hover{
+  background-image: url(/images/icon-fav-hover.svg);
+  background-color: white;
+  width: 32px;
+  height: 32px;
+}
 .heartactive{
   background-image: url(/images/icon-fav-active.svg);
   background-position: center;
   background-repeat: no-repeat;
   width: 32px;
   height: 32px;
+}
+.max:hover{
+  background: white;
+  background-image: url(/images/icon-max-hover.svg);
+  opacity: 1;
+}
+.download:hover{
+  background-image: url(/images/icon-download-hover.svg);
+  
 }

@@ -227,6 +227,7 @@ body {
 }
 
 .div-search #search-button {
+  content: url(/images/icon-search-modo-noct.svg);
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
@@ -237,6 +238,7 @@ body {
 }
 
 .div-search #delete-button {
+  content: url(/images/close-modo-noct.svg);
   display: none;
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
@@ -907,11 +909,13 @@ body {
         -ms-grid-row-align: center;
         align-self: center;
   }
-  .leftHover {
-    background-image: url(/images/button-slider-left-hover.svg);
+  .left:hover {
+    background-image: url(/images/button-slider-left.svg);
+    background-color: white;
   }
-  .rigthHover {
-    background-image: url(/images/Button-Slider-right-hover.svg);
+  .right:hover {
+    background-color: white;
+    background-image: url(/images/Button-Slider-right.svg);
   }
   .footer {
     display: -webkit-box;
@@ -1002,12 +1006,26 @@ body {
     border-radius: 6px;
     margin-left: 6px;
   }
+  .heart:hover {
+    background-image: url(/images/icon-fav-hover.svg);
+    background-color: white;
+    width: 32px;
+    height: 32px;
+  }
   .heartactive {
     background-image: url(/images/icon-fav-active.svg);
     background-position: center;
     background-repeat: no-repeat;
     width: 32px;
     height: 32px;
+  }
+  .max:hover {
+    background: white;
+    background-image: url(/images/icon-max-hover.svg);
+    opacity: 1;
+  }
+  .download:hover {
+    background-image: url(/images/icon-download-hover.svg);
   }
   .conttitlefav {
     text-align: center;
@@ -1072,6 +1090,406 @@ body {
   }
   .contimagemax {
     margin-bottom: 10%;
+  }
+  .miGif {
+    padding: 5%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 6fr 1fr;
+        grid-template-columns: 1fr 6fr 1fr;
+    gap: 4%;
+  }
+  .camara {
+    -ms-flex-item-align: center;
+        align-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .rectanglerecord {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    border: 1px solid #FFFFFF;
+    height: 500px;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+  }
+  .rollograbacion {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .box1 {
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+  }
+  .box2 {
+    border-top: 1px solid grey;
+    border-right: 1px solid grey;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+  }
+  .box3 {
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 90%;
+    left: 5%;
+  }
+  .box4 {
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 90%;
+    left: 90%;
+  }
+  .containertitle {
+    text-align: center;
+    padding: 5%;
+    width: 100%;
+  }
+  .titlemygif {
+    font-family: "Montserrat", sans-serif;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-family: "Roboto", sans-serif;
+    color: #FFFFFF;
+    font-size: 16px;
+  }
+  .controles {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 4%;
+    padding: 0% 5%;
+    margin-left: 1%;
+  }
+  .botones {
+    text-align: center;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 10%;
+    margin-bottom: 5%;
+  }
+  .firststep {
+    border: 1px solid #FFFFFF;
+    width: 32px;
+    height: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+  }
+  .secondstep {
+    border: 1px solid #FFFFFF;
+    width: 32px;
+    height: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+  }
+  .thirdstep {
+    border: 1px solid #FFFFFF;
+    width: 32px;
+    height: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+  }
+  .breakline {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 70%;
+    padding: 7px 5%;
+    background-color: #FFFFFF;
+    margin-bottom: 3%;
+  }
+  .buttonstart {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 25px;
+    padding: 1.5%;
+    font-weight: bold;
+    margin-bottom: 10%;
+  }
+  .buttonstart:hover, .buttonrecord:hover, .buttonend:hover, .buttonupload:hover {
+    background-color: #FFFFFF;
+    color: black;
+  }
+  .activecamara {
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin-left: 10%;
+    width: 80%;
+    height: 85%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: none;
+  }
+  .activecamara > video {
+    width: 100%;
+  }
+  .buttonrecord {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 25px;
+    padding: 1.5%;
+    font-weight: bold;
+    margin-bottom: 10%;
+    display: none;
+  }
+  .buttonend {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 25px;
+    padding: 1.5%;
+    font-weight: bold;
+    margin-bottom: 10%;
+    display: none;
+  }
+  .buttonupload {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 25px;
+    padding: 1.5%;
+    font-weight: bold;
+    margin-bottom: 10%;
+    display: none;
+  }
+  .gifograbado {
+    display: none;
+    position: relative;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 480px;
+    height: 100%;
+  }
+  .stepactive {
+    background-color: #FFFFFF;
+    color: black;
+  }
+  .repetir {
+    position: absolute;
+    right: 20%;
+    margin-top: 7px;
+    font-family: "Montserrat", sans-serif;
+    color: #FFFFFF;
+    font-weight: bold;
+    display: none;
+  }
+  .repetir:hover {
+    border-bottom: 2px solid #FFFFFF;
+  }
+  .containerGifo {
+    position: relative;
+  }
+  .overlaygifupload {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 400;
+    opacity: 0.6;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    background-color: #572EE5;
+  }
+  .containerupload {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  .logoupload {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .titleupload {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+  }
+  .logosuccess {
+    display: none;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .titleuploadsuccess {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    display: none;
+  }
+  #camara {
+    content: url(/images/camara-modo-noc.svg);
+  }
+  #pelicula {
+    content: url(/images/pelicula-modo-noc.svg);
+  }
+  .addactive {
+    display: unset;
+    background-image: url(/images/CTA-crear-gifo-active-modo-noc.svg);
+    width: 54px;
+    height: 54px;
+    background-color: transparent;
+    border: none;
+  }
+  .counter_recording {
+    position: absolute;
+    right: 20%;
+    margin-top: 7px;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-weight: bold;
+    display: none;
+  }
+  .buttonsgifupload {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    display: none;
+  }
+  .downloadmygifo {
+    background-image: url(/images/icon-download.svg);
+    width: 32px;
+    height: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 6px;
+    margin-right: 6px;
+  }
+  .linkmygifo {
+    background-image: url(/images/icon-link-normal.svg);
+    width: 32px;
+    height: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 6px;
+  }
+  .linkmygifo:hover {
+    background-image: url(/images/icon-link-hover.svg);
+  }
+  .downloadmygifo:hover {
+    background-image: url(/images/icon-download-hover.svg);
+  }
+  .erase {
+    background-image: url(/images/icon-trash-normal.svg);
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-position: center;
+    background-repeat: none;
+    background-color: transparent;
+    border-radius: 6px;
+  }
+  .erase:hover {
+    background-image: url(/images/icon-trash-hover.svg);
   }
 }
 /*# sourceMappingURL=darkstyle.css.map */
