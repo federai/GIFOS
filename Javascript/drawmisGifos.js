@@ -8,7 +8,7 @@ var misgifos = JSON.parse(localStorage.getItem("misgifos"));
         if (array == null || array=="") {
             contmisgifos.innerHTML="";
             var iconmisgifos = document.getElementById("iconmisgifos");
-            iconmisgifos.src = "/images/icon-mis-gifos-sin-contenido.svg"
+            iconmisgifos.src = "images/icon-mis-gifos-sin-contenido.svg"
             iconmisgifos.classList.add("heartfavempty");
             var titlemisgifos = document.getElementById("titlemisgifos");
             titlemisgifos.innerHTML = "¡Anímate a crear tu primer GIFO!";

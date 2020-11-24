@@ -59,7 +59,7 @@ header{
 
 .add{
     display: unset;
-    background-image: url(/images/button-crear-gifo.svg);
+    background-image: url(../images/button-crear-gifo.svg);
     width: 54px;
     height: 54px;
     background-color: transparent;
@@ -67,10 +67,10 @@ header{
   }
 
 .add-hover{
-    background-image: url(/images/CTA-crear-gifo-hover.svg);
+    background-image: url(../images/CTA-crear-gifo-hover.svg);
 }
 .add-click{
-    background-image:url(/images/CTA-crear-gifo-active.svg) ;
+    background-image:url(../images/CTA-crear-gifo-active.svg) ;
 }
 #lightMode {
     display: none;

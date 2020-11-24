@@ -78,9 +78,11 @@ function traerSugerencias() {
                     icon.classList.add('icon-div');
                     icon.innerHTML = '<i class="fas fa-search"></i>';
                     li.classList.add('searchSug');
+                    li.setAttribute('onclick','search("'+item[i]+'",0)');
                     li.innerHTML = item[i];
                     icon.appendChild(li);
                     ul.appendChild(icon);
+
                 }
                 containerSearch.appendChild(ul);
                 //ESTO ESCRIBE EN EL INPUT LA PALABRA SELECCIONADA

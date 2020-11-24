@@ -44,7 +44,7 @@
   border: none;
   cursor: pointer;
   background-color: transparent;
-  background-image: url(/images/burger.svg);
+  background-image: url(../images/burger.svg);
   background-size: 100%;
 }
 
@@ -54,7 +54,7 @@
 
 /* change ham image to close */
 .showClose {
-  background-image: url(/images/close.svg);
+  background-image: url(../images/close.svg);
   width: 15px;
   height: 14px;
 }
@@ -246,7 +246,7 @@
 }
 
 #container-search li {
-  background: url(/images/icon-search.svg) no-repeat left top;
+  background: url(../images/icon-search.svg) no-repeat left top;
   padding-left: 35px;
   cursor: pointer;
 }
@@ -359,7 +359,7 @@
 }
 
 .icon-suggestion {
-  background-image: url(/images/icon-search.svg);
+  background-image: url(../images/icon-search.svg);
   z-index: 4;
   width: 20px;
   height: 20px;
@@ -542,7 +542,7 @@
 }
 
 .heartactive {
-  background-image: url(/images/icon-fav-active.svg);
+  background-image: url(../images/icon-fav-active.svg);
   background-position: center;
   background-repeat: no-repeat;
   width: 32px;
@@ -573,7 +573,7 @@
 }
 
 #cross {
-  background-image: url(/images/close.svg);
+  background-image: url(../images/close.svg);
   width: 14px;
   height: 14px;
   background-repeat: none;
@@ -611,7 +611,7 @@
 }
 
 #download {
-  background-image: url(/images/icon-download.svg);
+  background-image: url(../images/icon-download.svg);
   width: 32px;
   height: 32px;
   background-position: center;
@@ -621,7 +621,7 @@
 }
 
 #favoritos {
-  background-image: url(/images/icon-fav.svg);
+  background-image: url(../images/icon-fav.svg);
   width: 32px;
   height: 32px;
   background-position: center;
@@ -655,7 +655,7 @@
 }
 
 .heartMax {
-  background-image: url(/images/icon-fav.svg);
+  background-image: url(../images/icon-fav.svg);
   width: 32px;
   height: 32px;
   border: none;
@@ -680,7 +680,7 @@
 }
 
 .heartactive {
-  background-image: url(/images/icon-fav-active.svg);
+  background-image: url(../images/icon-fav-active.svg);
   background-position: center;
   background-repeat: no-repeat;
   width: 32px;
@@ -785,17 +785,17 @@
   }
   .add {
     display: unset;
-    background-image: url(/images/button-crear-gifo.svg);
+    background-image: url(../images/button-crear-gifo.svg);
     width: 54px;
     height: 54px;
     background-color: transparent;
     border: none;
   }
   .add-hover {
-    background-image: url(/images/CTA-crear-gifo-hover.svg);
+    background-image: url(../images/CTA-crear-gifo-hover.svg);
   }
   .add-click {
-    background-image: url(/images/CTA-crear-gifo-active.svg);
+    background-image: url(../images/CTA-crear-gifo-active.svg);
   }
   #lightMode {
     display: none;
@@ -914,7 +914,7 @@
   }
   .left {
     display: unset;
-    background-image: url(/images/button-slider-left.svg);
+    background-image: url(../images/button-slider-left.svg);
     width: 40px;
     height: 40px;
     background-color: none;
@@ -925,7 +925,7 @@
   }
   .right {
     display: unset;
-    background-image: url(/images/Button-Slider-right.svg);
+    background-image: url(../images/Button-Slider-right.svg);
     width: 40px;
     height: 40px;
     background-color: none;
@@ -937,10 +937,10 @@
         align-self: center;
   }
   .left:hover {
-    background-image: url(/images/button-slider-left-hover.svg);
+    background-image: url(../images/button-slider-left-hover.svg);
   }
   .right:hover {
-    background-image: url(/images/Button-Slider-right-hover.svg);
+    background-image: url(../images/Button-Slider-right-hover.svg);
   }
   .footer {
     display: -webkit-box;
@@ -1013,14 +1013,14 @@
     left: 60%;
   }
   .heart {
-    background-image: url(/images/icon-fav.svg);
+    background-image: url(../images/icon-fav.svg);
     width: 32px;
     height: 32px;
     border: none;
     border-radius: 6px;
   }
   .download {
-    background-image: url(/images/icon-download.svg);
+    background-image: url(../images/icon-download.svg);
     width: 32px;
     height: 32px;
     background-position: center;
@@ -1030,7 +1030,7 @@
     margin-left: 6px;
   }
   .max {
-    background-image: url(/images/icon-max-normal.svg);
+    background-image: url(../images/icon-max-normal.svg);
     width: 32px;
     height: 32px;
     border: none;
@@ -1038,13 +1038,13 @@
     margin-left: 6px;
   }
   .heart:hover {
-    background-image: url(/images/icon-fav-hover.svg);
+    background-image: url(../images/icon-fav-hover.svg);
     background-color: white;
     width: 32px;
     height: 32px;
   }
   .heartactive {
-    background-image: url(/images/icon-fav-active.svg);
+    background-image: url(../images/icon-fav-active.svg);
     background-position: center;
     background-repeat: no-repeat;
     width: 32px;
@@ -1052,11 +1052,11 @@
   }
   .max:hover {
     background: white;
-    background-image: url(/images/icon-max-hover.svg);
+    background-image: url(../images/icon-max-hover.svg);
     opacity: 1;
   }
   .download:hover {
-    background-image: url(/images/icon-download-hover.svg);
+    background-image: url(../images/icon-download-hover.svg);
   }
   .conttitlefav {
     text-align: center;
@@ -1456,7 +1456,7 @@
   }
   .addactive {
     display: unset;
-    background-image: url(/images/CTA-crear-gifo-active.svg);
+    background-image: url(../images/CTA-crear-gifo-active.svg);
     width: 54px;
     height: 54px;
     background-color: transparent;
@@ -1481,7 +1481,7 @@
     display: none;
   }
   .downloadmygifo {
-    background-image: url(/images/icon-download.svg);
+    background-image: url(../images/icon-download.svg);
     width: 32px;
     height: 32px;
     background-position: center;
@@ -1491,7 +1491,7 @@
     margin-right: 6px;
   }
   .linkmygifo {
-    background-image: url(/images/icon-link-normal.svg);
+    background-image: url(../images/icon-link-normal.svg);
     width: 32px;
     height: 32px;
     background-position: center;
@@ -1500,13 +1500,13 @@
     border-radius: 6px;
   }
   .linkmygifo:hover {
-    background-image: url(/images/icon-link-hover.svg);
+    background-image: url(../images/icon-link-hover.svg);
   }
   .downloadmygifo:hover {
-    background-image: url(/images/icon-download-hover.svg);
+    background-image: url(../images/icon-download-hover.svg);
   }
   .erase {
-    background-image: url(/images/icon-trash-normal.svg);
+    background-image: url(../images/icon-trash-normal.svg);
     width: 32px;
     height: 32px;
     border: none;
@@ -1516,7 +1516,7 @@
     border-radius: 6px;
   }
   .erase:hover {
-    background-image: url(/images/icon-trash-hover.svg);
+    background-image: url(../images/icon-trash-hover.svg);
   }
 }
 /*# sourceMappingURL=lightstyle.css.map */

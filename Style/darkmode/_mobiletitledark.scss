@@ -62,7 +62,7 @@
     }
 
     #search-button {
-        content:url(/images/icon-search-modo-noct.svg);
+        content:url(../images/icon-search-modo-noct.svg);
         order: 3;
         border: none;
         cursor:pointer;
@@ -70,7 +70,7 @@
         display: inline-block;
     }
     #delete-button {
-        content:url(/images/close-modo-noct.svg);
+        content:url(../images/close-modo-noct.svg);
         display: none;
         order: 3;
         cursor: pointer;
@@ -87,7 +87,7 @@
     color: #9CAFC3;
     
     li { 
-        background: url(/images/icon-search-modo-noct.svg) no-repeat left top;
+        background: url(../images/icon-search-modo-noct.svg) no-repeat left top;
         padding-left: 35px;
         cursor: pointer;
     }
@@ -148,7 +148,7 @@
     padding: 5%
 }
 .icon-searchactive{
-    background-image: url(/images/close-modo-noct.svg);
+    background-image: url(../images/close-modo-noct.svg);
     width: 14px;
     height: 14px;
     margin-top: 18px;
@@ -181,7 +181,7 @@
     
 }
 .icon-suggestion{
-    background-image: url(/images/icon-search-mod-noc.svg);
+    background-image: url(../images/icon-search-mod-noc.svg);
     z-index: 4;
     width: 20px;
     height: 20px;

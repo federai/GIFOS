@@ -276,14 +276,14 @@
     display: none;
   }
   #camara{
-      content:url(/images/camara-modo-noc.svg);
+      content:url(../images/camara-modo-noc.svg);
   }
   #pelicula{
-      content:url(/images/pelicula-modo-noc.svg)
+      content:url(../images/pelicula-modo-noc.svg)
   }
   .addactive{
     display: unset;
-    background-image: url(/images/CTA-crear-gifo-active-modo-noc.svg);
+    background-image: url(../images/CTA-crear-gifo-active-modo-noc.svg);
     width: 54px;
     height: 54px;
     background-color: transparent;
@@ -306,7 +306,7 @@
     display: none;
   }
   .downloadmygifo{
-    background-image: url(/images/icon-download.svg);
+    background-image: url(../images/icon-download.svg);
     width: 32px;
     height: 32px;
     background-position: center;
@@ -316,7 +316,7 @@
     margin-right: 6px;
   }
   .linkmygifo{
-    background-image: url(/images/icon-link-normal.svg);
+    background-image: url(../images/icon-link-normal.svg);
     width: 32px;
     height: 32px;
     background-position: center;
@@ -325,8 +325,8 @@
     border-radius: 6px;
   }
   .linkmygifo:hover{
-    background-image: url(/images/icon-link-hover.svg);
+    background-image: url(../images/icon-link-hover.svg);
   }
   .downloadmygifo:hover{
-    background-image: url(/images/icon-download-hover.svg);
+    background-image: url(../images/icon-download-hover.svg);
   }

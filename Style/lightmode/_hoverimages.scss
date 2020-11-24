@@ -44,7 +44,7 @@
   }
 
   .heart{
-      background-image: url(/images/icon-fav.svg);
+      background-image: url(../images/icon-fav.svg);
       width: 32px;
       height: 32px;
       border: none;
@@ -52,7 +52,7 @@
       
   }
   .download{
-    background-image: url(/images/icon-download.svg);
+    background-image: url(../images/icon-download.svg);
     width: 32px;
     height: 32px;
     background-position: center;
@@ -62,7 +62,7 @@
     margin-left: 6px;
 }
 .max{
-    background-image: url(/images/icon-max-normal.svg);
+    background-image: url(../images/icon-max-normal.svg);
     width: 32px;
     height: 32px;
     border: none;
@@ -70,13 +70,13 @@
     margin-left: 6px;
 }
 .heart:hover{
-  background-image: url(/images/icon-fav-hover.svg);
+  background-image: url(../images/icon-fav-hover.svg);
   background-color: white;
   width: 32px;
   height: 32px;
 }
 .heartactive{
-  background-image: url(/images/icon-fav-active.svg);
+  background-image: url(../images/icon-fav-active.svg);
   background-position: center;
   background-repeat: no-repeat;
   width: 32px;
@@ -84,10 +84,10 @@
 }
 .max:hover{
   background: white;
-  background-image: url(/images/icon-max-hover.svg);
+  background-image: url(../images/icon-max-hover.svg);
   opacity: 1;
 }
 .download:hover{
-  background-image: url(/images/icon-download-hover.svg);
+  background-image: url(../images/icon-download-hover.svg);
   
 }

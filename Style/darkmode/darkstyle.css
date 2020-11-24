@@ -48,13 +48,13 @@ body {
   border: none;
   cursor: pointer;
   background-color: transparent;
-  background-image: url(/images/burger-modo-noct.svg);
+  background-image: url(../images/burger-modo-noct.svg);
   background-size: 100%;
 }
 
 /* change ham image to close */
 .showClose {
-  background-image: url(/images/close-modo-noct.svg);
+  background-image: url(../images/close-modo-noct.svg);
   width: 15px;
   height: 14px;
 }
@@ -227,7 +227,7 @@ body {
 }
 
 .div-search #search-button {
-  content: url(/images/icon-search-modo-noct.svg);
+  content: url(../images/icon-search-modo-noct.svg);
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
@@ -238,7 +238,7 @@ body {
 }
 
 .div-search #delete-button {
-  content: url(/images/close-modo-noct.svg);
+  content: url(../images/close-modo-noct.svg);
   display: none;
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
@@ -258,7 +258,7 @@ body {
 }
 
 #container-search li {
-  background: url(/images/icon-search-modo-noct.svg) no-repeat left top;
+  background: url(../images/icon-search-modo-noct.svg) no-repeat left top;
   padding-left: 35px;
   cursor: pointer;
 }
@@ -332,7 +332,7 @@ body {
 }
 
 .icon-searchactive {
-  background-image: url(/images/close-modo-noct.svg);
+  background-image: url(../images/close-modo-noct.svg);
   width: 14px;
   height: 14px;
   margin-top: 18px;
@@ -373,7 +373,7 @@ body {
 }
 
 .icon-suggestion {
-  background-image: url(/images/icon-search-mod-noc.svg);
+  background-image: url(../images/icon-search-mod-noc.svg);
   z-index: 4;
   width: 20px;
   height: 20px;
@@ -566,7 +566,7 @@ body {
 }
 
 #cross {
-  background-image: url(/images/close-modo-noct.svg);
+  background-image: url(../images/close-modo-noct.svg);
   width: 14px;
   height: 14px;
   background-repeat: none;
@@ -604,7 +604,7 @@ body {
 }
 
 #download {
-  background-image: url(/images/icon-download.svg);
+  background-image: url(../images/icon-download.svg);
   width: 32px;
   height: 32px;
   background-position: center;
@@ -614,7 +614,7 @@ body {
 }
 
 #favoritos {
-  background-image: url(/images/icon-fav.svg);
+  background-image: url(../images/icon-fav.svg);
   width: 40px;
   height: 40px;
   background-position: center;
@@ -650,7 +650,7 @@ body {
 }
 
 .heartMax {
-  background-image: url(/images/icon-fav.svg);
+  background-image: url(../images/icon-fav.svg);
   width: 32px;
   height: 32px;
   background-position: center;
@@ -766,17 +766,17 @@ body {
   }
   .add {
     display: unset;
-    background-image: url(/images/CTA-crear-gifo-modo-noc.svg);
+    background-image: url(../images/CTA-crear-gifo-modo-noc.svg);
     width: 54px;
     height: 54px;
     background-color: transparent;
     border: none;
   }
   .add-hover {
-    background-image: url(/images/CTA-crear-gifo-hover-modo-noc.svg);
+    background-image: url(../images/CTA-crear-gifo-hover-modo-noc.svg);
   }
   .add-click {
-    background-image: url(/images/CTA-crear-gifo-active-modo-noc.svg);
+    background-image: url(../images/CTA-crear-gifo-active-modo-noc.svg);
   }
   #lightMode {
     display: unset;
@@ -887,7 +887,7 @@ body {
   }
   .left {
     display: unset;
-    background-image: url(/images/button-slider-left-md-noct.svg);
+    background-image: url(../images/button-slider-left-md-noct.svg);
     width: 40px;
     height: 40px;
     background-color: transparent;
@@ -898,7 +898,7 @@ body {
   }
   .right {
     display: unset;
-    background-image: url(/images/button-slider-right-md-noct.svg);
+    background-image: url(../images/button-slider-right-md-noct.svg);
     width: 40px;
     height: 40px;
     background-color: transparent;
@@ -910,12 +910,12 @@ body {
         align-self: center;
   }
   .left:hover {
-    background-image: url(/images/button-slider-left.svg);
+    background-image: url(../images/button-slider-left.svg);
     background-color: white;
   }
   .right:hover {
     background-color: white;
-    background-image: url(/images/Button-Slider-right.svg);
+    background-image: url(../images/Button-Slider-right.svg);
   }
   .footer {
     display: -webkit-box;
@@ -981,7 +981,7 @@ body {
     left: 60%;
   }
   .heart {
-    background-image: url(/images/icon-fav.svg);
+    background-image: url(../images/icon-fav.svg);
     width: 32px;
     height: 32px;
     border: none;
@@ -989,7 +989,7 @@ body {
     border-radius: 6px;
   }
   .download {
-    background-image: url(/images/icon-download.svg);
+    background-image: url(../images/icon-download.svg);
     width: 32px;
     height: 32px;
     border: none;
@@ -998,7 +998,7 @@ body {
     margin-left: 6px;
   }
   .max {
-    background-image: url(/images/icon-max-normal.svg);
+    background-image: url(../images/icon-max-normal.svg);
     width: 32px;
     height: 32px;
     border: none;
@@ -1007,13 +1007,13 @@ body {
     margin-left: 6px;
   }
   .heart:hover {
-    background-image: url(/images/icon-fav-hover.svg);
+    background-image: url(../images/icon-fav-hover.svg);
     background-color: white;
     width: 32px;
     height: 32px;
   }
   .heartactive {
-    background-image: url(/images/icon-fav-active.svg);
+    background-image: url(../images/icon-fav-active.svg);
     background-position: center;
     background-repeat: no-repeat;
     width: 32px;
@@ -1021,11 +1021,11 @@ body {
   }
   .max:hover {
     background: white;
-    background-image: url(/images/icon-max-hover.svg);
+    background-image: url(../images/icon-max-hover.svg);
     opacity: 1;
   }
   .download:hover {
-    background-image: url(/images/icon-download-hover.svg);
+    background-image: url(../images/icon-download-hover.svg);
   }
   .conttitlefav {
     text-align: center;
@@ -1422,14 +1422,14 @@ body {
     display: none;
   }
   #camara {
-    content: url(/images/camara-modo-noc.svg);
+    content: url(../images/camara-modo-noc.svg);
   }
   #pelicula {
-    content: url(/images/pelicula-modo-noc.svg);
+    content: url(../images/pelicula-modo-noc.svg);
   }
   .addactive {
     display: unset;
-    background-image: url(/images/CTA-crear-gifo-active-modo-noc.svg);
+    background-image: url(../images/CTA-crear-gifo-active-modo-noc.svg);
     width: 54px;
     height: 54px;
     background-color: transparent;
@@ -1454,7 +1454,7 @@ body {
     display: none;
   }
   .downloadmygifo {
-    background-image: url(/images/icon-download.svg);
+    background-image: url(../images/icon-download.svg);
     width: 32px;
     height: 32px;
     background-position: center;
@@ -1464,7 +1464,7 @@ body {
     margin-right: 6px;
   }
   .linkmygifo {
-    background-image: url(/images/icon-link-normal.svg);
+    background-image: url(../images/icon-link-normal.svg);
     width: 32px;
     height: 32px;
     background-position: center;
@@ -1473,13 +1473,13 @@ body {
     border-radius: 6px;
   }
   .linkmygifo:hover {
-    background-image: url(/images/icon-link-hover.svg);
+    background-image: url(../images/icon-link-hover.svg);
   }
   .downloadmygifo:hover {
-    background-image: url(/images/icon-download-hover.svg);
+    background-image: url(../images/icon-download-hover.svg);
   }
   .erase {
-    background-image: url(/images/icon-trash-normal.svg);
+    background-image: url(../images/icon-trash-normal.svg);
     width: 32px;
     height: 32px;
     border: none;
@@ -1489,7 +1489,7 @@ body {
     border-radius: 6px;
   }
   .erase:hover {
-    background-image: url(/images/icon-trash-hover.svg);
+    background-image: url(../images/icon-trash-hover.svg);
   }
 }
 /*# sourceMappingURL=darkstyle.css.map */

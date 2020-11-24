@@ -15,7 +15,7 @@
 
 .left{
     display: unset;
-    background-image: url(/images/button-slider-left.svg);
+    background-image: url(../images/button-slider-left.svg);
     width: 40px;
     height: 40px;
     background-color: none;
@@ -25,7 +25,7 @@
 }
 .right{
     display: unset;
-    background-image: url(/images/Button-Slider-right.svg);
+    background-image: url(../images/Button-Slider-right.svg);
     width: 40px;
     height: 40px;
     background-color: none;
@@ -35,11 +35,11 @@
    
 }
 .left:hover{
-    background-image: url(/images/button-slider-left-hover.svg);
+    background-image: url(../images/button-slider-left-hover.svg);
 
 }
 .right:hover{
-    background-image: url(/images/Button-Slider-right-hover.svg);
+    background-image: url(../images/Button-Slider-right-hover.svg);
     
 }
 

@@ -30,7 +30,7 @@ if (favssave == null || favssave == "") {
 function favorites(valor, id) {
     changeHeart(valor, id);
     addId(id);
-    var x = document.getElementById("heartfav" + valor);
+    
 
 }
 
