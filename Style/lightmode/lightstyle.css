@@ -1002,6 +1002,7 @@
   .text {
     display: block;
     color: white;
+    font-family: "Montserrat", sans-serif;
     font-size: 20px;
     position: relative;
     margin-top: 70%;
